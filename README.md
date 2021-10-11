@@ -1,4 +1,4 @@
-# <h1><center>**Grupo 09 - Pirupí Games**
+# <h1><center>**Grupo 09 - Pirupí Games**</h1>
 
 ## <h2><center>Todos tus juegos _retro_ favoritos, en una consola.
 
