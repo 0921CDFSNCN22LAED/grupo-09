@@ -1,4 +1,4 @@
-# <h1 align="center">Grupo 09 - *Pirupí Games*</h1>
+# <h1 align="center">Grupo 09 - _Pirupí Games_</h1>
 
 ## <h2 align="center">Todos tus juegos _retro_ favoritos, en una consola.</h2>
 
@@ -20,25 +20,19 @@ El producto ya se encuentra en comercializacion. El mismo es producido por un in
 
 #### <h2 align="center">Integrantes _Pirpupí Team_</h2>
 
-
 <h3 align="center">Milton De Marte</h3>
 
 <h5 align="center">"Tengo 29 años, soy de zona norte, Buenos Aires, Argentina. Tengo experiencia en programacion en el area de Machine Learning desarrollado con el lenguaje Python. El analisis de bases de datos, su manipulacion, procesamiento y utilizacion para la toma de decisiones es un area en la cual me desenvuelvo muy bien y es una herramienta que puedo aportar al momento de trabajar con la base de datos de nuestro ecommerce."</h5>
-
-
 
 <h3 align="center">Karen Hernandez</h3>
 
 <h5 align="center">"Completar aqui"</h5>
 
-
-
 <h3 align="center">Pablo Calvo</h3>
 
 <h5 align="center">"Completar aqui"</h5>
 
-
-
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-<h5 align="center">"Completar aqui"</h5>
+<h5 align="center">"Tengo 23 años, soy de Medellín, Colombia.
+Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la resolución de problemas y desarrollo de proyectos. Adicional a eso tengo bases de programación por el uso de Arduino"</h5>
