@@ -1,9 +1,7 @@
 # <h1 align="center">Grupo 09 - _Pirupí Games_</h1>
 
 ## <h2 align="center">Todos tus juegos _retro_ favoritos, en una consola.</h2>
-
 #
-
 ### <h3 align="center">"_Hacemos consolas multijuegos retro arcade con diseño único y personalizado_"</h3>
 
 <h5 align="center">El producto es una consola de videojuegos del tipo arcade (estilo "fichines") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas retro integradas en un software el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su juego-retro favorito.</h5>
