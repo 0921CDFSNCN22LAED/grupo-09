@@ -6,15 +6,15 @@
 
 ### <h3 align="center">"_Hacemos consolas multijuegos retro arcade con diseño único y personalizado_"</h3>
 
-El producto es una consola de videojuegos del tipo arcade (estilo "fichines") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas retro integradas en un software el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su juego-retro favorito.
+<h5 align="center">El producto es una consola de videojuegos del tipo arcade (estilo "fichines") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas retro integradas en un software el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su juego-retro favorito.</h5>
 
-Nuestra plaza comercial, a grandes rasgos, son aquellos usuarios que se encuentran entre los 24 a 35 años.
-Todos aquellos que hayan nacido entre los años 80' y hasta el _nuevo siglo_(año 2000) seguro experimentaron la senacion de ir a los fichines y jugar _Street Fighter, Dino Crisis, PUMP_ y mucho otros mas.
+<h5 align="center">Nuestra plaza comercial, a grandes rasgos, son aquellos usuarios que se encuentran entre los 24 a 35 años.
+Todos aquellos que hayan nacido entre los años 80' y hasta el _nuevo siglo_(año 2000) seguro experimentaron la senacion de ir a los fichines y jugar _Street Fighter, Dino Crisis, PUMP_ y mucho otros mas.</h5>
 
 > Para los que somos de _Argentina_, la palabra _Sacoa_ seguro nos resulta familiar al momento de pensar en juegos retro.
 
 
-El producto ya se encuentra en comercializacion. El mismo es producido por un integrante del grupo, _Pablo Calvo_, el cual nos provee de la informacion necesaria sobre el producto para realizar un ecommerce acorde al mismo. Su medio de contacto y distribucion, por el momento, es a traves de la plataforma de Instagram. En la misma se cuenta con un fotos y videos que exponen el producto y sus distintas personalizacoines.
+<h5 align="center">El producto ya se encuentra en comercializacion. El mismo es producido por un integrante del grupo, **Pablo Calvo**, el cual nos provee de la informacion necesaria sobre el producto para realizar un ecommerce acorde al mismo. Su medio de contacto y distribucion, por el momento, es a traves de la plataforma de Instagram. En la misma se cuenta con un fotos y videos que exponen el producto y sus distintas personalizacoines.</h5>
 
 #
 
