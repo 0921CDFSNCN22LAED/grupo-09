@@ -18,7 +18,7 @@
 
 #
 
-#### <h2 align="center">Integrantes _Pirpupí Team_</h2>
+#### <h2 align="center">Integrantes _Pirupí Team_</h2>
 
 <h3 align="center">Milton De Marte</h3>
 
