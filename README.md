@@ -26,7 +26,9 @@
 
 <h3 align="center">Karen Hernandez</h3>
 
-<h5 align="center">"Completar aqui"</h5>
+<h5 align="center">"Tengo 22 años,soy de Bogotá, Colombia.
+Estudio diseño grafico, tengo muchas habilidades con teoria del color y en el manejo de programas de diseño, como lo son illustrator, photoshop, etc.
+tambien cuento con habilidades para la resolución de problemas y trabajo en equipo "</h5>
 
 <h3 align="center">Pablo Calvo</h3>
 
