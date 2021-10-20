@@ -32,7 +32,7 @@ tambien cuento con habilidades para la resolución de problemas y trabajo en equ
 
 <h3 align="center">Pablo Calvo</h3>
 
-<h5 align="center">"Completar aqui"</h5>
+<h5 align="center">"Tengo 35 años, actualmente me encuentro viviendo en Saavedra, CABA, Argentina. Tengo varios años de experiencia como soporte técnico en varios niveles. Actualmente me encuentro trabajando como administrador VOIP, administro servidores, pbx Asterisk con Kamailio en servidores Proxmox. Adicional a eso tengo experiencia con base de datos mysql."</h5>
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
