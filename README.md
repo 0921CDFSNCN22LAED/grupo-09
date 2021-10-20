@@ -8,7 +8,7 @@
 
 <p align="center">El producto es una <strong>consola de videojuegos</strong> del tipo arcade (estilo "fichines") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas <strong>retro</strong> integradas en un <em>software</em> el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su <em>juego-retro</em> favorito.<p>
 
-<p align="center">Nuestra plaza comercial, a grandes rasgos, son aquellos usuarios que se encuentran entre los <strong>24 a 35 años</strong>.
+<p align="center">Nuestra plaza comercial, a grandes rasgos, son aquellos usuarios que se encuentran entre los <strong>24 a 45 años</strong>.
   Todos aquellos que hayan nacido entre los años <strong>80'</strong> y hasta el <em>nuevo siglo</em>(<strong>año 2000</strong>) seguro experimentaron la sensación de ir a los fichines y jugar <em>Street Fighter, Dino Crisis, PUMP</em> y mucho otros mas.</p>
 
 <p align="center">Para los que somos de <em>Argentina</em>, la palabra <strong>Sacoa</strong> seguro nos resulta familiar al momento de pensar en juegos retro.</p>
@@ -41,3 +41,10 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 #
 
 #### <h2 align="center">_Referentes_</h2>
+
+<h5 align="center"> Estas son algunas páginas de referencia que actualmente comercializan los mismos productos.</h5>
+
+<li><a align="center">https://recrearteentret.com.ar/</a></li>
+<li><a align="center">https://www.laikaarcades.com.ar/</a></li>
+<li><a align="center">https://www.arcalan.com.ar/</a></li>
+<li><a align="center">https://www.tolueno.net/</a></li>
