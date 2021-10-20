@@ -13,7 +13,6 @@
 
 <p align="center">Para los que somos de <em>Argentina</em>, la palabra <strong>Sacoa</strong> seguro nos resulta familiar al momento de pensar en juegos retro.</p>
 
-
 <p align="center">El producto ya se encuentra en comercializacion. El mismo es producido por un integrante del grupo, <em>Pablo Calvo</em>, el cual nos provee de la informacion necesaria sobre el producto para realizar un <em>e-commerce</em> acorde al mismo. Su medio de contacto y distribucion, por el momento, es a traves de la plataforma de <strong>Instagram</strong>. En la misma se puede acceder a contenido que cuenta con fotos y videos que exponen el producto y sus distintas personalizacoines.</p>
 
 #
@@ -38,3 +37,7 @@ tambien cuento con habilidades para la resolución de problemas y trabajo en equ
 
 <h5 align="center">"Tengo 23 años, soy de Medellín, Colombia.
 Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la resolución de problemas y desarrollo de proyectos. Adicional a eso tengo bases de programación por el uso de Arduino"</h5>
+
+#
+
+#### <h2 align="center">_Referentes_</h2>
