@@ -48,6 +48,7 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 <li><a align="center">https://www.laikaarcades.com.ar/</a></li>
 <li><a align="center">https://www.arcalan.com.ar/</a></li>
 <li><a align="center">https://www.tolueno.net/</a></li>
+<li><a align="center">https://lepark.com.ar/producto/consola-arcade-multijuegos-hdmi/</a></li>
 
 #### <h2 align="center">_Link de Miro con el Wireframe_</h2>
 <h5 align="center">"https://miro.com/welcomeonboard/WWhRTE9peHJBTksycndZUkNGb3dOV1J0YnZqZ3dzeHN2dmlNQ3RkNmw1blRsY1diajRoajdPUjdxOTgxc3BBNXwzMDc0NDU3MzQ5MjQ3NzcwNDc3?invite_link_id=577226035433"</h5>
