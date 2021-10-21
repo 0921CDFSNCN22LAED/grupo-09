@@ -55,14 +55,8 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 
 #### <h2 align=center>_Logo, Tipografia y Colores_<h2>
 
-<u><h3 align=center>Mirar archivo PDF en el repositorio llamado diseno-grafico.pdf</h3></u>
+<h3 align=center>Mirar archivo PDF en el repositorio llamado diseno-grafico.pdf</h3>
 
-
-<br>
-
-<u><h3 align=center>Tipografias</h3></u>
-
-<li align="center">Poppins Light</li>
 
 #
 
