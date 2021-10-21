@@ -45,11 +45,11 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 <h4 align="center"> Estas son algunas páginas de referencia que actualmente comercializan los mismos productos.</h4>
 
 <br>
-<li align="center"><a href="https://recrearteentret.com.ar/"><em>Recrearte</em></a></li>
-<li align="center"><a href="https://www.laikaarcades.com.ar/"><em>Laika Arcades</em></a></li>
-<li align="center"><a href="https://www.tolueno.net/"><em>Tolueno</em></a></li>
-<li align="center"><a href="https://www.arcalan.com.ar/"><em>Arcalan</em></a></li>
-<li align="center"><a href="https://lepark.com.ar/producto/consola-arcade-multijuegos-hdmi/"><em>Consolas Le Park</em></a></li>
+<li align="center"><a href="https://recrearteentret.com.ar/" target="_blank"><em>Recrearte</em></a></li>
+<li align="center"><a href="https://www.laikaarcades.com.ar/" target="_blank"><em>Laika Arcades</em></a></li>
+<li align="center"><a href="https://www.tolueno.net/" target="_blank"><em>Tolueno</em></a></li>
+<li align="center"><a href="https://www.arcalan.com.ar/" target="_blank"><em>Arcalan</em></a></li>
+<li align="center"><a href="https://lepark.com.ar/producto/consola-arcade-multijuegos-hdmi/" target="_blank"><em>Consolas Le Park</em></a></li>
 
 #
 
@@ -71,4 +71,4 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 
 #### <h2 align="center">_Link de Miro con el Wireframe_</h2>
 
-<p align="center"><a href="https://miro.com/welcomeonboard/WWhRTE9peHJBTksycndZUkNGb3dOV1J0YnZqZ3dzeHN2dmlNQ3RkNmw1blRsY1diajRoajdPUjdxOTgxc3BBNXwzMDc0NDU3MzQ5MjQ3NzcwNDc3?invite_link_id=577226035433">Wireframes <em>Pirpupí Games</em></a></p>
+<p align="center"><a href="https://miro.com/welcomeonboard/WWhRTE9peHJBTksycndZUkNGb3dOV1J0YnZqZ3dzeHN2dmlNQ3RkNmw1blRsY1diajRoajdPUjdxOTgxc3BBNXwzMDc0NDU3MzQ5MjQ3NzcwNDc3?invite_link_id=577226035433" target="_blank">Wireframes <em>Pirpupí Games</em></a></p>
