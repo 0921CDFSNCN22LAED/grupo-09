@@ -1,0 +1,22 @@
+{
+  "name": "grupo-09",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">El producto es una <strong>consola de videojuegos</strong> del tipo arcade (estilo \"fichines\") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas <strong>retro</strong> integradas en un <em>software</em> el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su <em>juego-retro</em> favorito.<p>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0921CDFSNCN22LAED/grupo-09.git"
+  },
+  "author": "MDM - PG - NZC - KH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0921CDFSNCN22LAED/grupo-09/issues"
+  },
+  "homepage": "https://github.com/0921CDFSNCN22LAED/grupo-09#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
