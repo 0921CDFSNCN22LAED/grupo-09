@@ -59,11 +59,11 @@ Soy Ingeniero de Diseño de Producto por lo que tengo muchas habilidades en la r
 
 #
 
-#### <h2 align=center style="text-decoration:underline">_Logo, Tipografia y Colores_<h2>
+#### <h2 align=center style="text-decoration:underline">_Logo, Tipografia y Colores_</h2>
 
-<h3 align=center>En archivo `diseño-grafico.pdf` dentro de "Graficas"</h3>
+<h4 align=center>En archivo `diseño-grafico.pdf` dentro de "Graficas"</h4>
 
-
+#
 
 #### <h2 align="center" style="text-decoration:underline">_Enlaces_</h2>
 
