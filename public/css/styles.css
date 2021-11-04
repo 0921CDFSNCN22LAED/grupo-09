@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/** BODY **/
+
+/*HEADER*/
+
+header {
+  background-color: #000000;
+}
+
+.logo {
+}
+
+.navbar {
+}
+
+.navbar ul {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.navbar ul > li {
+}
+
+.navbar ul li > a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
