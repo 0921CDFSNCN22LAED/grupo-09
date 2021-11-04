@@ -5,12 +5,55 @@ const path = require("path")
 
 const publicDomain = path.resolve(__dirname, "./public")
 
-app.use(express.static(PublicDomain))
+
+
+
+
+app.use(express.static(publicDomain))
+
+
 
 app.listen(4000, () => {
     console.log("Servidor corriendo en el puerto: 4000")
 })
 
+
+
+
 app.get("/", (req,res) => {
-    res.sendFile(path.resolve(__dirname, "/views/index.html"))
+    res.sendFile(path.resolve(__dirname, "./views/index.html"))
 })
+
+
+
+app.get("/game_details", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "./views/game_details.html"))
+}
+)
+
+
+app.get("/login", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "./views/login.html"))
+}
+)
+
+
+
+app.get("/product_cart", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "./views/product_cart.html"))
+}
+)
+
+
+
+app.get("/product_details", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "./views/product_details.html"))
+}
+)
+
+
+
+app.get("/register", (req,res) => {
+    res.sendFile(path.resolve(__dirname, "./views/register.html"))
+}
+)
