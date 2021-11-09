@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN GAME DETAILS */
+
+.registration {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.container > h2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.wrapper > .user-reg > div {
+  margin-bottom: 10px;
+}
+
+.wrapper > .user-reg > div > label {
+  display: none;
+}
+
+.wrapper > .user-reg > div > input {
+  width: 90%;
+  text-align: center;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.reg-botones {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.reg-bot {
+  padding: 2px;
+  transition: all 1s;
+  border-radius: 2px;
+}
+
+.reg-bot:hover {
+  background-color: #a1cbc5;
+}
+
+.cancel-bot {
+  padding: 2px;
+  transition: all 1s;
+  border-radius: 2px;
+}
+
+.cancel-bot:hover {
+  background-color: #a31915;
+}
