@@ -1,0 +1,78 @@
+.boton{
+    border: none;
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  margin: auto;
+  
+}
+
+.boton-cta {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin: 20px 0;
+}
+.producto {
+  width: 80%;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px auto 10px;
+  display: block;
+
+}
+.section-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.img-console {
+    width: 20%;
+    margin: 0 auto;
+    display: block;
+    
+ }
+ .boton1,.boton2 {
+display:inline-block;
+width: 49%;
+ }
+ .precio {
+     font-weight: bold;
+     text-align: center;
+ }
+ .circulo {
+     width: 30px;
+     height: 30px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #a31915;
+}
+.circulo2 {
+     width: 30px;
+     height: 30px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #cdb48c;
+}
+.circulo3 {
+     width: 30px;
+     height: 30px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #706f6f;
+}
+.circulo4 {
+     width: 30px;
+     height: 30px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #a1cbc5;
+      }

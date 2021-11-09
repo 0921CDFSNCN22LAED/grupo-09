@@ -18,7 +18,7 @@
 
 <h3 align="center">Karen Hernandez</h3>
 
-#### <p align="center">completar aqui</p>
+#### <p align="center">"Realmente me gusto mucho el compromiso que tuvo todo el equipo, la gran ayuda de los chicos para llevar acabo todo lo relacionado con el proyecto, lo que mas puedo resaltar es el trabajo en conjunto que hemos tenido, ya pudimos ver que el tema de las reuniones no es sumamente importante pero en si estamos llevando a muy dinamicamente el proyecto</p>
 
 <br>
 
