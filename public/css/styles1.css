@@ -23,7 +23,6 @@ header {
 }
 
 .img-logo {
-  width: 65%;
   height: 120%;
 }
 
@@ -58,6 +57,16 @@ header {
   list-style-type: none;
   font-size: 2vw;
   margin: 10px;
+  transition: all 2s;
+}
+
+.user-menu ul > li:hover {
+  font-size: 2.5vw;
+  color: #cdb48c;
+}
+
+.user-menu ul > li:hover a {
+  color: #a31915;
 }
 
 .user-menu ul li > a {
@@ -104,6 +113,12 @@ header {
 .user-ux > a > i {
   font-size: 30px;
   color: white;
+  transition: all 1s;
+}
+
+.user-ux > a > i:hover {
+  font-size: 35px;
+  color: #a1cbc5;
 }
 
 /*Dropdowns*/
@@ -131,6 +146,8 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  text-align: center;
+  margin: auto;
 }
 
 .dropdown-content a:hover {

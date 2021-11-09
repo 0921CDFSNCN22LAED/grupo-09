@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/index.html"));
 });
 
-app.get("/game_details", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/game_details.html"));
+app.get("/games_details", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/games_details.html"));
 });
 
 app.get("/login", (req, res) => {

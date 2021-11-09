@@ -15,32 +15,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/aa20111c27.js" crossorigin="anonymous"></script>
 
-  <title>Pirupí Games</title>
-</head>
-
 <body>
   <header>
     <section class="header">
+      <div class="w-burger-menu">
+        <button class="burger-menu">
+          <i class="fas fa-bars"></i>
+          Menú
+        </button>
+      </div>
       <div class="w-logo">
-        <a href="/">
-          <img src="/images/Logo_solo_pirupi.jpg" alt="Aca va el logo de Pirupi" class="w-100" />
-        </a>
+        <a href="/"><img src="/images/Logo_solo_pirupi.jpg" alt="Aca va el logo de Pirupi" class="w-100 logo" /></a>
       </div>
       <div class="user-menu w-navbar">
         <nav class="navbar headlines">
           <ul>
             <li><a href="#">Consolas</a></li>
-            <li><a href="#">Catalogo de Juegos</a></li>
+            <li><a href="/games_details">Catalogo de Juegos</a></li>
             <li><a href="#">Trailers</a></li>
             <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
-      </div>
-      <div class="w-burger-menu">
-        <button class="burger-menu">
-          Menú
-          <i class="fas fa-bars"></i>
-        </button>
       </div>
       <div class="user-ux w-user-ux">
         <a href="/login"><i class="fas fa-user"></i></a>
@@ -49,8 +44,161 @@
     </section>
   </header>
   <main>
+    <section>
+      <section class="trailers-section margin-sections">
+        <div class="boton-box-trailers">
+          <button class="boton-sin-fondo"><i class="fas fa-arrow-alt-circle-left boton-trailers"></i></button>
+        </div>
+        <div class="trailers">
+          <img src="/images/trailers/supermariobros.jpeg" class="w-100" alt="Trailers" />
+        </div>
+        <div class="boton-box-trailers">
+          <button class="boton-sin-fondo"><i class="fas fa-arrow-alt-circle-right boton-trailers"></i></button>
+        </div>
+      </section>
+      <div class="boton-cta">
+        <button class="boton"> Ver Catalogo de Juegos</button>
+      </div>
+    </section>
+    <section class="margin-sections">
+      <h2 class="headlines centrado margin-10">¿Quienes Somos?</h2>
+      <p class="centrado">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad unde aspernatur voluptates
+        deserunt? Beatae porro autem similique molestias ipsa iste saepe inventore suscipit. Dicta maxime minima dolore
+        ullam optio iusto.</p>
+    </section>
+    <section class="margin-vertical-20 section-logos-consolas">
+      <div class="wrapper-logos-consolas">
+        <img src="/images/logos_consolas/nintendo_64.png" class="w-100" alt="Trailers" />
+      </div>
+      <div class="wrapper-logos-consolas">
+        <img src="/images/logos_consolas/play_station.png" class="w-100" alt="Trailers" />
+      </div>
+      <div class="wrapper-logos-consolas">
+        <img src="/images/logos_consolas/sg_1000.png" class="w-100" alt="Trailers" />
+      </div>
+      <div class="wrapper-logos-consolas">
+        <img src="/images/logos_consolas/supernintendo.png" class="w-100" alt="Trailers" />
+      </div>
+    </section>
+    <section class="margin-sections">
+      <h2 class="headlines centrado margin-10">Nuestras Consolas</h2>
+      <section class="section-productos">
+        <div class="contenedor-producto">
+          <div>
+            <img src="/images/doble_comando/IMG_7069.JPG" class="w-100" alt="Trailers" />
+          </div>
+          <div>
+            <h2 class="subs centrado margin-10 ">Consola 1</h2>
+            <p class="centrado">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi dignissimos
+              expedita.</p>
+          </div>
+          <div class="boton-cta">
+            <button class="boton"> Ver Más</button>
+          </div>
+        </div>
+        <div class="contenedor-producto">
+          <div>
+            <img src="/images/individual/Pirupi Consola individual.jpeg" class="w-100" alt="Trailers" />
+          </div>
+          <div>
+            <h2 class="subs centrado margin-10">Consola 2</h2>
+            <p class="centrado">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi dignissimos
+              expedita.</p>
+          </div>
+          <div class="boton-cta">
+            <button class="boton"> Ver Más</button>
+          </div>
+        </div>
+        <div class="contenedor-producto">
+          <div>
+            <img src="/images/dual/Pirupi dual-consola+joystick.jpeg" class="w-100" alt="Trailers" />
+          </div>
+          <div>
+            <h2 class="subs centrado margin-10">Consola 3</h2>
+            <p class="centrado">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sequi dignissimos
+              expedita.</p>
+          </div>
+          <div class="boton-cta">
+            <button class="boton"> Ver Más</button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="margin-sections">
+      <div class="contenedor-testimonial-section">
+        <div class="contenedor-imagen-testimonial">
+          <div class="imagen-testimonial">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="texto-testimonial">
+          <h2 class="subs margin-10">Testimonial</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut laboriosam id laborum maiores, deserunt atque
+            dicta quo earum velit, voluptates eos. Atque a iste cum, fugit dolorum iusto magni eveniet.</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer>
+    <section class="footer-section">
+      <section class="footer-navbar">
+        <div class="contenedor-footer-1">
+          <h3 class="subs">Consolas</h3>
+          <nav>
+            <ul>
+              <li><a href="">Consola 1</a></li>
+              <li><a href="">Consola 2</a></li>
+              <li><a href="">Consola 3</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="contenedor-footer-2">
+          <h3 class="subs">Catalogo Juegos</h3>
+          <nav>
+            <ul>
+              <li><a href="">PS1</a></li>
+              <li><a href="">Sega</a></li>
+              <li><a href="">Nintendo</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="contenedor-footer-3">
+          <h3 class="subs">Trailers</h3>
+          <nav>
+            <ul>
+              <li><a href="">PS1</a></li>
+              <li><a href="">Sega</a></li>
+              <li><a href="">Nintendo</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="contenedor-footer-4">
+          <h3 class="subs">Contacto</h3>
+          <nav>
+            <ul>
+              <li><a href="">pirupigames@gmail.com</a></li>
+              <li><a href="">+5491150523437</a></li>
+              <li><a href="">Ciudad, Argentina</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="social-media">
+        <div>
+          <a href=""><i class="fab fa-whatsapp-square"></i></a>
+        </div>
+        <div>
+          <a href=""><i class="fab fa-facebook-square"></i></a>
+        </div>
+        <div>
+          <a href=""><i class="fab fa-instagram-square"></i></a>
+        </div>
+        <div>
+          <a href=""><i class="fab fa-twitter-square"></i></a>
+        </div>
+      </section>
+    </section>
+  </footer>
 </body>
 
 </html>
