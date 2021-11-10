@@ -30,4 +30,4 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">completar aqui</p>
+#### <p align="center">Creo que el desarrollo del 1er sprint fue muy bueno ya que se cumplieron todos los objetivos de una muy buena manera y con un resultado satisfactorio. El equipo se comprometió y eso hizo que ese resultado fuera asi de bueno. Creo que en cuánto a lo que podemos mejorar fue que la entrega fue muy cerca del tiempo límite por lo que si hubiera habido algún contratiempo hubiéramos tenido problemas, por eso creo que como equipo debemos organizarnos más con los tiempos</p>
