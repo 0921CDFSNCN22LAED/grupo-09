@@ -31,3 +31,29 @@
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
 #### <p align="center">Creo que el desarrollo del 1er sprint fue muy bueno ya que se cumplieron todos los objetivos de una muy buena manera y con un resultado satisfactorio. El equipo se comprometió y eso hizo que ese resultado fuera asi de bueno. Creo que en cuánto a lo que podemos mejorar fue que la entrega fue muy cerca del tiempo límite por lo que si hubiera habido algún contratiempo hubiéramos tenido problemas, por eso creo que como equipo debemos organizarnos más con los tiempos</p>
+
+#
+
+## <h2 align="center"> **Sprint 2º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">"El segundo sprint nos puso de cara a nuevos desafios en los cuales pudimos divisar el potencial que tenemos como equipo, nuestra organizacion y nuestras fortalezas individuales. La division de tareas resulto muy eficiente para poder completar los requisitos del entregable.A su vez, la implementacion de los daily/weekly scrums resulto de gran ayuda para terminar con todos los detalles y tener el sitio listo y funcional. Creo que la comunicacion del equipo y la realizacion de las metas establecidas tuco un cambio muy positivo en este sprint. Para este nuevo sprint podemos establecer mejor los tiempos para luego no estar corriendo sobre el deadline. Creo que el equipo tiene mucho potencial y que estamos muy bien encaminados."</p>
+
+<br>
+
+<h3 align="center">Karen Hernandez</h3>
+
+#### <p align="center">"Completar aqui"</p>
+
+<br>
+
+<h3 align="center">Pablo Calvo</h3>
+
+#### <p align="center">"Compeltar aqui".</p>
+
+<br>
+
+<h3 align="center">Nicolas Zapata Cruz</h3>
+
+#### <p align="center">"Completar aqui"</p>
