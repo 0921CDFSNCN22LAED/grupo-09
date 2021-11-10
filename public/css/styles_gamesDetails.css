@@ -104,7 +104,7 @@
 }
 
 .barra {
-  margin-top: 15px;
+  margin-top: 50px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -113,14 +113,13 @@
   width: 90%;
   text-align: center;
   height: 30px;
+  border-radius: 10px;
 }
 
-.juegos-container {
+.img-container {
+  margin-top: 10px;
   margin: auto;
   width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .juegos-container > a {

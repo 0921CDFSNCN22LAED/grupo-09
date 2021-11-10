@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*MAIN LOGIN*/
+
+.user-login {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.login {
+  border-style: outset;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+}
+
+.login > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login > div > input {
+  width: 90%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+label {
+  display: none;
+}
+
+.login-botones button {
+  width: 30%;
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+
+.login > div > a > button {
+  width: 30%;
+}

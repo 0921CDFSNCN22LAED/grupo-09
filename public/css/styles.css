@@ -224,12 +224,9 @@ footer {
   padding: 20px 50px;
 }
 .social-media i {
-  color: black;
   font-size: 2em;
 }
-.social-media i:hover {
-  color: #a31915;
-}
+
 .contenedor-footer-1 {
   width: 18%;
   display: none;
@@ -246,6 +243,35 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+.fa-whatsapp-square {
+  color: #3ac14d;
+}
+.fa-whatsapp-square:hover {
+  color: #2d9a3c;
+}
+
+.fa-facebook-square {
+  color: #4167b2;
+}
+.fa-facebook-square:hover {
+  color: #365491;
+}
+
+.fa-instagram-square {
+  color: #d6005c;
+}
+.fa-instagram-square:hover {
+  color: #b80351;
+}
+
+.fa-twitter-square {
+  color: #039ff5;
+}
+.fa-twitter-square:hover {
+  color: #0488d0;
+}
+
 /*FOOTER*/
 
 @media (min-width: 480px) {
