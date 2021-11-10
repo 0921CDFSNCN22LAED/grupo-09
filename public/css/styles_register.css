@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-/* MAIN GAME DETAILS */
+/* MAIN REGISTER */
 
 .registration {
   text-align: center;
@@ -15,6 +15,7 @@
 .container {
   margin: auto;
   width: 80%;
+  background-image: url("./images/old_games.jpg");
 }
 
 .container > h2 {
@@ -42,10 +43,12 @@
 }
 
 .reg-botones {
-  display: flex;
-  justify-content: space-around;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.reg-botones button {
+  margin-top: 10px;
 }
 
 .reg-bot {

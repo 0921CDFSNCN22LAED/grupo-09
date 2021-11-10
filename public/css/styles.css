@@ -15,6 +15,9 @@ header {
   justify-content: space-around;
   align-items: center;
 }
+.w-logo {
+  width: 40%;
+}
 .w-100 {
   width: 100%;
 }
@@ -124,6 +127,10 @@ header {
 }
 .boton:hover {
   background-color: #93b6e2;
+}
+.boton a {
+  text-decoration: none;
+  color: white;
 }
 .boton-cta {
   width: 100%;
@@ -328,7 +335,7 @@ footer {
     width: 80%;
   }
   .w-logo {
-    width: 25%;
+    width: 10%;
   }
   .logo {
     margin-left: 25px;
