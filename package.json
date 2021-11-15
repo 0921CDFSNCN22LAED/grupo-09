@@ -4,7 +4,8 @@
   "description": "<p align=\"center\">El producto es una <strong>consola de videojuegos</strong> del tipo arcade (estilo \"fichines\") la cual puede ser personalizada (colores, dimensiones, estilo, etc) que consta de varias consolas <strong>retro</strong> integradas en un <em>software</em> el cual provee acceso a las mismas a traves de una interfaz completamente amigable para que el usuario pueda jugar su <em>juego-retro</em> favorito.<p>",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -e js app.js"
+    "start": "nodemon -e js ./src/app.js",
+    "nodemon": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.15"
   },
   "keywords": []
 }

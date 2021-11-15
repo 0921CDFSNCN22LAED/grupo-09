@@ -8,7 +8,7 @@
     <link href="/css/normalize,css" rel="stylesheet" />
     <link href="/css/themes.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="/css/styles_register.css" rel="stylesheet" />
+    <link href="/css/styles_login.css" rel="stylesheet" />
     <link href="/css/queries.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,54 +32,41 @@
             <div class="user-menu w-navbar">
                 <nav class="navbar headlines">
                     <ul>
-                        <li><a href="#">Consolas</a></li>
-                        <li><a href="games_details">Catalogo de Juegos</a></li>
+                        <li><a href="../products/details">Consolas</a></li>
+                        <li><a href="../products/games">Catalogo de Juegos</a></li>
                         <li><a href="#">Trailers</a></li>
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="user-ux w-user-ux">
-                <a href="/login"><i class="fas fa-user"></i></a>
-                <a href="product_cart"><i class="fas fa-shopping-cart"></i></i></a>
+                <a href="./login"><i class="fas fa-user"></i></a>
+                <a href="../products/cart"><i class="fas fa-shopping-cart"></i></i></a>
+
             </div>
         </section>
     </header>
     <main>
-        <form action="" method="" class="registration">
-            <div class="container">
-                <h2 class="headlines">Registrate</h2>
-                <div class="wrapper">
-                    <section class="user-reg">
-                        <div>
-                            <label for="user-mail">Correo Electronico</label>
-                            <input type="email" id="user-mail" name="user-mail"
-                                placeholder="Ingresa tu correo electronico" required>
-                        </div>
-                        <div>
-                            <label for="user-name">Nombre de Usuario</label>
-                            <input type="text" id="user-name" name="user-name"
-                                placeholder="Ingresa tu nombre de usuario" required>
-                        </div>
-                        <div>
-                            <label for="contra">Contraseña</label>
-                            <input type="password" name="contra" id="contra" placeholder="Ingresa tu contraseña"
-                                required>
-                        </div>
-                        <div>
-                            <label for="contra">Repetir Contraseña</label>
-                            <input type="password" name="contra" id="contra"
-                                placeholder="Repeti la contraseña ingresada" required>
-                        </div>
-                    </section>
-                    <section class="reg-botones">
-                        <a href="index"><button type="sumbit" class="boton">Enviar informacion</button></a>
-                        <button type="reset" class="boton">Borrar informacion</button>
-                    </section>
-                    </section>
+        <section class="user-login">
+            <div class="login">
+                <div>
+                    <label for="user-id">Nombre de usuario</label>
+                    <input type="text" id="user-id" name="user-id" placeholder="Ingresa tu nombre de usuario" required>
+                </div>
+                <div>
+                    <label for="user-pass">Contraseña</label>
+                    <input type="password" id="user-pass" name="user-pass" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <div class="login-botones">
+                    <button type="submit" class="boton">Ingresar</button>
+                </div>
+                <div>
+                    <h5>¿No tenes usuario?</h5>
+                    <a href="./register"><button type="submit" class="boton">Registrarse</button></a>
                 </div>
             </div>
-        </form>
+        </section>
+
     </main>
     <footer>
         <section class="footer-section">
