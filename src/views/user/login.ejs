@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include("../partials/head.ejs") %>
+        <link href="/css/styles_login.css" rel="stylesheet" />
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+            <section class="user-login">
+                <div class="login">
+                    <div>
+                        <label for="user-id">Nombre de usuario</label>
+                        <input type="text" id="user-id" name="user-id" placeholder="Ingresa tu nombre de usuario"
+                            required>
+                    </div>
+                    <div>
+                        <label for="user-pass">Contraseña</label>
+                        <input type="password" id="user-pass" name="user-pass" placeholder="Ingresa tu contraseña"
+                            required>
+                    </div>
+                    <div class="login-botones">
+                        <button type="submit" class="boton">Ingresar</button>
+                    </div>
+                    <div>
+                        <h5>¿No tenes usuario?</h5>
+                        <a href="./register"><button type="submit" class="boton">Registrarse</button></a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

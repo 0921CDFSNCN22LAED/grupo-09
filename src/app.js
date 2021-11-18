@@ -12,6 +12,9 @@ const mainUser = require("./routes/user.js")
 
 
 /*Server*/
+/**ejs**/
+app.set('view engine', 'ejs')
+
 /**boot**/
 app.listen(4000, () => {
   console.log("Servidor corriendo en el puerto: 4000");

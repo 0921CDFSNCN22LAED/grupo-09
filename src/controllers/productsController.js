@@ -3,15 +3,15 @@ const path = require('path')
 
 const productsController = {
     cart: (req,res) =>{
-        res.sendFile(path.resolve(__dirname, "../views/products/productCart.html"))
+        res.render("../src/views/products/productCart")
     },
 
     details: (req,res) =>{
-        res.sendFile(path.resolve(__dirname, "../views/products/productDetail.html"))
+        res.render("../src/views/products/productDetail")
     },
 
     games: (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../views/products/gamesDetails.html"));
+        res.render("../src/views/products/gamesDetails");
       }
 }
 
