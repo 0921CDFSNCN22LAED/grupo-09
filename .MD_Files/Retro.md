@@ -30,7 +30,7 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">Creo que el desarrollo del 1er sprint fue muy bueno ya que se cumplieron todos los objetivos de una muy buena manera y con un resultado satisfactorio. El equipo se comprometió y eso hizo que ese resultado fuera asi de bueno. Creo que en cuánto a lo que podemos mejorar fue que la entrega fue muy cerca del tiempo límite por lo que si hubiera habido algún contratiempo hubiéramos tenido problemas, por eso creo que como equipo debemos organizarnos más con los tiempos</p>
+#### <p align="center">EL trabajo del equipo fue muy bueno por eso el resultado del sprint logro ser de gran calidad. Se podria decir que fue una entrega completamente satisfactoria. Fuimos eficaces y eficientes. Espero que asi sigan siendo los otros sprints.</p>
 
 #
 
@@ -44,7 +44,7 @@
 
 <h3 align="center">Karen Hernandez</h3>
 
-#### <p align="center">"en esta nueva entrega del sprint 2 me senti muy agusto con el grupo, la ayuda que se vio reflejada del grupo fue muy  buena, Realmente me gusto mucho el compromiso que tuvo todo el equipo, la gran ayuda de los chicos para llevar acabo todo lo relacionado con el proyecto, lo que mas puedo resaltar es el trabajo en conjunto que hemos tenido, ya pudimos ver que el tema de las reuniones no es sumamente importante pero en si estamos llevando a muy dinamicamente el proyecto"</p>
+#### <p align="center">"en esta nueva entrega del sprint 2 me senti muy agusto con el grupo, la ayuda que se vio reflejada del grupo fue muy buena, Realmente me gusto mucho el compromiso que tuvo todo el equipo, la gran ayuda de los chicos para llevar acabo todo lo relacionado con el proyecto, lo que mas puedo resaltar es el trabajo en conjunto que hemos tenido, ya pudimos ver que el tema de las reuniones no es sumamente importante pero en si estamos llevando a muy dinamicamente el proyecto"</p>
 
 <br>
 
@@ -56,6 +56,6 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">"Completar aqui"</p>
+#### <p align="center">"Creo que el desarrollo del 1er sprint fue muy bueno ya que se cumplieron todos los objetivos de una muy buena manera y con un resultado satisfactorio. El equipo se comprometió y eso hizo que ese resultado fuera asi de bueno. Creo que en cuánto a lo que podemos mejorar fue que la entrega fue muy cerca del tiempo límite por lo que si hubiera habido algún contratiempo hubiéramos tenido problemas, por eso creo que como equipo debemos organizarnos más con los tiempos"</p>
 
 <br>
