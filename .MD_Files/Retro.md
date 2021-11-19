@@ -44,7 +44,7 @@
 
 <h3 align="center">Karen Hernandez</h3>
 
-#### <p align="center">"Completar aqui"</p>
+#### <p align="center">"en esta nueva entrega del sprint 2 me senti muy agusto con el grupo, la ayuda que se vio reflejada del grupo fue muy  buena, Realmente me gusto mucho el compromiso que tuvo todo el equipo, la gran ayuda de los chicos para llevar acabo todo lo relacionado con el proyecto, lo que mas puedo resaltar es el trabajo en conjunto que hemos tenido, ya pudimos ver que el tema de las reuniones no es sumamente importante pero en si estamos llevando a muy dinamicamente el proyecto"</p>
 
 <br>
 
@@ -57,3 +57,5 @@
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
 #### <p align="center">"Completar aqui"</p>
+
+<br>
