@@ -50,7 +50,7 @@
 
 <h3 align="center">Pablo Calvo</h3>
 
-#### <p align="center">"Compeltar aqui".</p>
+#### <p align="center">"Este sprint definitivamente fue mas desafiante ya que nos toco utilizar nuevas herramientas las cuales se volvieron un poco mas complejas. En cuanto al trabajo en equipo es excelente, todos aportan de forma constructiva, la mejor predisposición al momento de juntarnos para trabajar.. En cuanto cosas que se podrían mejorar al menos desde mi lado, si me gustaría poder dedicar mas tiempo al proyecto, este va a ser mi objetivo para el próximo sprint".</p>
 
 <br>
 
