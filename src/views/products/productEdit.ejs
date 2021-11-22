@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+  </head>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <section class="centrar">
+        <form action="/">
+          <div class="margin-between-info">
+            <label for="nombre-producto" class="ocultar-label"
+              >Nombre del producto</label
+            >
+            <input
+              class="box"
+              type="text"
+              name="nombre-producto"
+              id="nombre-producto"
+              placeholder="Nombre del producto"
+            />
+          </div>
+
+          <div class="margin-between-info">
+            <label for="descripcion" class="ocultar-label">Descripción</label>
+            <textarea
+              class="box"
+              type="text"
+              name="descripcion"
+              id="descripcion"
+              placeholder="Descripción"
+              >
+          </textarea>
+          </div>
+
+          <div class="margin-between-info">
+            <label for="imagen-de-producto">Subir imagen</label>
+            <div>
+              <input type="file" name="imagen-de-producto" accept=".jpg" />
+            </div>
+          </div>
+
+          <div class="margin-between-info">
+            <label for="tipo-de-producto" class="margin-between-info-12"
+              >Tipo</label
+            >
+            <div>
+              <input
+                type="radio"
+                name="tipo-de-producto"
+                value="individual"
+              />Individual
+              <input type="radio" name="tipo-de-producto" value="dual" />Dual
+              <input
+                type="radio"
+                name="tipo-de-producto"
+                value="doble-comando"
+              />Doble comando
+            </div>
+            <div class="margin-between-info list">
+            <label for="colores">Colores</label>
+            <ul>
+              <li>
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="color-1"
+                /><label>Color 1</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="color-2"
+                /><label>Color 2</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="color-3"
+                /><label>Color 3</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  name="colores"
+                  value="color-4"
+                /><label>Color 4</label>
+              </li>
+              <div class="margin-between-info list">
+            <label for="memoria">Memoria</label>
+            <ul>
+              <li>
+                <input
+                  type="checkbox"
+                  name="memoria"
+                  value="memoria-1"
+                /><label>Memoria 1</label>
+              </li>
+               <li>
+                <input
+                  type="checkbox"
+                  name="memoria"
+                  value="memoria-2"
+                /><label>Memoria 2</label>
+              </li>
+               <li>
+                <input
+                  type="checkbox"
+                  name="memoria"
+                  value="memoria-3"
+                /><label>Memoria 3</label>
+                 <li>
+                <input
+                  type="checkbox"
+                  name="memoria"
+                  value="memoria-4"
+                /><label>Memoria 4</label>
+              </li>
+            </ul>
+            <div class="margin-between-info">
+            <label for="precio-producto" class="ocultar-label"
+              >Precio</label
+            >
+            <input
+              class="box"
+              type="text"
+              name="precio-producto"
+              id="precio-producto"
+              placeholder="Precio"
+            />
+          </div>
+
+          <div>
+            <button class="buttons" type="submit">Enviar</button>
+            <button class="buttons" type="reset">Borrar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

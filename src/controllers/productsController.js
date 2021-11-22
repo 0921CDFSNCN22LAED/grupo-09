@@ -1,18 +1,21 @@
-const path = require('path')
-
+const path = require("path");
 
 const productsController = {
-    cart: (req,res) =>{
-        res.render("../src/views/products/productCart")
-    },
+  cart: (req, res) => {
+    res.render("../src/views/products/productCart");
+  },
 
-    details: (req,res) =>{
-        res.render("../src/views/products/productDetail")
-    },
+  details: (req, res) => {
+    res.render("../src/views/products/productDetail");
+  },
 
-    games: (req, res) => {
-        res.render("../src/views/products/gamesDetails");
-      }
-}
+  games: (req, res) => {
+    res.render("../src/views/products/gamesDetails");
+  },
 
-module.exports = productsController
+  edit: (req, res) => {
+    res.render("../src/views/products/productEdit");
+  },
+};
+
+module.exports = productsController;
