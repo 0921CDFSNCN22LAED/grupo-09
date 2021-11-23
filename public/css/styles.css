@@ -271,8 +271,6 @@ footer {
   color: #0488d0;
 }
 
-/*FOOTER*/
-
 @media (min-width: 480px) {
   /*HEADER*/
   .w-logo {
@@ -348,6 +346,8 @@ footer {
     text-align: left;
   }
 }
+
+/*1200px*/
 @media (min-width: 1200px) {
   /*HEADER*/
   .user-menu {

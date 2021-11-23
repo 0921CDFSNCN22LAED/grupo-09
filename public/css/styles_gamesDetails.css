@@ -63,9 +63,14 @@
 }
 
 #opciones-bot {
-  padding: 10px;
-  border-radius: 30%;
-  transition: all 0.5s;
+  border: none;
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+  margin: auto;
 }
 
 #opciones-bot:hover {
@@ -91,6 +96,12 @@
 .consolas-opciones > button {
   margin: 4px;
   padding: 2px;
+  width: 30%;
+  height: 30px;
+}
+
+.consolas-opciones button img {
+  width: 30%;
 }
 
 .generos-opciones {
@@ -137,19 +148,47 @@
 
 /*QUERIES*/
 
+@media (min-width: 360px) {
+  .barra {
+    margin-top: 20px;
+  }
+
+  .boton {
+    width: 35%;
+    font-size: 15px;
+  }
+}
+
 @media (min-width: 720px) {
   .container {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .left {
-    width: 40%;
+    width: 100%;
   }
 
   .right {
     width: 60%;
   }
+
+  .boton {
+    width: 35%;
+    font-size: 16px;
+  }
+
+  #consol-bot {
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .boton {
+    width: 35%;
+    font-size: 16px;
+  }
 }
