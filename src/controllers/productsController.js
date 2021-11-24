@@ -1,4 +1,6 @@
-const path = require("path");
+const fs = require("fs")
+
+
 
 const productsController = {
   cart: (req, res) => {
@@ -7,10 +9,6 @@ const productsController = {
 
   details: (req, res) => {
     res.render("../src/views/products/productDetail");
-  },
-
-  games: (req, res) => {
-    res.render("../src/views/products/gamesDetails");
   },
 
   edit: (req, res) => {

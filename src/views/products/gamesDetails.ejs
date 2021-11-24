@@ -13,12 +13,11 @@
                 <div class="left">
                     <h2 class="soft-title">Nuestro software</h2>
                     <div class="left-container">
-                        <p class="soft-descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor
-                            sit
-                            amet consectetur adipisicing elit.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit.
+                        <p class="soft-descr">Batocera.linux es una distribución de juegos retro de código abierto y
+                            completamente gratuita que se puede copiar a una memoria USB o una tarjeta SD con el
+                            objetivo de
+                            convertir cualquier computadora / nano computadora en una consola de juegos durante un juego
+                            o de forma definitiva.
                         </p>
                         <div class="opciones-container">
                             <h3>Busca por consola o por genero</h3>
@@ -27,16 +26,14 @@
                                 <button class="generos-bot boton">Generos</button>
                             </div>
                             <div class="consolas-opciones">
-                                <button><img src="/images/consolas/ps1.png" alt="Logo PlatStation1">PS1</button>
-                                <button><img src="/images/consolas/sega.png" alt="Logo PlatStation1">SEGA</button>
-                                <button><img src="/images/consolas/n64.png" alt="Logo PlatStation1">Nintendo 64</button>
-                                <button><img src="/images/consolas/ps1.png"
-                                        alt="Logo PlatStation1">SuperNintendo</button>
-                                <button><img src="/images/consolas/ps1.png" alt="Logo PlatStation1">Family</button>
-                                <button><img src="/images/consolas/ps1.png" alt="Logo PlatStation1">Dreamcast</button>
-                                <button><img src="/images/consolas/ps1.png" alt="Logo PlatStation1">PS1</button>
-                                <button><img src="/images/consolas/ps1.png" alt="Logo PlatStation1">PS1</button>
-
+                                <% for(let consol of consolas) { %>
+                                    <button><img src="/images/consolas/<%= consol.name %>.png"
+                                            alt="Logo <%= consol.name  %> ">
+                                        <div class="img-div">
+                                            <%= consol.name %>
+                                        </div>
+                                    </button>
+                                    <% } %>
                             </div>
                             <div class="generos-opciones">
                                 <button>Accion</button>

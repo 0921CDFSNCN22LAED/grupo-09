@@ -9,6 +9,7 @@ const publicDomain = path.resolve(__dirname, "../public");
 const mainPage = require("./routes/main.js")
 const mainProducts = require("./routes/products.js")
 const mainUser = require("./routes/user.js")
+const mainGames = require("./routes/games.js")
 
 
 /*Server*/
@@ -30,4 +31,6 @@ app.use("/", mainPage);
 app.use("/products", mainProducts);
 
 app.use("/user", mainUser)
+
+app.use("/games", mainGames)
 
