@@ -27,9 +27,10 @@
       </section>
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">¿Quienes Somos?</h2>
-        <p class="centrado">Somos Karen y Pablo, una pareja que descubrimos una pasión al fabricar consolas de videojuegos con un diseño
-        único. Nos apasiona la calidad y estética del producto. Nuestra intención es mantener
-        altos estándares de calidad en cada una de nuestras consolas.</p>
+        <p class="centrado">Somos Karen y Pablo, una pareja que descubrimos una pasión al fabricar consolas de
+          videojuegos con un diseño
+          único. Nos apasiona la calidad y estética del producto. Nuestra intención es mantener
+          altos estándares de calidad en cada una de nuestras consolas.</p>
       </section>
       <section class="margin-vertical-20 section-logos-consolas">
         <div class="wrapper-logos-consolas">
@@ -48,44 +49,24 @@
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">Nuestras Consolas</h2>
         <section class="section-productos">
-          <div class="contenedor-producto">
-            <div>
-              <img src="/images/doble_comando/IMG_7069.JPG" class="w-100" alt="Trailers" />
+          <% for(let product of products) { %>
+            <div class="contenedor-producto">
+              <div>
+                <img src="/images/productos/<%= product.image %>" class="w-100" alt="Trailers" />
+              </div>
+              <div>
+                <h2 class="subs centrado margin-10 ">
+                  <%= product.name %>
+                </h2>
+                <p class="centrado">
+                  <%= product.description %>
+                </p>
+              </div>
+              <div class="boton-cta">
+                <button class="boton"><a href="./products/details">Ver Más</a></button>
+              </div>
             </div>
-            <div>
-              <h2 class="subs centrado margin-10 ">Consola Two Players</h2>
-              <p class="centrado"> Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.</p>
-            </div>
-            <div class="boton-cta">
-              <button class="boton"><a href="./products/details">Ver Más</a></button>
-            </div>
-          </div>
-
-          <div class="contenedor-producto">
-            <div>
-              <img src="/images/individual/Pirupi Consola individual.jpeg" class="w-100" alt="Trailers" />
-            </div>
-            <div>
-              <h2 class="subs centrado margin-10">Dual stick arcade</h2>
-              <p class="centrado">Consola 1 player con sistema integrado + joystick 1 player.</p>
-            </div>
-            <div class="boton-cta">
-
-              <button class="boton"> Ver Más</button>
-            </div>
-          </div>
-          <div class="contenedor-producto">
-            <div>
-              <img src="/images/Joystick/Pirupi joystick.jpeg" class="w-100" alt="Trailers" />
-            </div>
-            <div>
-              <h2 class="subs centrado margin-10">Joystick PRO</h2>
-              <p class="centrado">Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.</p>
-            </div>
-            <div class="boton-cta">
-              <button class="boton"> Ver Más</button>
-            </div>
-          </div>
+            <% } %>
         </section>
       </section>
       <section class="margin-sections">

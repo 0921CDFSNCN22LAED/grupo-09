@@ -1,0 +1,19 @@
+[{
+    "id": "1",
+    "name": "Two Players",
+    "description": "Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.",
+    "image" : "consola_1.JPG"
+},
+{
+    "id": "2",
+    "name": "Dual Stick Arcade",
+    "description": "Consola 1 player con sistema integrado + joystick 1 player.",
+    "image" : "consola_2.jpeg"
+},
+{
+    "id": "3",
+    "name": "Joystick Pro",
+    "description": "Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.",
+    "image" : "consola_3.jpeg"
+}
+]
