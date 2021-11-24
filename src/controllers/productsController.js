@@ -16,6 +16,10 @@ const productsController = {
   edit: (req, res) => {
     res.render("../src/views/products/productEdit");
   },
+
+  add: (req, res) => {
+    res.render("../src/views/products/productAdd");
+  },
 };
 
 module.exports = productsController;
