@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+
 /*Public*/
 const publicDomain = path.resolve(__dirname, "../public");
 
@@ -15,6 +16,11 @@ const mainGames = require("./routes/games.js")
 /*Server*/
 /**ejs**/
 app.set('view engine', 'ejs')
+/**urlencoded**/
+app.use(express.urlencoded({ extended : false}))
+/**methodOverRide**/
+
+
 
 /**boot**/
 app.listen(4000, () => {
@@ -34,3 +40,8 @@ app.use("/user", mainUser)
 
 app.use("/games", mainGames)
 
+
+/**error-404**/
+app.use((req,res,next) => {
+  res.status(404).render(path.resolve(__dirname, "./views/not-found"))
+})

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include("../partials/header.ejs") %>
+    <main>
+      <section class="centrar">
+        <h2 class="headlines margin-bottom-20">Crear juego</h2>
+        <form action="/createGame" method="POST" enctype="multipart/form-data">
+          <div class="margin-bottom-15">
+            <label for="game-name">Nombre del juego</label>
+            <input class="box" type="text" name="game-name" id="nombre-producto" />
+          </div>
+
+          <div class="margin-bottom-15">
+            <label for="game-description">Descripción del juego</label>
+            <textarea class="box-textarea" type="text" name="game-description" id="game-description"></textarea>
+          </div>
+
+          <div class="margin-bottom-15">
+            <label for="game-image">Cargar imagen</label>
+            <div>
+              <input class="margin-bottom-20" type="file" name="game-image" accept=".jpg .png .jpeg" />
+            </div>
+          </div>
+
+          <div class="margin-bottom-15">
+            <label for="tipo-de-producto" class="margin-bottom-20">Tipo</label>
+            <div class="margin-bottom-20">
+              <div>
+                <input class="radio-check-space" type="radio" name="tipo-de-producto" value="individual" />Individual
+              </div>
+              <div>
+                <input class="radio-check-space" type="radio" name="tipo-de-producto" value="dual" />Dual
+              </div>
+              <div>
+                <input class="radio-check-space" type="radio" name="tipo-de-producto" value="doble-comando" />Doble
+                comando
+              </div>
+            </div>
+            <div class="margin-bottom-15 list">
+              <label for="game-gender">Genero</label>
+              <ul class="margin-bottom-20">
+                <li>
+                  <input class="radio-check-space" type="checkbox" name="colores" value="color-1" /><label>Color
+                    1</label>
+                </li>
+                <li>
+                  <input class="radio-check-space" type="checkbox" name="colores" value="color-2" /><label>Color
+                    2</label>
+                </li>
+                <li>
+                  <input class="radio-check-space" type="checkbox" name="colores" value="color-3" /><label>Color
+                    3</label>
+                </li>
+                <li>
+                  <input class="radio-check-space" type="checkbox" name="colores" value="color-4" /><label>Color
+                    4</label>
+                </li>
+              </ul>
+              <div class="margin-bottom-15 list">
+                <label for="memoria">Capacidades de memoria</label>
+                <ul class="margin-bottom-20">
+                  <li>
+                    <input class="radio-check-space" type="checkbox" name="memoria" value="memoria-1" /><label>Memoria
+                      1</label>
+                  </li>
+                  <li>
+                    <input class="radio-check-space" type="checkbox" name="memoria" value="memoria-2" /><label>Memoria
+                      2</label>
+                  </li>
+                  <li>
+                    <input class="radio-check-space" type="checkbox" name="memoria" value="memoria-3" /><label>Memoria
+                      3</label>
+                  <li>
+                    <input class="radio-check-space" type="checkbox" name="memoria" value="memoria-4" /><label>Memoria
+                      4</label>
+                  </li>
+                </ul>
+                <div class="margin-bottom-15">
+                  <label for="precio-producto">Precio</label>
+                  <input class="box" type="text" name="precio-producto" id="precio-producto" />
+                </div>
+
+                <div class="buttons-send-erase">
+                  <button class="buttons" type="submit">Confirmar</button>
+                  <button class="buttons">Cancelar</button>
+                </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

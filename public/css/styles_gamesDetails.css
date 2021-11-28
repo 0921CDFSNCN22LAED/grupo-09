@@ -16,7 +16,7 @@
 }
 
 .left {
-  background-color: #c0c0c0;
+  text-align: center;
 }
 
 .soft-title {
@@ -32,6 +32,7 @@
   border: 2px;
   border-color: #000000;
   border-style: solid;
+  background-color: #c0c0c0;
 }
 
 .soft-descr {
@@ -133,6 +134,10 @@
   padding: 2px;
 }
 
+.right {
+  text-align: center;
+}
+
 .barra {
   text-align: center;
   margin-bottom: 10px;
@@ -163,6 +168,12 @@
 
 .consolas {
   padding: 5px;
+}
+
+.create {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
 }
 
 /*QUERIES*/
@@ -204,6 +215,10 @@
 @media (min-width: 1200px) {
   .container {
     flex-direction: row;
+  }
+
+  .left {
+    width: 40%;
   }
 
   .boton {

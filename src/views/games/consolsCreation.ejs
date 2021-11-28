@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include("../partials/header.ejs") %>
+    <main>
+
+      <section class="centrar">
+        <h2 class="headlines">Creando nueva consola</h2>
+        <p style="margin-bottom : 20px">(consola software)</p>
+        <form action="/details" method="POST">
+          <div class="margin-bottom-15">
+            <label for="consol-name">Nombre de la consola</label>
+            <input class="box" type="text" name="consol-name" id="nombre-producto" />
+          </div>
+
+          <div class="margin-bottom-15">
+            <label for="consol-image">Cargar imagen</label>
+            <div>
+              <input class="margin-bottom-20" type="file" name="consol-image" accept=".jpg" />
+            </div>
+          </div>
+
+          <div class="margin-bottom-15">
+            <label for="consol-logo">Cargar logo</label>
+            <div>
+              <input class="margin-bottom-20" type="file" name="consol-logo" accept=".jpg" />
+            </div>
+          </div>
+
+          <div class="buttons-send-erase">
+            <button class="buttons" type="submit">Confirmar</button>
+            <button class="buttons">Cancelar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "nombre",
+        "last name": "aalgo",
+        "bday" : "17/12/1908",
+        "mail" : "algo@algo@.com",
+        "pass" : "*******",
+        "adress" : "street, number, city",
+        "PC" : 1619,
+        "favorites" : "action adventure fight"
+
+
+
+    }
+]

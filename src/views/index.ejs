@@ -9,6 +9,7 @@
   <%- include("./partials/header.ejs") %>
 
     <main>
+
       <section>
         <section class="trailers-section margin-sections">
           <div class="boton-box-trailers">
@@ -25,6 +26,7 @@
           <button class="boton"><a href="./games">Ver Catalogo de Juegos</a></button>
         </div>
       </section>
+
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">¿Quienes Somos?</h2>
         <p class="centrado">Somos Karen y Pablo, una pareja que descubrimos una pasión al fabricar consolas de
@@ -32,20 +34,15 @@
           único. Nos apasiona la calidad y estética del producto. Nuestra intención es mantener
           altos estándares de calidad en cada una de nuestras consolas.</p>
       </section>
+
       <section class="margin-vertical-20 section-logos-consolas">
-        <div class="wrapper-logos-consolas">
-          <img src="/images/logos_consolas/nintendo_64.png" class="w-100" alt="Trailers" />
-        </div>
-        <div class="wrapper-logos-consolas">
-          <img src="/images/logos_consolas/play_station.png" class="w-100" alt="Trailers" />
-        </div>
-        <div class="wrapper-logos-consolas">
-          <img src="/images/logos_consolas/sg_1000.png" class="w-100" alt="Trailers" />
-        </div>
-        <div class="wrapper-logos-consolas">
-          <img src="/images/logos_consolas/supernintendo.png" class="w-100" alt="Trailers" />
-        </div>
+        <% for (let consol of consols) { %>
+          <div class="wrapper-logos-consolas">
+            <img src="/images/logos_consolas/<%= consol.logo %>" class="w-100" alt="Trailers" />
+          </div>
+          <% } %>
       </section>
+
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">Nuestras Consolas</h2>
         <section class="section-productos">
@@ -69,6 +66,7 @@
             <% } %>
         </section>
       </section>
+
       <section class="margin-sections">
         <div class="contenedor-testimonial-section">
           <div class="contenedor-imagen-testimonial">
@@ -84,6 +82,7 @@
           </div>
         </div>
       </section>
+
     </main>
     <%- include("./partials/footer.ejs") %>
 </body>
