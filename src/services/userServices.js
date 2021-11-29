@@ -3,7 +3,7 @@ const fs = require("fs");
 const usersJSON = fs.readFileSync("src/database/usuarios.json", "utf-8");
 const users = JSON.parse(usersJSON);
 
-function saveProducts() {
+function saveUsers() {
   const to_text = JSON.stringify(users, null, 4);
   fs.writeFileSync(usersJSON, to_text, "utf-8");
 }
@@ -11,6 +11,13 @@ function saveProducts() {
 module.exports = {
   getAll() {
     return users;
+  },
+
+  findOne(id) {
+    const user = users.find((user) => {
+      return user.id == id;
+    });
+    return user;
   },
 
   create(body) {
@@ -23,7 +30,7 @@ module.exports = {
 
     users.push(user_to_create);
 
-    saveProducts();
+    saveUsers();
   },
 
   update(id, body) {
@@ -31,7 +38,7 @@ module.exports = {
       return user.id == id;
     });
 
-    user_to_update = {
+    const user_to_update = {
       id: users[index].id,
       image: users[index].image,
       ...body,
@@ -39,16 +46,16 @@ module.exports = {
 
     users[index] = user_to_update;
 
-    saveProducts();
+    saveUsers();
   },
 
-  delete(id) {
+  destroy(id) {
     const index = games.findIndex((game) => {
       return game.id == id;
     });
 
-    games.splice(index, 1);
+    users.splice(index, 1);
 
-    saveProducts();
+    saveUsers();
   },
 };
