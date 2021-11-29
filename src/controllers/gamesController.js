@@ -14,6 +14,7 @@ const gamesController = {
         })
     },
 
+    /**GAME SERVICES**/
     /*Create Game Form*/
     createGame: (req,res) => {
 
@@ -24,25 +25,26 @@ const gamesController = {
     storeGame: (req, res) => {
 
        gamesServices.create(req.body)
-        res.redirect("../src/views/games/details")
+        res.redirect("/games")
     },
 
-      /*Update Game*/
-      updateGame: (req, res) => {
+    /*Update Game*/
+    updateGame: (req, res) => {
 
         const idSearch = req.params.id
         gamesServices.update(idSearch,req.body)
-        res.redirect("../src/views/games/details")
+        res.redirect("/games")
     },
 
     /*Destroy Game*/
     destroyGame : (req,res) => {
         
-        gamesServices.destroy(req.body)
-        res.redirect("../src/views/games/details")
+        const idSearch = req.params.id
+        gamesServices.destroy(idSearch)
+        res.redirect("/games")
     },
 
-
+    /**CONSOL SERVICES**/
     /*Create Consol Form*/
     createConsol: (req,res) => {
 
@@ -53,26 +55,35 @@ const gamesController = {
     storeConsol: (req, res) => {
 
         consolServices.create(req.body)
-        res.redirect("../src/views/games/details")
+        res.redirect("/games")
+    },
+
+    /*Edit Consol*/
+    editConsol: (req,res) => {
+
+        const idSearch = req.params.id
+        product = consolServices.findOne(idSearch)
+
+        res.render("../src/views/games/consolsEdit",{
+            product,
+        })
     },
 
     /*Update Consol*/
     updateConsol: (req, res) => {
 
-        consolServices.update(req.body)
-        res.redirect("../src/views/games/details")
+        const idSearch = req.params.id
+        consolServices.update(idSearch, req.body)
+        res.redirect("/games")
     },
 
     /*Destroy Consol*/
     destroyConsol : (req,res) => {
 
-        consolServices.destroy(req.body)
-        res.redirect("../src/views/games/details")
+        const idSearch = req.params.id
+        consolServices.destroy(idSearch)
+        res.redirect("/games")
     }
-
-    
-    
-
 
 }
 

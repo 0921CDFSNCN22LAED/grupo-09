@@ -7,38 +7,40 @@
 
 <body>
   <%- include("../partials/header.ejs") %>
-    <main>
 
-      <section class="centrar">
-        <h2 class="headlines">Creando nueva consola</h2>
-        <p style="margin-bottom : 20px">(consola software)</p>
-        <form action="/details" method="POST">
-          <div class="margin-bottom-15">
-            <label for="consol-name">Nombre de la consola</label>
-            <input class="box" type="text" name="consol-name" id="nombre-producto" />
-          </div>
 
-          <div class="margin-bottom-15">
-            <label for="consol-image">Cargar imagen</label>
-            <div>
-              <input class="margin-bottom-20" type="file" name="consol-image" accept=".jpg" />
-            </div>
-          </div>
+    <section class="centrar">
 
-          <div class="margin-bottom-15">
-            <label for="consol-logo">Cargar logo</label>
-            <div>
-              <input class="margin-bottom-20" type="file" name="consol-logo" accept=".jpg" />
-            </div>
-          </div>
+      <h2 class="headlines">Creando nueva consola</h2>
+      <p style="margin-bottom : 20px">(consola software)</p>
 
-          <div class="buttons-send-erase">
-            <button class="buttons" type="submit">Confirmar</button>
-            <button class="buttons">Cancelar</button>
+      <form action="./" method="POST" enctype="multipart/form-data">
+        <div class="margin-bottom-15">
+          <label for="name">Nombre de la consola</label>
+          <input class="box" type="text" name="name" id="name" required />
+        </div>
+
+        <div class="margin-bottom-15">
+          <label for="image">Cargar imagen</label>
+          <div>
+            <input class="margin-bottom-20" type="file" name="image" accept=".jpg" />
           </div>
-        </form>
-      </section>
-    </main>
+        </div>
+
+        <div class="margin-bottom-15">
+          <label for="logo">Cargar logo</label>
+          <div>
+            <input class="margin-bottom-20" type="file" name="logo" accept=".jpg" />
+          </div>
+        </div>
+
+        <div class="buttons-send-erase">
+          <button class="buttons" type="submit">Confirmar</button>
+          <button class="buttons" type="reset">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
 
     <%- include("../partials/footer.ejs") %>
 </body>

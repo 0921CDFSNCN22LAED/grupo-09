@@ -1,12 +1,15 @@
 const fs = require("fs")
+const path = require("path")
 
-const consolsJSON = fs.readFileSync("src/database/consolas.json", "utf-8")
-const consols = JSON.parse(consolsJSON)
+const consolsJSON = path.join(__dirname, "../database/consolas.json")
+const consols = JSON.parse(fs.readFileSync(consolsJSON, "utf-8"))
+
 
 function saveProducts(){
-    const to_text = JSON.stringify(consolsJSON, null, 4)
+    const to_text = JSON.stringify(consols, null, 4)
     fs.writeFileSync(consolsJSON, to_text, "utf-8")
 }
+
 
 module.exports = {
 
@@ -14,13 +17,21 @@ module.exports = {
         return consols
     },
 
+    findOne(id){
+        const consol = consols.find((consol) => {
+            return consol.id == id
+        })
+        return consol
+    },
+
     create(body){
 
         const consol_to_create = {
+            
             id : Date.now(),
-            name : req.body.name,
-            image : req.body.image,
-            logo : req.body.logo,
+            name : body.name,
+            image: body.image,
+            logo : body.logo
         }
 
         consols.push(consol_to_create)

@@ -18,6 +18,8 @@ const mainGames = require("./routes/games.js")
 app.set('view engine', 'ejs')
 /**urlencoded**/
 app.use(express.urlencoded({ extended : false}))
+/**use json**/
+app.use(express.json())
 /**methodOverRide**/
 
 
