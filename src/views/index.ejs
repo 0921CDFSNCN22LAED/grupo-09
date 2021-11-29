@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+  </head>
 
-<head>
-  <%- include('./partials/head.ejs') %>
-</head>
-
-<body>
-  <%- include("./partials/header.ejs") %>
+  <body>
+    <%- include("./partials/header.ejs") %>
 
     <main>
-
       <section>
         <section class="trailers-section margin-sections">
           <div class="boton-box-trailers">
-            <button class="boton-sin-fondo"><i class="fas fa-arrow-alt-circle-left boton-trailers"></i></button>
+            <button class="boton-sin-fondo">
+              <i class="fas fa-arrow-alt-circle-left boton-trailers"></i>
+            </button>
           </div>
           <div class="trailers">
-            <img src="/images/trailers/supermariobros.jpeg" class="w-100" alt="Trailers" />
+            <img
+              src="/images/trailers/supermariobros.jpeg"
+              class="w-100"
+              alt="Trailers"
+            />
           </div>
           <div class="boton-box-trailers">
-            <button class="boton-sin-fondo"><i class="fas fa-arrow-alt-circle-right boton-trailers"></i></button>
+            <button class="boton-sin-fondo">
+              <i class="fas fa-arrow-alt-circle-right boton-trailers"></i>
+            </button>
           </div>
         </section>
         <div class="boton-cta">
-          <button class="boton"><a href="./games">Ver Catalogo de Juegos</a></button>
+          <button class="boton">
+            <a href="./games">Ver Catalogo de Juegos</a>
+          </button>
         </div>
       </section>
 
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">¿Quienes Somos?</h2>
-        <p class="centrado">Somos Karen y Pablo, una pareja que descubrimos una pasión al fabricar consolas de
-          videojuegos con un diseño
-          único. Nos apasiona la calidad y estética del producto. Nuestra intención es mantener
-          altos estándares de calidad en cada una de nuestras consolas.</p>
+        <p class="centrado">
+          Somos Karen y Pablo, una pareja que descubrimos una pasión al fabricar
+          consolas de videojuegos con un diseño único. Nos apasiona la calidad y
+          estética del producto. Nuestra intención es mantener altos estándares
+          de calidad en cada una de nuestras consolas.
+        </p>
       </section>
 
       <section class="margin-vertical-20 section-logos-consolas">
         <% for (let consol of consols) { %>
-          <div class="wrapper-logos-consolas">
-            <img src="/images/logos_consolas/<%= consol.logo %>" class="w-100" alt="Trailers" />
-          </div>
-          <% } %>
+        <div class="wrapper-logos-consolas">
+          <img
+            src="/images/logos_consolas/<%= consol.logo %>"
+            class="w-100"
+            alt="Trailers"
+          />
+        </div>
+        <% } %>
       </section>
 
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">Nuestras Consolas</h2>
         <section class="section-productos">
           <% for(let product of products) { %>
-            <div class="contenedor-producto">
-              <div>
-                <img src="/images/productos/<%= product.image %>" class="w-100" alt="Trailers" />
-              </div>
-              <div>
-                <h2 class="subs centrado margin-10 ">
-                  <%= product.name %>
-                </h2>
-                <p class="centrado">
-                  <%= product.description %>
-                </p>
-              </div>
-              <div class="boton-cta">
-                <button class="boton"><a href="./products/details">Ver Más</a></button>
-              </div>
+          <div class="contenedor-producto">
+            <div>
+              <img
+                src="/images/productos/<%= product.image %>"
+                class="w-100"
+                alt="Trailers"
+              />
             </div>
-            <% } %>
+            <div>
+              <h2 class="subs centrado margin-10"><%= product.name %></h2>
+              <p class="centrado"><%= product.description %></p>
+            </div>
+            <div class="boton-cta">
+              <button class="boton">
+                <a href="./products/details">Ver Más</a>
+              </button>
+            </div>
+          </div>
+          <% } %>
         </section>
       </section>
 
@@ -76,15 +92,16 @@
           </div>
           <div class="texto-testimonial">
             <h2 class="subs margin-10">Testimonial</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut laboriosam id laborum maiores, deserunt
-              atque
-              dicta quo earum velit, voluptates eos. Atque a iste cum, fugit dolorum iusto magni eveniet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+              laboriosam id laborum maiores, deserunt atque dicta quo earum
+              velit, voluptates eos. Atque a iste cum, fugit dolorum iusto magni
+              eveniet.
+            </p>
           </div>
         </div>
       </section>
-
     </main>
     <%- include("./partials/footer.ejs") %>
-</body>
-
+  </body>
 </html>
