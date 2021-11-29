@@ -1,7 +1,44 @@
-[{"id": "1", "name":"PS1", "image": "PS1.png", "logo":"play_station.png"},
-    {"id": "2", "name":"SEGA", "image": "sega.png", "logo":"sega.png"},
-    {"id": "3", "name":"N64", "image": "N64.png", "logo":"nintendo_64.png"},
-    {"id": "4", "name":"SuperNintendo", "image": "SuperNintendo.png", "logo": "supernintendo.png"},
-    {"id": "5", "name":"Family", "image": "Family.png", "logo": "family.jpg"},
-    {"id": "6", "name":"Atari", "image": "Atari.png", "logo": "atari.jpg"}
+[
+    {
+        "id": "1",
+        "name": "PS1",
+        "image": "PS1.png",
+        "logo": "play_station.png"
+    },
+    {
+        "id": "2",
+        "name": "N64",
+        "image": "N64.png",
+        "logo": "nintendo_64.png"
+    },
+    {
+        "id": "3",
+        "name": "SEGA",
+        "image": "sega.png",
+        "logo": "sega.png"
+    },
+    {
+        "id": "4",
+        "name": "ATARI",
+        "image": "Atari.png",
+        "logo": "atari.jpg"
+    },
+    {
+        "id": "5",
+        "name": "FAMILY",
+        "image": "Family.png",
+        "logo": "family.jpg"
+    },
+    {
+        "id": "6",
+        "name": "SuperNintendo",
+        "image": "SuperNintendo.png",
+        "logo": "supernintendo.png"
+    },
+    {
+        "id": 1638199885543
+    },
+    {
+        "id": 1638199964471
+    }
 ]
