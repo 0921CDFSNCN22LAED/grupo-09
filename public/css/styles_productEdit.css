@@ -64,6 +64,7 @@ main {
 
 .buttons-send-erase {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .radio-check-space {
