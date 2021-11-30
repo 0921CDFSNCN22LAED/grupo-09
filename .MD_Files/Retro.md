@@ -59,3 +59,35 @@
 #### <p align="center">"Creo que el desarrollo del 1er sprint fue muy bueno ya que se cumplieron todos los objetivos de una muy buena manera y con un resultado satisfactorio. El equipo se comprometió y eso hizo que ese resultado fuera asi de bueno. Creo que en cuánto a lo que podemos mejorar fue que la entrega fue muy cerca del tiempo límite por lo que si hubiera habido algún contratiempo hubiéramos tenido problemas, por eso creo que como equipo debemos organizarnos más con los tiempos"</p>
 
 <br>
+
+## <h2 align="center"> **Sprint 3º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">"En el tercer sprint el equipo se encontro un poco dispero al momento de realizar encuentros, pero por cuestiones personales y de trabajo. Por contra parte nos llevo a organizarnos mejor como equipo, implementar pequeñas reuniones o charlas por distintas redes y luego poder trabajar de manera eficiente y asincronicamente. La realizacion de los objetivos del sprint nº3 fueron rapidos de resolver y nos puso de cara a una nueva estructura del proyecto y nuevas metodologias de trabajo."</p>
+
+<br>
+
+<h3 align="center">Karen Hernandez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Pablo Calvo</h3>
+
+#### <p align="center">"completar aqui".</p>
+
+<br>
+
+<h3 align="center">Nicolas Zapata Cruz</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Paulina Gomez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
