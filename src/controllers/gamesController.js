@@ -28,6 +28,17 @@ const gamesController = {
         res.redirect("/games")
     },
 
+    /*Edit Game*/
+    editGame: (req,res) =>{
+
+        idSearch = req.params.id
+        const game = gamesServices.findOne(idSearch)
+
+        res.render("../src/views/games/gamesEdit",{
+            game
+        })
+    },
+
     /*Update Game*/
     updateGame: (req, res) => {
 
