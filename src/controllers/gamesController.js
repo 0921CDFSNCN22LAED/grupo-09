@@ -62,10 +62,10 @@ const gamesController = {
     editConsol: (req,res) => {
 
         const idSearch = req.params.id
-        product = consolServices.findOne(idSearch)
+        consol = consolServices.findOne(idSearch)
 
         res.render("../src/views/games/consolsEdit",{
-            product,
+            consol,
         })
     },
 
