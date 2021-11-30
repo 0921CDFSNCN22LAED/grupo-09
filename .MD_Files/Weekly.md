@@ -53,3 +53,19 @@
 ### <li align="center">**¿Que se hara hoy**</li>
 
 <p align="center">Por el momento venimos al dia con todas las tareas pendientes. Profundizamos en la estetica del proyecto dado que siempre estamos aplicando nuevos cambios a su imagen.</p>
+
+## <h3 align="center" style="text-decoration: underline">Sabado 28 de Noviembre\_</h3>
+
+<br>
+
+### <li align="center">**¿Que se hizo ayer?**</li>
+
+<p align="center">Coordinamos un dia en el finde semana para realizar una reunion con la intencion de hablar y debatir sobre de que forma realizararemos las tareas del sprint n°4.</p>
+
+### <li align="center">**Impedimentos**</li>
+
+<p align="center">A lo largo del sprint n°4 la coordinaciones de reuniones se dificulto por cuestiones personales/laborales pero en contra parte ayudo a implementar nuevas formas de comuncacion</p>
+
+### <li align="center">**¿Que se hara hoy**</li>
+
+<p align="center">Con el equipo realizamos la reunion para revisar los puntos del sprint n°4. En vista que se encontraba en su gran mayoria resultos propusimos distribuir la mejora de la pagina en cuanto a estetica y funcionalidad. Dejar la misma lista para el proximo paso.</p>
