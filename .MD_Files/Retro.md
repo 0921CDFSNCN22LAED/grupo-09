@@ -76,7 +76,7 @@
 
 <h3 align="center">Pablo Calvo</h3>
 
-#### <p align="center">"completar aqui".</p>
+#### <p align="center">"Definitivamente en este sprint no pude aportar mucho ya que vengo atrasado con los materiales y me está costando ponerme al día. Espero poder revertir esta situación para el próximo sprint. Si puedo destacar la actitud del equipo a la hora de trabajar ya que se realizaron varias meet para poder avanzar con el proyecto.".</p>
 
 <br>
 
