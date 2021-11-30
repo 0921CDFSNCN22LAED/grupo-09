@@ -28,12 +28,19 @@
                             </div>
                             <div class="consolas-opciones">
                                 <% for(let consol of consols) { %>
-                                    <button><img src="/images/consolas/<%= consol.image %>"
-                                            alt="Logo <%= consol.name  %> ">
-                                        <div class="img-div">
-                                            <%= consol.name %>
-                                        </div>
+
+                                    <button>
+                                        <a href="/games/<%= consol.id %>/edit ">
+                                            <img src="/images/consolas/<%= consol.image %>"
+                                                alt="Logo <%= consol.name  %> ">
+                                            <div class="img-div">
+                                                <%= consol.name %>
+                                            </div>
+
+                                        </a>
+
                                     </button>
+
                                     <% } %>
                             </div>
                             <div class="generos-opciones">
