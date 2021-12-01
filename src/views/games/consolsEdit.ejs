@@ -14,31 +14,38 @@
 
             <form action="/games/<%= consol.id %>?_method=PUT" method="POST">
                 <div class="margin-bottom-15">
-                    <label for="consol-name">Nombre de la consola</label>
-                    <input class="box" type="text" name="consol-name" id="nombre-producto" value="<%= consol.name %>" />
+                    <label for="name">Nombre de la consola</label>
+                    <input class="box" type="text" name="name" id="name" value="<%= consol.name %>" />
                 </div>
 
                 <div class="margin-bottom-15">
-                    <label for="consol-image">Cargar imagen</label>
+                    <label for="image">Cargar imagen</label>
                     <div>
-                        <input class="margin-bottom-20" type="file" name="consol-image" accept=".jpg"
+                        <input class="margin-bottom-20" type="file" name="image" accept=".jpg"
                             value="<%= consol.image %>" />
                     </div>
                 </div>
 
                 <div class="margin-bottom-15">
-                    <label for="consol-logo">Cargar logo</label>
+                    <label for="logo">Cargar logo</label>
                     <div>
-                        <input class="margin-bottom-20" type="file" name="consol-logo" accept=".jpg"
+                        <input class="margin-bottom-20" type="file" name="logo" accept=".jpg"
                             value="<%= consol.logo %>" />
                     </div>
                 </div>
 
-                <div class="buttons-send-erase">
+                <div class="buttons-send-erase" style="display: block; text-align:center ">
                     <button class="buttons" type="submit">Confirmar</button>
-                    <button class="buttons">Cancelar</button>
+
                 </div>
             </form>
+
+            <div class="buttons-send-erase" style="display: block; text-align:center ">
+                <form action="/games/<%= consol.id %>?_method=DELETE" method="POST">
+                    <button class="buttons">Eliminar consola</button>
+                </form>
+            </div>
+
         </section>
 
         <%- include("../partials/footer.ejs") %>
