@@ -48,7 +48,7 @@ module.exports = {
         })
 
         const product_to_update  = {
-            id: products[index].id,
+            id: consols[index].id,
             ...body
             
         }
@@ -61,8 +61,8 @@ module.exports = {
 
     destroy(id){
 
-        index = products.filter((prod) =>{
-            return prod.id == id
+        index = consols.findIndex((consol) =>{
+            return consol.id == id
         })
 
         consols.splice(index,1)
