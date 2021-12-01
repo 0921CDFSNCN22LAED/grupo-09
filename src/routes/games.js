@@ -3,6 +3,7 @@ const router = express.Router()
 
 const gamesController = require("../controllers/gamesController.js")
 
+
 /*-Index Games-*/
 router.get("/", gamesController.index)
 
