@@ -49,18 +49,18 @@ header {
 .w-navbar {
   width: 80%;
 }
-.navbar ul {
+.navbar1 ul {
   justify-content: space-around;
   margin: 50px;
   list-style-type: none;
   display: flex;
 }
-.navbar ul li > a {
+.navbar1 ul li > a {
   color: white;
   text-decoration: none;
   margin: auto 15px;
 }
-.navbar ul li > a:hover {
+.navbar1 ul li > a:hover {
   color: #cdb48c;
 }
 
