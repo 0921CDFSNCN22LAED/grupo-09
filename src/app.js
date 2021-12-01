@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require('method-override')
 
 
 /*Public*/
@@ -21,7 +22,7 @@ app.use(express.urlencoded({ extended : false}))
 /**use json**/
 app.use(express.json())
 /**methodOverRide**/
-
+app.use(methodOverride('_method'))
 
 
 /**boot**/
