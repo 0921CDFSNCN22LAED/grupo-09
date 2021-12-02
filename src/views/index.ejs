@@ -68,11 +68,11 @@
           <% for(let product of products) { %>
           <div class="contenedor-producto">
             <div>
-              <img
+              <a href="./products/details/<%= product.id %>"><img
                 src="/images/productos/<%= product.image %>"
                 class="w-100"
                 alt="Trailers"
-              />
+              /></a>
             </div>
             <div>
               <h2 class="subs centrado margin-10"><%= product.name %></h2>
