@@ -10,7 +10,7 @@
   <%- include("../partials/header.ejs") %>
 
     <main>
-    <section >
+    <section class = "margin-vertical-20" >
       <h2 class="headlines centrado margin-10">Detalle Del Producto</h2>
       <h2 class="subs margin-vertical-20 product-name-detail"><%= product.name %></h2>
       <div style="width: 100%">   
@@ -61,6 +61,35 @@
           </form>
         </section>
         </section>
+        </section>
+        <section class="margin-vertical-20 section-logos-consolas">
+          <% for (let consol of consols) { %>
+          <div class="wrapper-logos-consolas">
+            <img
+              src="/images/logos_consolas/<%= consol.logo %>"
+              class="w-100"
+              alt="Trailers"
+            />
+          </div>
+          <% } %>
+        </section>
+        <section class="margin-sections">
+          <div class="contenedor-testimonial-section">
+            <div class="contenedor-imagen-testimonial">
+              <div class="imagen-testimonial">
+                <img src="/images/profile_photos/undefined.png" alt="Foto de perfil" class="w-100"/>
+              </div>
+            </div>
+            <div class="texto-testimonial">
+              <h2 class="subs margin-10">Testimonial</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                laboriosam id laborum maiores, deserunt atque dicta quo earum
+                velit, voluptates eos. Atque a iste cum, fugit dolorum iusto magni
+                eveniet.
+              </p>
+            </div>
+          </div>
         </section>
     </main>
 </body>

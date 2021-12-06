@@ -44,6 +44,7 @@ const productsController = {
       product,
       productColors,
       productMemories,
+      consols,
     });
   },
 
