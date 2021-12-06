@@ -93,23 +93,17 @@ header {
 .margin-vertical-20 {
   margin: 20px 0;
 }
-.trailers-section {
+.trailers-box {
   display: flex;
-  justify-content: space-around;
+  width: 100%;
 }
 .trailers {
   width: 100%;
-}
-.boton-box-trailers {
-  display: none;
+  margin: auto;
 }
 .boton-trailers {
-  font-size: 50px;
-  color: #000000;
-  background-color: white;
-}
-.boton-trailers:hover {
-  color: #93b6e2;
+  background-color: none;
+  border-radius: 100%;
 }
 .boton-sin-fondo {
   border: none;
@@ -283,6 +277,10 @@ footer {
   .trailers {
     width: 60%;
   }
+  .boton-trailers {
+    background-color: #000000;
+    border-radius: 100%;
+  }
   .boton-box-trailers {
     display: block;
     width: 10%;
@@ -301,7 +299,9 @@ footer {
     margin: 0;
   }
   .contenedor-testimonial-section {
-    width: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
   .imagen-testimonial {
     width: 150px;
@@ -376,6 +376,9 @@ footer {
   }
   .section-logos-consolas {
     padding: 0;
+  }
+  .contenedor-testimonial-section {
+    width: 70%;
   }
 
   /*FOOTER*/
