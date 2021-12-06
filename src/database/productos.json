@@ -5,36 +5,25 @@
     "description": "Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.",
     "price": 1000,
     "image": "consola_1.JPG",
-    "consol_color": {
-      "rojo": "#a31915",
-      "arena": "#cdb48c",
-      "gris": "#706f6f",
-      "negro": "#000000"
-    },
-    "joystick_color": {
-      "rojo": "#a31915",
-      "arena": "#cdb48c",
-      "gris": "#706f6f",
-      "negro": "#000000"
-    },
-    "memory": {
-      "256": 256,
-      "512": 512,
-      "1024": 1024
-    }
+    "consol_color": "",
+    "memory": ""
   },
   {
     "id": "2",
     "name": "Dual Stick Arcade",
     "description": "Consola 1 player con sistema integrado + joystick 1 player.",
     "price": 2000,
-    "image": "consola_2.jpeg"
+    "image": "consola_2.jpeg",
+    "consol_color": "",
+    "memory": ""
   },
   {
     "id": "3",
     "name": "Joystick Pro",
     "description": "Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.",
     "price": 3000,
-    "image": "consola_3.jpeg"
+    "image": "consola_3.jpeg",
+    "consol_color": "",
+    "memory": ""
   }
 ]
