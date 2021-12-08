@@ -6,7 +6,7 @@ const consolServices = require("../services/consolServices");
 const gamesController = {
   /*INDEX*/
   index: (req, res) => {
-    res.render("../src/views/games/details", {
+    res.render("games/details", {
       consols: consolServices.getAll(),
       games: gamesServices.getAll(),
     });
@@ -15,7 +15,7 @@ const gamesController = {
   /**GAME SERVICES**/
   /*Create Game Form*/
   createGame: (req, res) => {
-    res.render("../src/views/games/gamesCreation");
+    res.render("games/gamesCreation");
   },
 
   /*Save Game*/
@@ -29,7 +29,7 @@ const gamesController = {
     idSearch = req.params.id;
     const game = gamesServices.findOne(idSearch);
 
-    res.render("../src/views/games/gamesEdit", {
+    res.render("games/gamesEdit", {
       game,
     });
   },
@@ -51,7 +51,7 @@ const gamesController = {
   /**CONSOL SERVICES**/
   /*Create Consol Form*/
   createConsol: (req, res) => {
-    res.render("../src/views/games/consolsCreation");
+    res.render("games/consolsCreation");
   },
 
   /*Save Consol*/
@@ -65,7 +65,7 @@ const gamesController = {
     const idSearch = req.params.id;
     consol = consolServices.findOne(idSearch);
 
-    res.render("../src/views/games/consolsEdit", {
+    res.render("games/consolsEdit", {
       consol,
     });
   },

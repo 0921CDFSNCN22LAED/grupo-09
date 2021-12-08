@@ -20,14 +20,14 @@ const consols = JSON.parse(consolsJSON);
 
 const productsController = {
   products: (req, res) => {
-    res.render("../src/views/products/products", {
+    res.render("products/products", {
       products,
       consols,
     });
   },
 
   cart: (req, res) => {
-    res.render("../src/views/products/productCart");
+    res.render("products/productCart");
   },
 
   details: (req, res) => {
@@ -40,7 +40,7 @@ const productsController = {
     });
     //return product;
     /** }\,*/
-    res.render("../src/views/products/productDetail", {
+    res.render("products/productDetail", {
       product,
       productColors,
       productMemories,
@@ -49,11 +49,11 @@ const productsController = {
   },
 
   edit: (req, res) => {
-    res.render("../src/views/products/productEdit");
+    res.render("products/productEdit");
   },
 
   add: (req, res) => {
-    res.render("../src/views/products/productAdd");
+    res.render("products/productAdd");
   },
 };
 

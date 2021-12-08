@@ -17,6 +17,7 @@ const mainGames = require("./routes/games.js")
 /*Server*/
 /**ejs**/
 app.set('view engine', 'ejs')
+app.set("views", path.join(__dirname, "views"))
 /**urlencoded**/
 app.use(express.urlencoded({ extended : false}))
 /**use json**/
@@ -46,5 +47,5 @@ app.use("/games", mainGames)
 
 /**error-404**/
 app.use((req,res,next) => {
-  res.status(404).render(path.resolve(__dirname, "./views/not-found"))
+  res.status(404).render(path.resolve(__dirname, "./views/main/not-found"))
 })

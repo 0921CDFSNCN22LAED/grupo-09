@@ -4,7 +4,7 @@ const userServices = require("../services/userServices");
 
 const userController = {
   register: (req, res) => {
-    res.render("../src/views/user/register");
+    res.render("user/register");
   },
 
   storeUser: (req, res) => {
@@ -13,7 +13,7 @@ const userController = {
   },
 
   login: (req, res) => {
-    res.render("../src/views/user/login");
+    res.render("user/login");
   },
 
   confirmUser: (req, res) => {
@@ -25,7 +25,7 @@ const userController = {
   },
 
   editUser: (req, res) => {
-    res.render("../src/views/user/edit"); /** Falta crear la vista edit users */
+    res.render("user/edit"); /** Falta crear la vista edit users */
   },
 
   updateUser: (req, res) => {

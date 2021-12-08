@@ -11,7 +11,7 @@ const consols = JSON.parse(consolsJSON)
 
 const mainController = {
     index: (req,res) =>{
-        res.render("../src/views/index",{
+        res.render("main/index",{
             products,
             consols,
         })
