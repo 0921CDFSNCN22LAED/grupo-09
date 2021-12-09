@@ -82,7 +82,7 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"A pesar de lograr entregar el sprint completo, el equipo se disperso mucho y tuvo ausencias y faltas de interes. Vale la pena destacar el trabajo de Milton quien fue el que se encargo de sacar la entrega adelante. Personalmente pude haber participado mas pero cumpli con lo que se me asigno. "</p>
 
 <br>
 
