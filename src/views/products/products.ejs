@@ -1,74 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head.ejs') %>
-  </head>
 
-  <body>
-    <%- include("../partials/header.ejs") %>
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include("../partials/header.ejs") %>
     <main>
       <section class="margin-sections">
         <h2 class="headlines centrado margin-10">Nuestras Consolas</h2>
         <section class="section-productos">
           <% for(let product of products) { %>
-          <div class="contenedor-producto">
-            <div>
-              <a href="./products/details/<%= product.id %>"
-                ><img
-                  src="/images/productos/<%= product.image %>"
-                  class="w-100"
-                  alt="Trailers"
-              /></a>
+            <div class="contenedor-producto">
+              <div>
+                <a href="./products/details/<%= product.id %>"><img src="/images/productos/<%= product.image %>"
+                    class="w-100" alt="Trailers" /></a>
+              </div>
+              <div>
+                <h2 class="subs centrado margin-10">
+                  <%= product.name %>
+                </h2>
+                <p class="centrado">
+                  <%= product.description %>
+                </p>
+              </div>
+              <div class="boton-cta">
+                <button class="boton">
+                  <a href="./products/details/<%= product.id %>">Ver Más</a>
+                </button>
+              </div>
             </div>
-            <div>
-              <h2 class="subs centrado margin-10"><%= product.name %></h2>
-              <p class="centrado"><%= product.description %></p>
-            </div>
-            <div class="boton-cta">
-              <button class="boton">
-                <a href="./products/details/<%= product.id %>">Ver Más</a>
-              </button>
-            </div>
-          </div>
-          <% } %>
+            <% } %>
         </section>
       </section>
 
       <section class="margin-vertical-20 section-logos-consolas">
         <% for (let consol of consols) { %>
-        <div class="wrapper-logos-consolas">
-          <img
-            src="/images/logos_consolas/<%= consol.logo %>"
-            class="w-100"
-            alt="Trailers"
-          />
-        </div>
-        <% } %>
+          <div class="wrapper-logos-consolas">
+            <img src="/images/logos_consolas/<%= consol.logo %>" class="w-100" alt="Trailers" />
+          </div>
+          <% } %>
       </section>
 
-      <section class="margin-sections">
-        <div class="contenedor-testimonial-section">
-          <div class="contenedor-imagen-testimonial">
-            <div class="imagen-testimonial">
-              <img
-                src="/images/profile_photos/undefined.png"
-                alt="Foto de perfil"
-                class="w-100"
-              />
-            </div>
-          </div>
-          <div class="texto-testimonial">
-            <h2 class="subs margin-10">Testimonial</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-              laboriosam id laborum maiores, deserunt atque dicta quo earum
-              velit, voluptates eos. Atque a iste cum, fugit dolorum iusto magni
-              eveniet.
-            </p>
-          </div>
-        </div>
-      </section>
+      <%- include("../partials/testimonial.ejs") %>
+
     </main>
     <%- include("../partials/footer.ejs") %>
-  </body>
+</body>
+
 </html>

@@ -1,164 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head.ejs') %>
-  </head>
 
-  <body>
-    <%- include("../partials/header.ejs") %>
+<head>
+  <%- include('../partials/head.ejs') %>
+</head>
+
+<body>
+  <%- include("../partials/header.ejs") %>
     <main>
       <section class="centrar">
         <h2 class="headlines margin-bottom-20">Agregar producto</h2>
-        <form action="/">
+
+        <form action="./" method="POST">
           <div class="margin-bottom-15">
-            <label for="nombre-producto" class="subs"
-              >Nombre del producto</label
-            >
-            <input
-              class="box"
-              type="text"
-              name="nombre-producto"
-              id="nombre-producto"
-            />
+            <label for="name" class="subs">Nombre del producto</label>
+            <input class="box" type="text" name="name" id="name">
           </div>
 
           <div class="margin-bottom-15">
-            <label for="descripcion" class="subs">Descripción</label>
-            <textarea
-              class="box-textarea"
-              type="text"
-              name="descripcion"
-              id="descripcion"
-            ></textarea>
+            <label for="description" class="subs">Descripción</label>
+            <textarea class="box-textarea" type="text" name="description" id="description"></textarea>
           </div>
 
           <div class="margin-bottom-15">
-            <label for="imagen-de-producto" class="subs">Subir imagen</label>
+            <label for="image" class="subs">Subir imagen</label>
             <div>
-              <input
-                class="margin-bottom-20"
-                type="file"
-                name="imagen-de-producto"
-                accept=".jpg"
-              />
+              <input class="margin-bottom-20" type="file" name="image" accept=".jpg" />
             </div>
           </div>
 
-          <div class="margin-bottom-15">
-            <label for="tipo-de-producto" class="margin-bottom-20 subs"
-              >Tipo</label
-            >
-            <div class="margin-bottom-20">
-              <div>
-                <input
-                  class="radio-check-space"
-                  type="radio"
-                  name="tipo-de-producto"
-                  value="individual"
-                />Individual
-              </div>
-              <div>
-                <input
-                  class="radio-check-space"
-                  type="radio"
-                  name="tipo-de-producto"
-                  value="dual"
-                />Dual
-              </div>
-              <div>
-                <input
-                  class="radio-check-space"
-                  type="radio"
-                  name="tipo-de-producto"
-                  value="doble-comando"
-                />Doble comando
-              </div>
-            </div>
-          </div>
+
           <div class="margin-bottom-15 list">
-            <label for="colores" class="subs">Colores disponibles</label>
+            <label for="consol_color" class="subs">Colores disponibles </label>
             <ul class="margin-bottom-20">
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="colores"
-                  value="color-1"
-                /><label>Color 1</label>
+                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-1" /><label>Color
+                  1</label>
               </li>
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="colores"
-                  value="color-2"
-                /><label>Color 2</label>
+                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-2" /><label>Color
+                  2</label>
               </li>
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="colores"
-                  value="color-3"
-                /><label>Color 3</label>
+                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-3" /><label>Color
+                  3</label>
               </li>
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="colores"
-                  value="color-4"
-                /><label>Color 4</label>
+                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-4" /><label>Color
+                  4</label>
               </li>
             </ul>
           </div>
           <div class="margin-bottom-15 list">
-            <label for="memoria" class="subs">Capacidades de memoria</label>
+            <label for="memory" class="subs">Capacidades de memoria</label>
             <ul class="margin-bottom-20">
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="memoria"
-                  value="memoria-1"
-                /><label>Memoria 1</label>
+                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" /><label>Memoria
+                  1</label>
               </li>
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="memoria"
-                  value="memoria-2"
-                /><label>Memoria 2</label>
+                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" /><label>Memoria
+                  2</label>
               </li>
               <li>
-                <input
-                  class="radio-check-space"
-                  type="checkbox"
-                  name="memoria"
-                  value="memoria-3"
-                /><label>Memoria 3</label>
+                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" /><label>Memoria
+                  3</label>
               </li>
             </ul>
           </div>
           <div class="margin-bottom-15">
-            <label for="precio-producto" class="subs">Precio</label>
-            <input
-              class="box"
-              type="text"
-              name="precio-producto"
-              id="precio-producto"
-            />
+            <label for="price" class="subs">Precio</label>
+            <input class="box" type="text" name="price" id="price" />
           </div>
 
           <div class="buttons-send-erase">
-            <button class="buttons" type="submit">Confirmar</button>
-            <button class="buttons">Cancelar</button>
+            <button class="buttons" type="submit">Agregar producto</button>
+            <button class="buttons" type="reset">Resetar informacion</button>
           </div>
         </form>
       </section>
     </main>
-
     <%- include("../partials/footer.ejs") %>
-  </body>
+</body>
+
 </html>

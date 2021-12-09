@@ -1,8 +1,7 @@
 const fs = require("fs");
+const path = require("path")
 
-const productsJSON = fs.readFileSync("src/database/productos.json", "utf-8");
-const products = JSON.parse(productsJSON);
-
+/* Importando informacion de las consolas*/
 const productColorsJSON = fs.readFileSync(
   "src/database/productosColores.json",
   "utf-8"
@@ -15,14 +14,18 @@ const productMemoriesJSON = fs.readFileSync(
 );
 const productMemories = JSON.parse(productMemoriesJSON);
 
-const consolsJSON = fs.readFileSync("src/database/consolas.json", "utf-8");
-const consols = JSON.parse(consolsJSON);
+
+/*Importando Consolas y Productos*/
+
+const consolServices = require("../services/consolServices")
+const productsServices = require("../services/productsServices")
+
 
 const productsController = {
   products: (req, res) => {
     res.render("products/products", {
-      products,
-      consols,
+      products: productsServices.getAll(),
+      consols: consolServices.getAll(),
     });
   },
 
@@ -31,29 +34,48 @@ const productsController = {
   },
 
   details: (req, res) => {
-    const id = req.params.id;
-    //const product = productsService.findOne(id);
 
-    //findOne(id) {
-    const product = products.find((prod) => {
-      return prod.id == id;
-    });
-    //return product;
-    /** }\,*/
+    const id = req.params.id;
+    const product = productsServices.findOne(id);
+
+    
     res.render("products/productDetail", {
       product,
       productColors,
       productMemories,
-      consols,
+      consols: consolServices.getAll(),
+      products: productsServices.getAll()
     });
   },
 
   edit: (req, res) => {
-    res.render("products/productEdit");
+    const idSearch = req.params.id;
+    product = productsServices.findOne(idSearch);
+
+    res.render("products/productEdit", {
+      product,
+    });
+  },
+
+  update: (req, res) => {
+    const idSearch = req.params.id;
+    productsServices.update(idSearch, req.body);
+    res.redirect(`/products/details/${idSearch}`);
+  },
+
+  destroy: (req, res) => {
+    const idSearch = req.params.id;
+    productsServices.destroy(idSearch);
+    res.redirect("/products");
   },
 
   add: (req, res) => {
     res.render("products/productAdd");
+  },
+
+  store: (req, res) => {
+    productsServices.create(req.body);
+    res.redirect("/products");
   },
 };
 
