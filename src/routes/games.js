@@ -11,7 +11,7 @@ router.get("/", gamesController.index)
 /**request form**/
 router.get("/consolsCreation", gamesController.createConsol)
 /**store method**/
-router.post("/", gamesController.storeConsol )
+router.post("/", gamesController.storeConsol)
 /**edit method**/
 router.get("/:id/edit", gamesController.editConsol)
 /**update method**/
@@ -23,7 +23,7 @@ router.delete("/:id", gamesController.destroyConsol)
 /**request form**/
 router.get("/gamesCreation", gamesController.createGame)
 /**store method**/
-router.post("/", gamesController.storeGame)
+router.post("/gamesCreation", gamesController.storeGame)
 /**edit method**/
 router.get("/:id/edit", gamesController.editGame)
 /**update method**/

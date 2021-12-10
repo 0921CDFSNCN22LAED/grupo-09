@@ -1,11 +1,11 @@
 [
     {
         "id": "1",
-        "name":"Final Fantasy VIII",
+        "name": "Final Fantasy VIII",
         "gender": "RPG",
         "consol": "Play Station 1",
         "family": "Play Station",
-        "image":"url",
-        "description" : "description"
+        "image": "url",
+        "description": "description"
     }
 ]

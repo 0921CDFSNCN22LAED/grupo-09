@@ -76,12 +76,12 @@
 
 ### <li align="center">**¿Que se hizo ayer?**</li>
 
-<p align="center">Coordinamos un dia en el finde semana para realizar una reunion con la intencion de hablar y debatir sobre de que forma realizararemos las tareas del sprint n°4.</p>
+<p align="center">Coordinamos un dia en la semana para realizar una reunion con la intencion de hablar y debatir sobre los ultimos detalles que debemos darle al proyecto antes de la entrega.</p>
 
 ### <li align="center">**Impedimentos**</li>
 
-<p align="center">A lo largo del sprint n°4 la coordinaciones de reuniones se dificulto por cuestiones personales/laborales pero en contra parte ayudo a implementar nuevas formas de comuncacion</p>
+<p align="center">Logramos satisfactoriamente finalizar el proyecto y dejarlo listo para la entrega del Sprint n°4</p>
 
 ### <li align="center">**¿Que se hara hoy**</li>
 
-<p align="center">Con el equipo realizamos la reunion para revisar los puntos del sprint n°4. En vista que se encontraba en su gran mayoria resultos propusimos distribuir la mejora de la pagina en cuanto a estetica y funcionalidad. Dejar la misma lista para el proximo paso.</p>
+<p align="center">Realizamos los ultimos retoques al proyecto, tanto en rutas, controladores, views, servicios y en la app. De esta forma el proyecto se encontraria listo para entregarlo y continuar con la implementacion de la nueva informacion para la realizacion del Sprint n°5</p>

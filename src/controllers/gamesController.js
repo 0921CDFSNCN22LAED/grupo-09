@@ -1,3 +1,5 @@
+const genders = ["RPG", "Action", "Adventure", "Sports", "Shooters", "Indie", "Race", "Puzzles"]
+
 const fs = require("fs");
 
 const gamesServices = require("../services/gamesServices");
@@ -15,7 +17,9 @@ const gamesController = {
   /**GAME SERVICES**/
   /*Create Game Form*/
   createGame: (req, res) => {
-    res.render("games/gamesCreation");
+    res.render("games/gamesCreation",{
+      genders
+    });
   },
 
   /*Save Game*/

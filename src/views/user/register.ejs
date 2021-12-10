@@ -11,34 +11,44 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            <form action="" method="" class="registration">
+            <form action="./" method="POST" class="registration">
                 <div class="container">
                     <h2 class="headlines">Registrate</h2>
                     <div class="wrapper">
                         <section class="user-reg">
                             <div>
-                                <label for="user-mail">Correo Electronico</label>
-                                <input type="email" id="user-mail" name="user-mail"
-                                    placeholder="Ingresa tu correo electronico" required>
-                            </div>
-                            <div>
-                                <label for="user-name">Nombre de Usuario</label>
-                                <input type="text" id="user-name" name="user-name"
-                                    placeholder="Ingresa tu nombre de usuario" required>
-                            </div>
-                            <div>
-                                <label for="contra">Contraseña</label>
-                                <input type="password" name="contra" id="contra" placeholder="Ingresa tu contraseña"
+                                <label for="mail">Correo Electronico</label>
+                                <input type="email" id="mail" name="mail" placeholder="Ingresa tu correo electronico"
                                     required>
                             </div>
                             <div>
-                                <label for="contra">Repetir Contraseña</label>
-                                <input type="password" name="contra" id="contra"
+                                <label for="user_name">Nombre de Usuario</label>
+                                <input type="text" id="user_name" name="user_name"
+                                    placeholder="Ingresa tu nombre de usuario" required>
+                            </div>
+                            <div>
+                                <label for="address">Domicilio</label>
+                                <input type="text" id="address" name="address"
+                                    placeholder="Ingresa tu nombre de usuario" required>
+                            </div>
+                            <div>
+                                <label for="avatar">Elegi tu foto de perfil</label>
+                                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
+                            </div>
+
+                            <div>
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="password">Repetir Contraseña</label>
+                                <input type="password" name="password" id="password"
                                     placeholder="Repeti la contraseña ingresada" required>
                             </div>
                         </section>
                         <section class="reg-botones">
-                            <a href="index"><button type="sumbit" class="boton">Enviar informacion</button></a>
+                            <button type="sumbit" class="boton">Enviar informacion</button>
                             <button type="reset" class="boton">Borrar informacion</button>
                         </section>
                         </section>

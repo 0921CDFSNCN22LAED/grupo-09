@@ -1,7 +1,9 @@
 const fs = require("fs");
+const path = require("path")
+const bcryptjs = require("bcryptjs")
 
-const usersJSON = fs.readFileSync("src/database/usuarios.json", "utf-8");
-const users = JSON.parse(usersJSON);
+const usersJSON = path.join(__dirname,"../database/usuarios.json");
+const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
 
 function saveUsers() {
   const to_text = JSON.stringify(users, null, 4);
@@ -23,9 +25,10 @@ module.exports = {
   create(body) {
     const user_to_create = {
       id: Date.now(),
-      ...body,
-      image: "",
-      logo: "",
+      user_name : body.user_name,
+      mail: body.mail,
+      password: body.password,
+      address : body.address
     };
 
     users.push(user_to_create);

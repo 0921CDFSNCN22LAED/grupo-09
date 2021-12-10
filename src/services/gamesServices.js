@@ -5,9 +5,10 @@ const gamesJSON = path.join(__dirname, "../database/juegos.json")
 const games = JSON.parse(fs.readFileSync(gamesJSON, "utf-8"))
 
 function saveProducts(){
-    const to_text = JSON.stringify(gamesJSON, null, 4)
+    const to_text = JSON.stringify(games, null, 4)
     fs.writeFileSync(gamesJSON, to_text, "utf-8")
 }
+
 
 module.exports = {
     getAll(){
@@ -15,7 +16,7 @@ module.exports = {
     },
 
     findOne(id){
-        const game = games.find((consol) => {
+        const game = games.find((game) => {
             return game.id == id
         })
         return game
@@ -27,7 +28,6 @@ module.exports = {
             id: Date.now(),
             ...body,
             image: "",
-            logo: "",
         }
 
         games.push(game_to_create)
