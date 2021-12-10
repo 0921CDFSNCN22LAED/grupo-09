@@ -82,11 +82,13 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"A pesar de lograr entregar el sprint completo, el equipo se disperso mucho y tuvo ausencias y faltas de interes. Vale la pena destacar el trabajo de Milton quien fue el que se encargo de sacar la entrega adelante. Personalmente pude haber participado mas pero cumpli con lo que se me asigno. "</p>
 
 <br>
 
 <h3 align="center">Paulina Gomez</h3>
+
+#### <p align="center">"Personalmente este módulo me ha costado bastante y por esta razón no pude tener una participación tan activa en este spring; sin embargo si estuve conectada en las reuniones y la explicación por parte de otros miembros del equipo me ayudo bastante para entender mucho mejor el tema; espero poder repasar los temas del módulo y entenderlos completamente para realizar más código en el seguiente sprint. Cabe resaltar que cuando hay problemas complejos en el código me gusta que nos reunimos algunos compañeros del equipo para ver como podemos aportar a la resolución del problema "</p>
 
 #### <p align="center">"completar aqui"</p>
 
