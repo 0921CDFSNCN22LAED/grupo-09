@@ -5,9 +5,14 @@
         <h3 class="subs">Consolas</h3>
         <div>
           <ul>
-            <li><a href="">Consola 1</a></li>
-            <li><a href="">Consola 2</a></li>
-            <li><a href="">Consola 3</a></li>
+            <% for(let product of products) { %>
+
+              <li><a href="/products/details/<%= product.id %> ">
+                  <%= product.name %>
+                </a></li>
+
+              <% } %>
+
           </ul>
         </div>
       </div>

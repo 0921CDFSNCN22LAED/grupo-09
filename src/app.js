@@ -13,6 +13,7 @@ const mainProducts = require("./routes/products.js")
 const mainUser = require("./routes/user.js")
 const mainGames = require("./routes/games.js")
 
+const productsServices = require("./services/productsServices")
 
 /*Server*/
 /**ejs**/
@@ -34,6 +35,7 @@ app.listen(4000, () => {
 /**static_files**/
 app.use(express.static(publicDomain));
 
+app.locals.products = productsServices.getAll()
 
 /**views**/
 app.use("/", mainPage);
