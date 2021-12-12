@@ -12,6 +12,7 @@ const mainPage = require("./routes/main.js")
 const mainProducts = require("./routes/products.js")
 const mainUser = require("./routes/user.js")
 const mainGames = require("./routes/games.js")
+const mainConsols = require("./routes/consols.js")
 
 const productsServices = require("./services/productsServices")
 
@@ -45,6 +46,8 @@ app.use("/products", mainProducts);
 app.use("/user", mainUser)
 
 app.use("/games", mainGames)
+
+app.use("/consols", mainConsols)
 
 
 /**error-404**/

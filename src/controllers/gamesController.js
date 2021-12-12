@@ -1,9 +1,8 @@
 const genders = ["RPG", "Action", "Adventure", "Sports", "Shooters", "Indie", "Race", "Puzzles"]
 
-const fs = require("fs");
-
 const gamesServices = require("../services/gamesServices");
 const consolServices = require("../services/consolServices");
+
 
 const gamesController = {
   /*INDEX*/
@@ -50,43 +49,7 @@ const gamesController = {
     const idSearch = req.params.id;
     gamesServices.destroy(idSearch);
     res.redirect("/games");
-  },
-
-  /**CONSOL SERVICES**/
-  /*Create Consol Form*/
-  createConsol: (req, res) => {
-    res.render("games/consolsCreation");
-  },
-
-  /*Save Consol*/
-  storeConsol: (req, res) => {
-    consolServices.create(req.body);
-    res.redirect("/games");
-  },
-
-  /*Edit Consol*/
-  editConsol: (req, res) => {
-    const idSearch = req.params.id;
-    consol = consolServices.findOne(idSearch);
-
-    res.render("games/consolsEdit", {
-      consol,
-    });
-  },
-
-  /*Update Consol*/
-  updateConsol: (req, res) => {
-    const idSearch = req.params.id;
-    consolServices.update(idSearch, req.body);
-    res.redirect("/games");
-  },
-
-  /*Destroy Consol*/
-  destroyConsol: (req, res) => {
-    const idSearch = req.params.id;
-    consolServices.destroy(idSearch);
-    res.redirect("/games");
-  },
+  }
 };
 
 module.exports = gamesController;

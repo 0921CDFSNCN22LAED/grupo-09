@@ -13,7 +13,7 @@ router.get("/cart", productsController.cart);
 router.get("/details/:id", productsController.details);
 
 /*-Products Creation-*/
-/**request form**/
+/**create form**/
 router.get("/productAdd", productsController.add)
 /**store method**/
 router.post("/", productsController.store)

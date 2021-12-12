@@ -3,7 +3,7 @@
         "id": "1",
         "name": "Two Players",
         "description": "Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.",
-        "price": 1000,
+        "price": "1000",
         "image": "consola_1.JPG",
         "consol_color": "",
         "memory": ""
