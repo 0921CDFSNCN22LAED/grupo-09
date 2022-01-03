@@ -85,3 +85,19 @@
 ### <li align="center">**¿Que se hara hoy**</li>
 
 <p align="center">Realizamos los ultimos retoques al proyecto, tanto en rutas, controladores, views, servicios y en la app. De esta forma el proyecto se encontraria listo para entregarlo y continuar con la implementacion de la nueva informacion para la realizacion del Sprint n°5</p>
+
+## <h3 align="center" style="text-decoration: underline">Miercoles 29 de Diciembre\_</h3>
+
+<br>
+
+### <li align="center">**¿Que se hizo ayer?**</li>
+
+<p align="center">Logramos coordinar un dia en la semana para que el equipo se reuna y de la manera mas rapida y eficaz acordemos cual seria el m.o para esta nueva entrega</p>
+
+### <li align="center">**Impedimentos**</li>
+
+<p align="center">La comunicacion se volvio un poco distante en el equipo pero todos entendemos y acordamos que se debe a cuestiones personales, laborales y tambien las fechas (fin de año)</p>
+
+### <li align="center">**¿Que se hara hoy**</li>
+
+<p align="center">Ya habiendonos reunido y acordado como realizaremos este proyecto podemos comenzar con la implementacion de los middlewares y authentication.</p>

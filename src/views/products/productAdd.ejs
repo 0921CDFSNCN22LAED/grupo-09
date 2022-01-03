@@ -11,73 +11,91 @@
       <section class="centrar">
         <h2 class="headlines margin-bottom-20">Agregar producto</h2>
 
-        <form action="/products" method="POST">
-          <div class="margin-bottom-15">
-            <label for="name" class="subs">Nombre del producto</label>
-            <input class="box" type="text" name="name" id="name">
-          </div>
+        <% if(locals.errors) { %>
+          <% errors.forEach(error=> { %>
+            <p>
+              <%= error.msg %>
+            </p>
+            <% }) %>
+              <% } %>
 
-          <div class="margin-bottom-15">
-            <label for="description" class="subs">Descripción</label>
-            <textarea class="box-textarea" type="text" name="description" id="description"></textarea>
-          </div>
+                <form action="/products" method="POST" enctype="multipart/form-data">
+                  <div class="margin-bottom-15">
+                    <label for="name" class="subs">Nombre del producto</label>
+                    <input class="box" type="text" name="name" id="name" value=<%=locals.old && old.name ? old.name
+                      : " " %> >
+                  </div>
 
-          <div class="margin-bottom-15">
-            <label for="image" class="subs">Subir imagen</label>
-            <div>
-              <input class="margin-bottom-20" type="file" name="image" accept=".jpg" />
-            </div>
-          </div>
+                  <div class="margin-bottom-15">
+                    <label for="description" class="subs">Descripción</label>
+                    <textarea class="box-textarea" type="text" name="description" id="description" value=<%=locals.old
+                      && old.description ? old.description : " " %> ></textarea>
+                  </div>
+
+                  <div class="margin-bottom-15">
+                    <label for="image" class="subs">Subir imagen</label>
+                    <div>
+                      <input class="margin-bottom-20" type="file" name="image" id="image" accept="image/*" />
+                    </div>
+                  </div>
 
 
-          <div class="margin-bottom-15 list">
-            <label for="consol_color" class="subs">Colores disponibles </label>
-            <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-1" /><label>Color
-                  1</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-2" /><label>Color
-                  2</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-3" /><label>Color
-                  3</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-4" /><label>Color
-                  4</label>
-              </li>
-            </ul>
-          </div>
-          <div class="margin-bottom-15 list">
-            <label for="memory" class="subs">Capacidades de memoria</label>
-            <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" /><label>Memoria
-                  1</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" /><label>Memoria
-                  2</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" /><label>Memoria
-                  3</label>
-              </li>
-            </ul>
-          </div>
-          <div class="margin-bottom-15">
-            <label for="price" class="subs">Precio</label>
-            <input class="box" type="text" name="price" id="price" />
-          </div>
+                  <div class="margin-bottom-15 list">
+                    <label for="consol_color" class="subs">Colores disponibles </label>
+                    <ul class="margin-bottom-20">
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="consol_color" value="color-1"
+                          <%=locals.old && old.consol_color==="color-1" ? "selected" : " " %> />Color
+                        1
+                      </li>
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="consol_color" value="color-2"
+                          <%=locals.old && old.consol_color==="color-2" ? "selected" : " " %> />Color
+                        2
+                      </li>
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="consol_color" value="color-3"
+                          <%=locals.old && old.consol_color==="color-3" ? "selected" : " " %>/>Color
+                        3
+                      </li>
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="consol_color" value="color-4"
+                          <%=locals.old && old.consol_color==="color-4" ? "selected" : " " %>/>Color
+                        4
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="margin-bottom-15 list">
+                    <label for="memory" class="subs">Capacidades de memoria</label>
+                    <ul class="margin-bottom-20">
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" <%=locals.old
+                          && old.memory==="memoria-1" ? "selected" : " " %>/>Memoria
+                        1
+                      </li>
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" <%=locals.old
+                          && old.memory==="memoria-2" ? "selected" : " " %>/>Memoria
+                        2
+                      </li>
+                      <li>
+                        <input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" <%=locals.old
+                          && old.memory==="memoria-3" ? "selected" : " " %>/>Memoria
+                        3
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="margin-bottom-15">
+                    <label for="price" class="subs">Precio</label>
+                    <input class="box" type="text" name="price" id="price" value=<%=locals.old && old.price ? old.price
+                      : " " %> />
+                  </div>
 
-          <div class="buttons-send-erase">
-            <button class="buttons" type="submit">Agregar producto</button>
-            <button class="buttons" type="reset">Resetar informacion</button>
-          </div>
-        </form>
+                  <div class="buttons-send-erase">
+                    <button class="buttons" type="submit">Agregar producto</button>
+                    <button class="buttons" type="reset">Resetar informacion</button>
+                  </div>
+                </form>
       </section>
     </main>
     <%- include("../partials/footer.ejs") %>

@@ -1,7 +1,23 @@
 const express = require('express')
+const multer = require('multer')
+const path = require("path")
 const router = express.Router()
 
 const gamesController = require("../controllers/gamesController.js")
+const middlewareImages = require('../middlewares/middlewareImages.js')
+const validationsGames = require('../validations/validationsGames.js')
+const targetFolder = path.resolve(__dirname, "../../public/images/game_images")
+
+const storage = multer.diskStorage({
+    destination : (req, file, cb) =>{
+        cb(null, targetFolder)},
+
+    filename : (req, file, cb)=> {
+        cb(null , `${Date.now()}_game${path.extname(file.originalname)}`)
+    }
+})
+
+const uploadFile = multer({storage})
 
 
 /*-Index Games-*/
@@ -11,7 +27,7 @@ router.get("/", gamesController.index)
 /**request form**/
 router.get("/gamesCreation", gamesController.createGame)
 /**store method**/
-router.post("/", gamesController.storeGame)
+router.post("/", uploadFile.any("game_images", middlewareImages), validationsGames,gamesController.storeGame)
 /**edit method**/
 router.get("/:id/edit", gamesController.editGame)
 /**update method**/

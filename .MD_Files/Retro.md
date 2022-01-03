@@ -90,6 +90,36 @@
 
 #### <p align="center">"Personalmente este módulo me ha costado bastante y por esta razón no pude tener una participación tan activa en este spring; sin embargo si estuve conectada en las reuniones y la explicación por parte de otros miembros del equipo me ayudo bastante para entender mucho mejor el tema; espero poder repasar los temas del módulo y entenderlos completamente para realizar más código en el seguiente sprint. Cabe resaltar que cuando hay problemas complejos en el código me gusta que nos reunimos algunos compañeros del equipo para ver como podemos aportar a la resolución del problema "</p>
 
+<br>
+
+## <h2 align="center"> **Sprint 4º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">"La entrega en tiempo y forma del Sprint 4 fue realizada con exito. Para el 5to sprint (y todos aquellos que vengan por delante) podriamos intentar de generar mas weekly meeting para poder organizar mejor el trabajo, no solo en trello sino en el proyecto. Llegadas las fechas festivas y de fin de año es normal que la gente se tome tiempos para ellos, sus familias y respirar un poco por lo cual considero que este "desencuentro" era algo no solo esperable sino añorable para poder recuperar las energias."</p>
+
+<br>
+
+<h3 align="center">Karen Hernandez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Pablo Calvo</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Nicolas Zapata Cruz</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Paulina Gomez</h3>
+
 #### <p align="center">"completar aqui"</p>
 
 <br>

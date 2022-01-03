@@ -14,7 +14,8 @@ const mainUser = require("./routes/user.js")
 const mainGames = require("./routes/games.js")
 const mainConsols = require("./routes/consols.js")
 
-const productsServices = require("./services/productsServices")
+const productsServices = require("./services/productsServices");
+const consolServices = require("./services/consolServices.js");
 
 /*Server*/
 /**ejs**/
@@ -37,6 +38,7 @@ app.listen(4000, () => {
 app.use(express.static(publicDomain));
 
 app.locals.products = productsServices.getAll()
+app.locals.consols = consolServices.getAll()
 
 /**views**/
 app.use("/", mainPage);

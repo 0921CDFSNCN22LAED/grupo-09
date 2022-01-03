@@ -11,42 +11,69 @@
       <section class="centrar">
 
         <h2 class="headlines margin-bottom-20">Crear juego</h2>
-        <form action="/games" method="POST">
-          <div class="margin-bottom-15">
-            <label for="name">Nombre del juego</label>
-            <input class="box" type="text" name="name" id="name" />
-          </div>
 
-          <div class="margin-bottom-15">
-            <label for="description">Descripción del juego</label>
-            <textarea class="box-textarea" type="text" name="description" id="description" required></textarea>
-          </div>
+        <% if(locals.errors) { %>
+          <% errors.forEach(error=> { %>
+            <p>
+              <%= error.msg %>
+            </p>
+            <% }) %>
+              <% } %>
 
-          <div class="margin-bottom-15">
-            <label for="image">Cargar imagen</label>
-            <div>
-              <input class="margin-bottom-20" type="file" name="image" accept=".jpg .png .jpeg" />
-            </div>
-          </div>
+                <form action="/games" method="POST" enctype="multipart/form-data">
 
-          <div class="margin-bottom-15">
-            <label for="gender" class="margin-bottom-20" required>Genero</label>
-            <div class="margin-bottom-20">
-              <% for(gender of genders) { %>
-                <div>
-                  <input class="radio-check-space" type="radio" name="gender" value="individual" />
-                  <%= gender %>
-                </div>
-                <% } %>
-            </div>
-          </div>
+                  <div class="margin-bottom-15">
+                    <label for="name">Nombre del juego</label>
+                    <input class="box" type="text" name="name" id="name" value=<%=locals.old && old.name ? old.name
+                      : " " %> />
+                  </div>
+
+                  <div class="margin-bottom-15">
+                    <label for="description">Descripción del juego</label>
+                    <textarea class="box-textarea" type="text" name="description" id="description" value=<%=locals.old
+                      && old.description ? old.description : " " %>  ></textarea>
+                  </div>
+
+                  <div class="margin-bottom-15">
+                    <label for="game_images">Cargar imagen</label>
+                    <div>
+                      <input class="margin-bottom-20" type="file" name="game_images" accept=".jpg .png .jpeg" />
+                    </div>
+                  </div>
+
+                  <div class="margin-bottom-15">
+                    <label for="gender" class="margin-bottom-20">Genero</label>
+                    <div class="margin-bottom-20">
+                      <% for(gender of genders) { %>
+                        <div>
+                          <input class="radio-check-space" type="radio" name="gender" id="gender" value=<%=locals.old &&
+                            old.gender===gender ? gender : " " %> />
+                          <%= gender %>
+                        </div>
+                        <% } %>
+                    </div>
+                  </div>
+
+                  <div class="margin-bottom-15">
+                    <label for="consol" class="margin-bottom-20">Consola</label>
+                    <div class="margin-bottom-20">
+                      <% for(consol of consols) { %>
+                        <div>
+                          <input class="radio-check-space" type="radio" name="consol" value=<%=locals.old ??
+                            old.consol===consol ? old.consol : " " %> />
+                          <%= consol.family %>
+                        </div>
+                        <% } %>
+                    </div>
+                  </div>>
+                  </div>
 
 
-          <div class="buttons-send-erase">
-            <button class="buttons" type="submit">Confirmar</button>
-            <button class="buttons">Cancelar</button>
-          </div>
-        </form>
+                  <div class="buttons-send-erase">
+                    <button class="buttons" type="submit">Confirmar</button>
+                    <button class="buttons">Cancelar</button>
+                  </div>
+                </form>
       </section>
     </main>
 

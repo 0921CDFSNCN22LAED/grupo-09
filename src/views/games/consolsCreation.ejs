@@ -12,31 +12,41 @@
       <h2 class="headlines">Creando nueva consola</h2>
       <p style="margin-bottom: 20px">(consola software)</p>
 
-      <form action="/consols" method="POST">
-        <div class="margin-bottom-15">
-          <label for="name">Nombre de la consola</label>
-          <input class="box" type="text" name="name" id="name" required />
-        </div>
+      <% if(locals.errors) { %>
+        <% errors.forEach(error=> %>
+          <p>
+            <%=error.msg %>
+          </p>
+          <% }) %>
+            <% } %>
 
-        <div class="margin-bottom-15">
-          <label for="image">Cargar imagen</label>
-          <div>
-            <input class="margin-bottom-20" type="file" name="image" accept=".jpg" />
-          </div>
-        </div>
+              <form action="/consols" method="POST" enctype="multipart/form-data">
 
-        <div class="margin-bottom-15">
-          <label for="logo">Cargar logo</label>
-          <div>
-            <input class="margin-bottom-20" type="file" name="logo" accept=".jpg" />
-          </div>
-        </div>
+                <div class="margin-bottom-15">
+                  <label for="name">Nombre de la consola</label>
+                  <input class="box" type="text" name="name" id="name" value=<%=locals.old && old.first_name ?
+                    old.first_name : " " %> />
+                </div>
 
-        <div class="buttons-send-erase">
-          <button class="buttons" type="submit">Confirmar</button>
-          <button class="buttons" type="reset">Borrar informacion</button>
-        </div>
-      </form>
+                <div class="margin-bottom-15">
+                  <label for="consol_image">Cargar imagen</label>
+                  <div>
+                    <input class="margin-bottom-20" type="file" name="consol_image" accept=".jpg" />
+                  </div>
+                </div>
+
+                <div class="margin-bottom-15">
+                  <label for="logo">Cargar logo</label>
+                  <div>
+                    <input class="margin-bottom-20" type="file" name="logo" accept=".jpg" />
+                  </div>
+                </div>
+
+                <div class="buttons-send-erase">
+                  <button class="buttons" type="submit">Confirmar</button>
+                  <button class="buttons" type="reset">Borrar informacion</button>
+                </div>
+              </form>
     </section>
 
     <%- include("../partials/footer.ejs") %>

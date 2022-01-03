@@ -1,3 +1,4 @@
+const req = require("express/lib/request")
 const fs = require("fs")
 const path = require("path")
 
@@ -26,9 +27,8 @@ module.exports = {
 
         const product_to_create = {
             id: Date.now(),
-            ...body,
-            image: "",
-            logo: "",
+            image : body.image,
+            ...body
         }
 
         products.push(product_to_create)
