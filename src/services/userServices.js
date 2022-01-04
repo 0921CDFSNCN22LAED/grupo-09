@@ -22,9 +22,9 @@ module.exports = {
     return user;
   },
 
-  findEmail(id) {
+  findEmail(email) {
     const user = users.find((user) => {
-      return user.id == id;
+      return user.email == email;
     });
     return user;
   },
@@ -69,7 +69,7 @@ module.exports = {
 
   login(body) {
     const user_to_log = {
-      email: body.email,
+      id: body.id,
       password: bcryptjs.hashSync(body.password, 10),
     };
   },

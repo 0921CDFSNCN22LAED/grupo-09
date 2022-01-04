@@ -52,7 +52,7 @@ const userController = {
 
   /*Confirm user Login attempt*/
   confirmUser: (req, res) => {
-    let loginUser = userServices.findOne(req.body);
+    let loginUser = userServices.findEmail(req.body);
 
     if (loginUser) {
       if (bcryptjs.compareSync(req.body.password, user.password)) {

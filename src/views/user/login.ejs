@@ -15,11 +15,11 @@
 
                     <div class="login">
                         <div>
-                            <label for="mail">Ingresa tu mail</label>
-                            <input type="text" id="mail" name="mail" placeholder="Ingresa tu nombre de usuario">
-                            <%if(locals.errors && errors.mail){ %>
+                            <label for="email">Ingresa tu mail</label>
+                            <input type="text" id="email" name="email" placeholder="Ingresa tu nombre de usuario">
+                            <%if(locals.errors && errors.email){ %>
                                 <div>
-                                    <%= errors.mail.msg%>
+                                    <%= errors.email.msg%>
                                 </div>
                                 <% } %>
                         </div>

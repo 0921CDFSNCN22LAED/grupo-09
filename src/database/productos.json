@@ -4,7 +4,7 @@
         "name": "Two Players",
         "description": "Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.",
         "price": "1000",
-        "image": "consola_1.JPG",
+        "product_image": "consola_1.JPG",
         "consol_color": "",
         "memory": ""
     },
@@ -13,7 +13,7 @@
         "name": "Dual Stick Arcade",
         "description": "Consola 1 player con sistema integrado + joystick 1 player.",
         "price": 2000,
-        "image": "consola_2.jpeg",
+        "product_image": "consola_2.jpeg",
         "consol_color": "",
         "memory": ""
     },
@@ -22,8 +22,16 @@
         "name": "Joystick Pro",
         "description": "Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.",
         "price": 3000,
-        "image": "consola_3.jpeg",
+        "product_image": "consola_3.jpeg",
         "consol_color": "",
         "memory": ""
+    },
+    {
+        "id": 1641265360987,
+        "name": "Producto Nico",
+        "description": "clvdcvdlcclcdl",
+        "consol_color": "color-1",
+        "memory": "memoria-1",
+        "price": "9999"
     }
 ]
