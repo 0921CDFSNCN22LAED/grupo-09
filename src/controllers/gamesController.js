@@ -32,7 +32,8 @@ const gamesController = {
     } else {
       res.render("games/gamesCreation",{
         errors : errors.array(),
-        old : req.body
+        old : req.body,
+        genders
       })
     }
     

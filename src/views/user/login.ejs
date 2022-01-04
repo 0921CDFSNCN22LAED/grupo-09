@@ -11,24 +11,38 @@
 
         <main>
             <section class="user-login">
-                <div class="login">
-                    <div>
-                        <label for="user-id">Nombre de usuario</label>
-                        <input type="text" id="user-id" name="user-id" placeholder="Ingresa tu nombre de usuario"
-                            required>
+                <form action="/user/login" method="POST">
+
+                    <div class="login">
+                        <div>
+                            <label for="mail">Ingresa tu mail</label>
+                            <input type="text" id="mail" name="mail" placeholder="Ingresa tu nombre de usuario">
+                            <%if(locals.errors && errors.mail){ %>
+                                <div>
+                                    <%= errors.mail.msg%>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div>
+                            <label for="user-pass">Contraseña</label>
+                            <input type="password" id="user-pass" name="user-pass" placeholder="Ingresa tu contraseña">
+                        </div>
+
+                        <div>
+                            <label for="remember">Recordarme </label>Recordarme
+                            <input type="checkbox" id="remember" name="remember">
+                        </div>
+
+                        <div class="login-botones">
+                            <button type="submit" class="boton">Ingresar</button>
+                        </div>
+
                     </div>
-                    <div>
-                        <label for="user-pass">Contraseña</label>
-                        <input type="password" id="user-pass" name="user-pass" placeholder="Ingresa tu contraseña"
-                            required>
-                    </div>
-                    <div class="login-botones">
-                        <button type="submit" class="boton">Ingresar</button>
-                    </div>
-                    <div>
-                        <h5>¿No tenes usuario?</h5>
-                        <a href="./register"><button type="submit" class="boton">Registrarse</button></a>
-                    </div>
+                </form>
+                <div>
+                    <h5>¿No tenes usuario?</h5>
+                    <a href="/user/register"><button class="boton">Registrarse</button></a>
                 </div>
             </section>
 

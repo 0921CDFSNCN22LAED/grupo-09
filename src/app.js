@@ -1,11 +1,13 @@
-const express = require("express");
-const app = express();
-const path = require("path");
+const express = require("express")
+const app = express()
+const path = require("path")
 const methodOverride = require('method-override')
+const session = require("express-session")
+const cookieParser = require("cookie-parser")
 
 
 /*Public*/
-const publicDomain = path.resolve(__dirname, "../public");
+const publicDomain = path.resolve(__dirname, "../public")
 
 /*Routes*/
 const mainPage = require("./routes/main.js")
@@ -14,8 +16,10 @@ const mainUser = require("./routes/user.js")
 const mainGames = require("./routes/games.js")
 const mainConsols = require("./routes/consols.js")
 
-const productsServices = require("./services/productsServices");
-const consolServices = require("./services/consolServices.js");
+const productsServices = require("./services/productsServices")
+const consolServices = require("./services/consolServices.js")
+
+//const middlewareRemember = require("./middlewares/middlewareRemember.js")
 
 /*Server*/
 /**ejs**/
@@ -23,27 +27,36 @@ app.set('view engine', 'ejs')
 app.set("views", path.join(__dirname, "views"))
 /**urlencoded**/
 app.use(express.urlencoded({ extended : false}))
-/**use json**/
+/**JSON**/
 app.use(express.json())
 /**methodOverRide**/
 app.use(methodOverride('_method'))
+/**Session**/
+app.use(session({
+  secret : "secret text", 
+  resave : false, 
+  saveUninitialized : true}))
+/**Cookies**/
+//app.use(cookieParser)
+/**Remember Middelware**/
+//app.use(middlewareRemember)
 
 
 /**boot**/
 app.listen(4000, () => {
-  console.log("Servidor corriendo en el puerto: 4000");
-});
+  console.log("Servidor corriendo en el puerto: 4000")
+})
 
 /**static_files**/
-app.use(express.static(publicDomain));
+app.use(express.static(publicDomain))
 
 app.locals.products = productsServices.getAll()
 app.locals.consols = consolServices.getAll()
 
 /**views**/
-app.use("/", mainPage);
+app.use("/", mainPage)
 
-app.use("/products", mainProducts);
+app.use("/products", mainProducts)
 
 app.use("/user", mainUser)
 

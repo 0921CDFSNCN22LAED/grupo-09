@@ -5,7 +5,9 @@ const consolsController = {
   /**CONSOL SERVICES**/
   /*Create Consol Form*/
   createConsol: (req, res) => {
-    res.render("games/consolsCreation")
+    res.render("games/consolsCreation",{
+      old : req.body
+    })
   },
 
   /*Save Consol*/
@@ -16,7 +18,7 @@ const consolsController = {
       consolServices.create(req.body)
       res.redirect("/games")
     } else {
-      res.render("games/consolsCreaton",{
+      res.render("games/consolsCreation",{
         errors : errors.array(),
         old : req.body
       })

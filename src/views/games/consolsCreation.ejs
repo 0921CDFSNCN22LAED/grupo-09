@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <%- include('../partials/head.ejs', {title: "Creando consola" }) %>
 </head>
@@ -13,25 +14,27 @@
       <p style="margin-bottom: 20px">(consola software)</p>
 
       <% if(locals.errors) { %>
-        <% errors.forEach(error=> %>
+        <% errors.forEach(error=> {%>
           <p>
             <%=error.msg %>
           </p>
           <% }) %>
             <% } %>
 
+
               <form action="/consols" method="POST" enctype="multipart/form-data">
 
                 <div class="margin-bottom-15">
                   <label for="name">Nombre de la consola</label>
-                  <input class="box" type="text" name="name" id="name" value=<%=locals.old && old.first_name ?
-                    old.first_name : " " %> />
+                  <input class="box" type="text" name="name" id="name" value="<%=locals.old  ?
+                    old.name : " " %>">
                 </div>
+
 
                 <div class="margin-bottom-15">
                   <label for="consol_image">Cargar imagen</label>
                   <div>
-                    <input class="margin-bottom-20" type="file" name="consol_image" accept=".jpg" />
+                    <input class="margin-bottom-20" type="file" name="consol_image" id="consol_image" accept=".jpg">
                   </div>
                 </div>
 

@@ -71,7 +71,9 @@ const productsController = {
   },
 
   add: (req, res) => {
-    res.render("products/productAdd")
+    res.render("products/productAdd",{
+      old : req.body
+    })
   },
 
   store: (req, res) => {

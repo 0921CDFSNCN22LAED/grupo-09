@@ -27,7 +27,7 @@ module.exports = {
         const game_to_create = {
             id: Date.now(),
             ...body,
-            image: "",
+            image: body.file.filename,
         }
 
         games.push(game_to_create)

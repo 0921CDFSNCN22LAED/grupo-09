@@ -23,7 +23,7 @@ const uploadFile = multer({storage})
 /**request form**/
 router.get("/consolsCreation", consolsController.createConsol)
 /**store method**/
-router.post("/",  uploadFile.any("consol_image", middlewareImages), validationsConsol, consolsController.storeConsol)
+router.post("/",  uploadFile.any("consol_image"), validationsConsol, consolsController.storeConsol)
 /**edit method**/
 router.get("/:id/edit", consolsController.editConsol)
 /**update method**/

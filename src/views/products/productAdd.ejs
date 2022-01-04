@@ -33,9 +33,10 @@
                   </div>
 
                   <div class="margin-bottom-15">
-                    <label for="image" class="subs">Subir imagen</label>
+                    <label for="product_image" class="subs">Subir imagen</label>
                     <div>
-                      <input class="margin-bottom-20" type="file" name="image" id="image" accept="image/*" />
+                      <input class="margin-bottom-20" type="file" name="product_image" id="product_image"
+                        accept="image/*" />
                     </div>
                   </div>
 
@@ -88,7 +89,7 @@
                   <div class="margin-bottom-15">
                     <label for="price" class="subs">Precio</label>
                     <input class="box" type="text" name="price" id="price" value=<%=locals.old && old.price ? old.price
-                      : " " %> />
+                      : " " %> >
                   </div>
 
                   <div class="buttons-send-erase">

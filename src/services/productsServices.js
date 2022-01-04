@@ -27,7 +27,7 @@ module.exports = {
 
         const product_to_create = {
             id: Date.now(),
-            image : body.image,
+            product_image : body.file.filename,
             ...body
         }
 

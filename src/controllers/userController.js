@@ -1,15 +1,20 @@
 const path = require("path")
+const fs = require("fs")
 const {validationResult} = require("express-validator")
-
 const userServices = require("../services/userServices")
+const bcryptjs = require("bcryptjs")
+
+const usersJSON = path.join(__dirname,"../database/usuarios.json")
+const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"))
+
 
 const userController = {
-  /*Register user View*/
+  /*Register Method*/
   register: (req, res) => {
     res.render("user/register")
   },
 
-  /*Login user View*/
+  /*Login Method*/
   login: (req, res) => {
     res.render("user/login")
   },
@@ -20,9 +25,12 @@ const userController = {
     const errors = validationResult(req)
     
     if(errors.isEmpty()){
+
       userServices.create(req.body)
       res.redirect("/user/login")
+
     } else { 
+
       res.render("user/register",{
         errors : errors.array(),
         old : req.body
@@ -49,13 +57,39 @@ const userController = {
   },
 
   /*Confirm user Login attempt*/
- // confirmUser: (req, res) => {
-    /**Crear en services método compare para comparar si los datos coinciden con algun usuario y crear un if que sirva de respuesta positiva o respuesta negativa **/
-//  if ((a = b)) {
-//  userServices.create(req.body)
-//      res.redirect("/")
-//    }
-//  },
+  confirmUser: (req, res) => {
+    
+
+   
+      let loginUser = userServices.findMail(req.body)
+      
+     
+        if(loginUser){
+          if(bcryptjs.compareSync(req.body.password, user.password)){
+            delete loginUser.password //no guarda en session la password
+            req.session.loggedUser = loginUser
+            //if(cookies)
+            return res.redirect("/index")
+          }
+          return res.render("user/login",{
+            errors : {
+              mail : {
+                msg : "Email o contraseña invalido"
+            }
+          }
+        }
+        )
+      }
+
+      return res.render("user/login",{
+        errors : {
+          mail : {
+            msg : "Email o contraseña invalido adasdasd"
+        }
+      }
+    }
+    )
+  }
   
 }
 

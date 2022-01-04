@@ -59,13 +59,13 @@
                     <div class="margin-bottom-20">
                       <% for(consol of consols) { %>
                         <div>
-                          <input class="radio-check-space" type="radio" name="consol" value=<%=locals.old ??
-                            old.consol===consol ? old.consol : " " %> />
+                          <input class="radio-check-space" type="radio" name="consol" value=<%=locals.old &&
+                            old.consol===consol ? consol : " " %> />
                           <%= consol.family %>
                         </div>
                         <% } %>
                     </div>
-                  </div>>
+                  </div>
                   </div>
 
 

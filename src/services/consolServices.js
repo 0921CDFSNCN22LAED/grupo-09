@@ -29,9 +29,7 @@ module.exports = {
         const consol_to_create = {
             
             id : Date.now(),
-            name : body.name,
-            image: body.image,
-            logo : body.logo
+            ...body
         }
 
         consols.push(consol_to_create)

@@ -6,6 +6,7 @@ const router = express.Router()
 const userController = require("../controllers/userController.js")
 const middlewareImages = require("../middlewares/middlewareImages.js")
 const validationsUsers = require("../validations/validationsUsers.js")
+const middlewareRemember = require("../middlewares/middlewareRemember.js");
 const targetFolder = path.resolve(__dirname , "../../public/images/users/avatar")
 
 const storage = multer.diskStorage({
@@ -24,11 +25,11 @@ const uploadFile = multer({storage})
 /**register form**/
 router.get("/register", userController.register)
 /**store method**/
-router.post("/", uploadFile.any("avatar", middlewareImages), validationsUsers, userController.storeUser)
+router.post("/", uploadFile.single("user_image"), validationsUsers, userController.storeUser)
 /**login form **/
 router.get("/login", userController.login)
 /**confirm login **/
-//router.post("/", userController.confirmUser)
+router.post("/login", middlewareRemember, userController.confirmUser)
 /**edit method**/
 router.get("/:id/edit", userController.editUser)
 /**update method**/

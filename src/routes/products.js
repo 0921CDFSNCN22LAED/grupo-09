@@ -5,6 +5,7 @@ const router = express.Router()
 
 const productsController = require("../controllers/productsController.js")
 const middlewareImages = require('../middlewares/middlewareImages.js')
+const validationsProducts = require('../validations/validationsProducts.js')
 const targetFolder = path.join(__dirname, "../../public/images/productos")
 
 
@@ -31,7 +32,7 @@ router.get("/details/:id", productsController.details)
 /**create form**/
 router.get("/productAdd", productsController.add)
 /**store method**/
-router.post("/", uploadFile.single("image", middlewareImages), productsController.store)
+router.post("/", uploadFile.single("product_image", middlewareImages), validationsProducts,productsController.store)
 /**edit method**/
 router.get("/:id/edit", productsController.edit)
 /**update method**/
