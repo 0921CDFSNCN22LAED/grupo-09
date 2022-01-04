@@ -1,18 +1,18 @@
 [
-    {
-        "id": "1",
-        "user_name": "nombre",
-        "mail": "algo@algo@.com",
-        "password": "*******",
-        "address": "street, number, city",
-        "avatar": ""
-    },
-    {
-        "id": 1641258701710,
-        "mail": "miltondemarte@gmail.com",
-        "user_name": "AtomicalHaze",
-        "address": "Roma 956",
-        "password": "$2a$10$oDBqIBJDdnlFZ2VpmPHgrOVeTlI1uwmc2GFs.YvDd/FoZ.qRAkA16",
-        "confirmPassword": "Milton123"
-    }
+  {
+    "id": "1",
+    "user_name": "nombre",
+    "email": "algo@algo@.com",
+    "password": "*******",
+    "address": "street, number, city",
+    "avatar": ""
+  },
+  {
+    "id": 1641258701710,
+    "email": "miltondemarte@gmail.com",
+    "user_name": "AtomicalHaze",
+    "address": "Roma 956",
+    "password": "$2a$10$oDBqIBJDdnlFZ2VpmPHgrOVeTlI1uwmc2GFs.YvDd/FoZ.qRAkA16",
+    "confirmPassword": "Milton123"
+  }
 ]
