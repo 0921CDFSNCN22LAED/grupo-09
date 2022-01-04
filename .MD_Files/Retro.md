@@ -108,7 +108,7 @@
 
 <h3 align="center">Pablo Calvo</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"Si bien estábamos un poco adelantados en cuanto solicitado, esto nos vino perfecto ya que diciembre es un mes complicado, en mi caso me encontré de vacaciones y a eso le sumamos las fechas festivas, definitivamente mi cabeza estaba en otro lado. Para el próximo sprint espero poder aportar un poco más ya que en este tiempo logre recargar un poco las energías."</p>
 
 <br>
 
