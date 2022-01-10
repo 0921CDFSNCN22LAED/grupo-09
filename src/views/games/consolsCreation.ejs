@@ -12,44 +12,48 @@
     <section class="centrar">
       <h2 class="headlines">Creando nueva consola</h2>
       <p style="margin-bottom: 20px">(consola software)</p>
+      <div class="errores">
+        <% if(locals.errors) { %>
+          <% errors.forEach(error=> {%>
+            <ul>
+              <li>
+                <p>
+                  <%=error.msg %>
+                </p>
+              </li>
+            </ul>
 
-      <% if(locals.errors) { %>
-        <% errors.forEach(error=> {%>
-          <p>
-            <%=error.msg %>
-          </p>
-          <% }) %>
-            <% } %>
+            <% }) %>
+              <% } %>
+      </div>
+      <form action="/consols" method="POST" enctype="multipart/form-data">
 
-
-              <form action="/consols" method="POST" enctype="multipart/form-data">
-
-                <div class="margin-bottom-15">
-                  <label for="name">Nombre de la consola</label>
-                  <input class="box" type="text" name="name" id="name" value="<%=locals.old  ?
+        <div class="margin-bottom-15">
+          <label for="name">Nombre de la consola</label>
+          <input class="box" type="text" name="name" id="name" value="<%=locals.old  ?
                     old.name : " " %>">
-                </div>
+        </div>
 
 
-                <div class="margin-bottom-15">
-                  <label for="consol_image">Cargar imagen</label>
-                  <div>
-                    <input class="margin-bottom-20" type="file" name="consol_image" id="consol_image" accept=".jpg">
-                  </div>
-                </div>
+        <div class="margin-bottom-15">
+          <label for="consol_image">Cargar imagen</label>
+          <div>
+            <input class="margin-bottom-20" type="file" name="consol_image" id="consol_image" accept=".jpg">
+          </div>
+        </div>
 
-                <div class="margin-bottom-15">
-                  <label for="logo">Cargar logo</label>
-                  <div>
-                    <input class="margin-bottom-20" type="file" name="logo" accept=".jpg" />
-                  </div>
-                </div>
+        <div class="margin-bottom-15">
+          <label for="logo">Cargar logo</label>
+          <div>
+            <input class="margin-bottom-20" type="file" name="logo" accept=".jpg" />
+          </div>
+        </div>
 
-                <div class="buttons-send-erase">
-                  <button class="buttons" type="submit">Confirmar</button>
-                  <button class="buttons" type="reset">Borrar informacion</button>
-                </div>
-              </form>
+        <div class="buttons-send-erase">
+          <button class="buttons" type="submit">Confirmar</button>
+          <button class="buttons" type="reset">Borrar informacion</button>
+        </div>
+      </form>
     </section>
 
     <%- include("../partials/footer.ejs") %>
