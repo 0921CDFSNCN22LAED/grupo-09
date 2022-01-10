@@ -30,7 +30,9 @@
                                 <% for(let consol of consols) { %>
 
                                     <button>
+                                        <% if(locals.userLogged && locals.userLogged.admin) {  %>
                                         <a href="/consols/<%= consol.id %>/edit ">
+                                            <% } %> 
                                             <img src="/images/consolas/<%= consol.image %>"
                                                 alt="Logo <%= consol.name  %> ">
                                             <div class="img-div">
