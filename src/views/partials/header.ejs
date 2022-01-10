@@ -15,6 +15,8 @@
                     <li><a href="/products">Consolas</a></li>
                     <li><a href="/games">Catalogo de Juegos</a></li>
                     <li><a href="#">Trailers</a></li>
+                    <% if(locals.userLogged) {  %><li><a href="/user/profile"><%= userLogged.user_name %></a></li><% } %>
+                    
                 </ul>
             </nav>
         </div>

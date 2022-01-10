@@ -93,6 +93,9 @@ header {
 .margin-vertical-20 {
   margin: 20px 0;
 }
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
 .trailers-box {
   display: flex;
   width: 100%;

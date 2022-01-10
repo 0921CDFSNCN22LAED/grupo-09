@@ -51,15 +51,20 @@ const userController = {
   },
 
   /*Confirm user Login attempt*/
-  confirmUser: (req, res) => {
-    let loginUser = userServices.findEmail(req.body);
+  confirmUser: async (req, res) => {
+    let loginUser = await userServices.findEmail(req.body.email);
 
     if (loginUser) {
-      if (bcryptjs.compareSync(req.body.password, user.password)) {
+      if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
         delete loginUser.password; //no guarda en session la password
-        req.session.loggedUser = loginUser;
-        //if(cookies)
-        return res.redirect("/index");
+        req.session.userLogged = loginUser;
+
+        if (req.body.remember_user) {
+          await res.cookie("userEmail", req.body.email, {
+            maxAge: 1000 * 60 * 60,
+          });
+        }
+        return res.redirect("/");
       }
       return res.render("user/login", {
         errors: {
@@ -77,6 +82,14 @@ const userController = {
         },
       },
     });
+  },
+  profile: (req, res) => {
+    res.render("user/profile");
+  },
+  logout: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("/");
   },
 };
 
