@@ -5,6 +5,7 @@
     "user_name": "nico1",
     "address": "nico1",
     "password": "$2a$10$tIJF1JoBtx2Cu.Uet1NKOuqYPj/13.uWkAfP/JP9a6UgzpPKbFkHu",
-    "confirmPassword": "Nico1234"
+    "confirmPassword": "Nico1234",
+    "admin": true
   }
 ]

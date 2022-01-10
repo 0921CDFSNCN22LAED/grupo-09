@@ -73,8 +73,10 @@
                 <button class="buttons">Catalogo de Juegos</button>
               </div>
             </form>
+            <% if(locals.userLogged && locals.userLogged.admin) {  %>
             <a href="/products/<%= product.id %>/edit">
               <button class="buttons">Editar</button></a>
+              <% } %> 
           </section>
         </section>
       </section>

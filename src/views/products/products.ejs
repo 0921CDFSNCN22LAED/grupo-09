@@ -32,11 +32,13 @@
           </div>
           <% } %>
         </section>
+        <% if(locals.userLogged && locals.userLogged.admin) { %>
         <div class="boton-cta">
           <button class="boton">
             <a href="/products/productAdd">Agregar consolas</a>
           </button>
         </div>
+        <% } %>
       </section>
 
       <section class="margin-vertical-20 section-logos-consolas">
