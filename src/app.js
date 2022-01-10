@@ -21,8 +21,6 @@ const consolServices = require("./services/consolServices.js");
 //Middleware de Session
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
-//const middlewareRemember = require("./middlewares/middlewareRemember.js")
-
 /*Server*/
 /**ejs**/
 app.set("view engine", "ejs");
@@ -45,8 +43,6 @@ app.use(
 app.use(cookieParser());
 //Session Middleware
 app.use(userLoggedMiddleware);
-/**Remember Middelware**/
-//app.use(middlewareRemember)
 
 /**boot**/
 app.listen(4000, () => {
