@@ -24,12 +24,13 @@ module.exports = {
         return consol
     },
 
-    create(body){
+    create(body, file){
 
         const consol_to_create = {
             
             id : Date.now(),
-            ...body
+            ...body,
+            consol_image : file
         }
 
         consols.push(consol_to_create)

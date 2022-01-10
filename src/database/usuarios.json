@@ -1,20 +1,29 @@
 [
-  {
-    "id": 1641267891435,
-    "email": "nico1@gmail.com",
-    "user_name": "nico1",
-    "address": "nico1",
-    "password": "$2a$10$tIJF1JoBtx2Cu.Uet1NKOuqYPj/13.uWkAfP/JP9a6UgzpPKbFkHu",
-    "confirmPassword": "Nico1234",
-    "admin": true
-  },
-  {
-    "id": 1641267891436,
-    "email": "nico1@gmail.com",
-    "user_name": "nico1",
-    "address": "nico1",
-    "password": "$2a$10$tIJF1JoBtx2Cu.Uet1NKOuqYPj/13.uWkAfP/JP9a6UgzpPKbFkHu",
-    "confirmPassword": "Nico1234",
-    "admin": true
-  }
+    {
+        "id": 1641267891435,
+        "email": "nico1@gmail.com",
+        "user_name": "nico1",
+        "address": "nico1",
+        "confirmPassword": "Nico1234",
+        "admin": true
+    },
+    {
+        "id": 1641855317979,
+        "email": "miltondemarte1@gmail.com",
+        "user_name": "AtomicalHaze",
+        "address": "Roma 956, Garin, Buenos Aires",
+        "password": "$2a$10$ut8XR7xDX.A.ITMiWkKFRODfFNYxwyiXIXeln1ej1b7x1fPs1t2QS",
+        "confirmPassword": "Milton1234",
+        "user_image": "1641855317969_avatar.png",
+        "admin" : true
+    },
+    {
+        "id": 1641856163128,
+        "email": "miltondemarte333@gmail.com",
+        "user_name": "AtomicalHaze",
+        "address": "Roma 956",
+        "password": "$2a$10$VC7HMr0GVxCo0cWOOm1s0.dD7VloAldlHpP2erSF8B77unOMeNZ6e",
+        "confirmPassword": "Alala123",
+        "user_image": "1641856163088_avatar.png"
+    }
 ]

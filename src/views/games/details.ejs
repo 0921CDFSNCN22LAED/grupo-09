@@ -30,16 +30,16 @@
                                 <% for(let consol of consols) { %>
 
                                     <button>
-                                        <% if(locals.userLogged && locals.userLogged.admin) {  %>
-                                        <a href="/consols/<%= consol.id %>/edit ">
-                                            <% } %> 
-                                            <img src="/images/consolas/<%= consol.image %>"
-                                                alt="Logo <%= consol.name  %> ">
-                                            <div class="img-div">
-                                                <%= consol.name %>
-                                            </div>
+                                        <% if(locals.userLogged && locals.userLogged.admin) { %>
+                                            <a href="/consols/<%= consol.id %>/edit ">
+                                                <% } %>
+                                                    <img src="/images/consolas/<%= consol.consol_image %>"
+                                                        alt="Logo <%= consol.name  %> ">
+                                                    <div class="img-div">
+                                                        <%= consol.name %>
+                                                    </div>
 
-                                        </a>
+                                            </a>
 
                                     </button>
 
@@ -57,9 +57,10 @@
                             </div>
                         </div>
                     </div>
-                    <% if(locals.userLogged && locals.userLogged.admin) {  %>
-                    <button class="boton create"><a href="/consols/consolsCreation" alt="">Crear Consola</a></button>
-                    <% } %>
+                    <% if(locals.userLogged && locals.userLogged.admin) { %>
+                        <button class="boton create"><a href="/consols/consolsCreation" alt="">Crear
+                                Consola</a></button>
+                        <% } %>
                 </div>
 
                 <div class="right">
@@ -70,9 +71,9 @@
                     <div class="img-container">
                         <img src="\images\old_games.jpg" alt="image-games" width="100%">
                     </div>
-                    <% if(locals.userLogged && locals.userLogged.admin) {  %>
-                    <button class="boton create"><a href="/games/gamesCreation" alt="">Crear Juego</a></button>
-                    <% } %> 
+                    <% if(locals.userLogged && locals.userLogged.admin) { %>
+                        <button class="boton create"><a href="/games/gamesCreation" alt="">Crear Juego</a></button>
+                        <% } %>
 
             </section>
 

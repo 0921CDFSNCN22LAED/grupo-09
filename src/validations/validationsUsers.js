@@ -1,4 +1,7 @@
 const { check } = require("express-validator");
+const path = require("path");
+const { nextTick } = require("process");
+const userServices =  require("../services/userServices")
 
 module.exports = [
   check("email")
@@ -6,7 +9,12 @@ module.exports = [
     .withMessage("Ingresar un email.")
     .bail()
     .isEmail()
-    .withMessage("Debes ingresar un mail valido: nombre@servicio.com"),
+    .withMessage("Debes ingresar un mail valido: nombre@servicio.com")
+    .custom((value , {req}) => {
+      if(userServices.findEmail(req.body.email)){
+        throw new Error("Este mail ya se encuentra registrado")
+      } return true
+    }),
 
   check("user_name")
     .notEmpty()

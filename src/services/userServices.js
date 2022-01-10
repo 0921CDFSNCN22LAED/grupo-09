@@ -29,11 +29,12 @@ module.exports = {
     return user;
   },
 
-  create(body) {
+  create(body, file) {
     const user_to_create = {
       id: Date.now(),
       ...body,
       password: bcryptjs.hashSync(body.password, 10),
+      user_image : file
     };
 
     users.push(user_to_create);

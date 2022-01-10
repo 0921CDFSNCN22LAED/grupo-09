@@ -22,14 +22,19 @@ const userController = {
   storeUser: (req, res) => {
     const errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-      userServices.create(req.body);
-      res.redirect("/user/login");
-    } else {
+    if (!errors.isEmpty()) {
       res.render("user/register", {
-        errors: errors.array(),
+        errors: errors.mapped(),
         old: req.body,
-      });
+      })
+     
+    } 
+    
+    else {
+      
+      userServices.create(req.body, req.file.filename);
+      res.redirect("/user/login");
+      ;
     }
   },
 

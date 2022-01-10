@@ -27,7 +27,7 @@ router.get("/", gamesController.index)
 /**request form**/
 router.get("/gamesCreation", gamesController.createGame)
 /**store method**/
-router.post("/", uploadFile.any("game_images", middlewareImages), validationsGames, gamesController.storeGame)
+router.post("/", uploadFile.single("game_images", middlewareImages), validationsGames, gamesController.storeGame)
 /**edit method**/
 router.get("/:id/edit", gamesController.editGame)
 /**update method**/

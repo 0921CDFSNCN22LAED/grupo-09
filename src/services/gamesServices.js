@@ -22,12 +22,12 @@ module.exports = {
         return game
     },
 
-    create(body){
+    create(body, file){
 
         const game_to_create = {
             id: Date.now(),
             ...body,
-            image: body.file.filename,
+            game_images : file
         }
 
         games.push(game_to_create)

@@ -35,7 +35,7 @@ const gamesController = {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      gamesServices.create(req.body);
+      gamesServices.create(req.body, req.file.filename);
       res.redirect("/games");
     } else {
       res.render("games/gamesCreation", {

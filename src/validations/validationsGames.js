@@ -1,4 +1,5 @@
 const { check } = require("express-validator");
+const path = require("path")
 
 module.exports = [
   check("name")
@@ -11,6 +12,11 @@ module.exports = [
   check("gender")
     .notEmpty()
     .withMessage("Debes seleccionar el genero del juego, ejemplo :'RPG'")
+    .bail(),
+
+    check("consol")
+    .notEmpty()
+    .withMessage("Debes seleccionar una consla del juego, ejemplo :'PlayStation'")
     .bail(),
 
   check("description")

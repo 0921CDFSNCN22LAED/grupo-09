@@ -60,7 +60,7 @@ const productsController = {
 
   update: (req, res) => {
     const idSearch = req.params.id
-    productsServices.update(idSearch, req.body)
+    productsServices.update(idSearch, req.body, req.file.filename)
     res.redirect(`/products/details/${idSearch}`)
   },
 
@@ -81,7 +81,7 @@ const productsController = {
     const errors = validationResult(req)
 
     if (errors.isEmpty()){
-      productsServices.create(req.body)
+      productsServices.create(req.body, req.file.filename)
       res.redirect("/products")
     } else {
       res.render("products/productAdd", {

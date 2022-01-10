@@ -34,7 +34,7 @@ router.get("/productAdd", productsController.add)
 /**store method**/
 router.post("/", uploadFile.single("product_image", middlewareImages), validationsProducts,productsController.store)
 /**edit method**/
-router.get("/:id/edit", productsController.edit)
+router.get("/:id/edit", uploadFile.single("product_image", middlewareImages), validationsProducts,productsController.edit)
 /**update method**/
 router.put("/:id", productsController.update)
 /**delete method**/
