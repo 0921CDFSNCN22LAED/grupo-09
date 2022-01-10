@@ -1,69 +1,62 @@
-const req = require("express/lib/request")
-const fs = require("fs")
-const path = require("path")
+const req = require("express/lib/request");
+const fs = require("fs");
+const path = require("path");
 
-const productsJSON = path.join(__dirname, "../database/productos.json")
-const products = JSON.parse(fs.readFileSync(productsJSON, "utf-8"))
+const productsJSON = path.join(__dirname, "../database/productos.json");
+const products = JSON.parse(fs.readFileSync(productsJSON, "utf-8"));
 
-function saveProducts(){
-    const to_text = JSON.stringify(products, null, 4)
-    fs.writeFileSync(productsJSON, to_text, "utf-8")
+function saveProducts() {
+  const to_text = JSON.stringify(products, null, 4);
+  fs.writeFileSync(productsJSON, to_text, "utf-8");
 }
 
 module.exports = {
-    getAll(){
-        return products
-    },
+  getAll() {
+    return products;
+  },
 
-    findOne(id){
+  findOne(id) {
+    const product = products.find((producto) => {
+      return producto.id == id;
+    });
+    return product;
+  },
 
-        const product = products.find((producto) => {
-            return producto.id == id
-        })
-        return product
-    },
+  create(body) {
+    const product_to_create = {
+      id: Date.now(),
+      //product_image: body.file.filename,
+      ...body,
+    };
 
-    create(body){
+    products.push(product_to_create);
 
-        const product_to_create = {
-            id: Date.now(),
-            product_image : body.file.filename,
-            ...body
-        }
+    saveProducts();
+  },
 
-        products.push(product_to_create)
+  update(id, body) {
+    const index = products.findIndex((producto) => {
+      return producto.id == id;
+    });
 
+    product_to_update = {
+      id: products[index].id,
+      image: products[index].image,
+      ...body,
+    };
 
-        saveProducts()
-    },
+    products[index] = product_to_update;
 
-    update(id, body){
+    saveProducts();
+  },
 
-        const index = products.findIndex((producto) => {
-            return producto.id == id
-        })
+  destroy(id) {
+    const index = products.findIndex((product) => {
+      return product.id == id;
+    });
 
-        product_to_update = {
-            id: products[index].id,
-            image : products[index].image,
-            ...body
-            
-        }
+    products.splice(index, 1);
 
-        products[index] = product_to_update
-
-        saveProducts()
-
-    },
-
-    destroy(id){
-        const index = products.findIndex((product) => {
-            return product.id == id
-        })
-
-        products.splice(index,1)
-
-        saveProducts()
-    },
-
-}
+    saveProducts();
+  },
+};

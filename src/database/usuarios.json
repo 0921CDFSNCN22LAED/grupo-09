@@ -1,18 +1,20 @@
 [
-    {
-        "id": "1",
-        "user_name": "nombre",
-        "mail": "algo@algo@.com",
-        "password": "*******",
-        "address": "street, number, city",
-        "avatar": ""
-    },
-    {
-        "id": 1641258701710,
-        "mail": "miltondemarte@gmail.com",
-        "user_name": "AtomicalHaze",
-        "address": "Roma 956",
-        "password": "$2a$10$oDBqIBJDdnlFZ2VpmPHgrOVeTlI1uwmc2GFs.YvDd/FoZ.qRAkA16",
-        "confirmPassword": "Milton123"
-    }
+  {
+    "id": 1641267891435,
+    "email": "nico1@gmail.com",
+    "user_name": "nico1",
+    "address": "nico1",
+    "password": "$2a$10$tIJF1JoBtx2Cu.Uet1NKOuqYPj/13.uWkAfP/JP9a6UgzpPKbFkHu",
+    "confirmPassword": "Nico1234",
+    "admin": true
+  },
+  {
+    "id": 1641267891436,
+    "email": "nico1@gmail.com",
+    "user_name": "nico1",
+    "address": "nico1",
+    "password": "$2a$10$tIJF1JoBtx2Cu.Uet1NKOuqYPj/13.uWkAfP/JP9a6UgzpPKbFkHu",
+    "confirmPassword": "Nico1234",
+    "admin": true
+  }
 ]

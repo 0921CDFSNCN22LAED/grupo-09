@@ -20,7 +20,7 @@
       <section class="contenedor-detail">
         <section class="imagen-detail">
           <div>
-            <img class="img-console" src="/images/productos/<%= product.image %>" style="width:100%" height="100%" />
+            <img class="img-console" src="/images/productos/<%= product.product_image %>" style="width:100%" height="100%" />
           </div>
           <section class="descripcion-detail-1">
             <div>
@@ -73,8 +73,10 @@
                 <button class="buttons">Catalogo de Juegos</button>
               </div>
             </form>
+            <% if(locals.userLogged && locals.userLogged.admin) {  %>
             <a href="/products/<%= product.id %>/edit">
               <button class="buttons">Editar</button></a>
+              <% } %> 
           </section>
         </section>
       </section>

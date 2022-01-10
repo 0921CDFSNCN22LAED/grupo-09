@@ -3,25 +3,32 @@
   margin: 0;
   padding: 0;
 }
+.blanc-space {
+  display: none;
+}
+
+.profile_photo {
+  border-radius: 100%;
+}
 
 /*MAIN LOGIN*/
 
 .user-login {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;
+  width: 100%;
 }
-
-.login {
+.box-login {
+  text-align: center;
   border-style: outset;
-  width: 50%;
+  width: 80%;
   margin: auto;
-  padding: 10px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ece8e8;
 }
 
 .login > div {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .login > div > input {
@@ -29,20 +36,56 @@
   text-align: center;
   padding: 5px;
   border-radius: 8px;
+  height: 35px;
 }
 
 label {
   display: none;
 }
 
-.login-botones button {
-  width: 30%;
-}
-
-h5 {
-  margin-bottom: 10px;
+.boton {
+  width: 80%;
 }
 
 .login > div > a > button {
   width: 30%;
+}
+
+@media (min-width: 480px) {
+  .boton {
+    width: 65%;
+  }
+  .box-login {
+    background-color: white;
+  }
+}
+
+@media (min-width: 1200px) {
+  .boton {
+    width: 50%;
+  }
+  .login-display {
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+  }
+
+  .blanc-space {
+    display: block;
+    width: 50%;
+    margin: auto;
+  }
+  .user-login {
+    width: 50%;
+  }
+  main {
+    margin: 0;
+  }
+  .bg-image {
+    background-image: url("https://raw.githubusercontent.com/0921CDFSNCN22LAED/grupo-09/main/public/images/trailers/mission-start.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
