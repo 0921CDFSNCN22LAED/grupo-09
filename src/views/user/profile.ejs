@@ -22,12 +22,10 @@
                                 alt="User Photo" />
                             </div>
                             <div class="margin-vertical-20">
-                                <form action="/user/edit" method="POST">
                                     <div>
-                                        <button type="submit" class="boton">Editar</button>
+                                        <a href="/user/<%= locals.userLogged.id %>/edit">
+                                        <button type="submit" class="boton">Editar</button></a>
                                     </div>
-
-                                </form>
                             </div>
                             <div>
                                 <a href="/user/logout/"><button class="boton">Cerrar Sesión</button></a>

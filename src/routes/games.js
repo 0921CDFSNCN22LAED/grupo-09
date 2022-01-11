@@ -7,6 +7,7 @@ const gamesController = require("../controllers/gamesController.js")
 const middlewareImages = require('../middlewares/middlewareImages.js')
 const validationsGames = require('../validations/validationsGames.js')
 const targetFolder = path.resolve(__dirname, "../../public/images/game_images")
+const editItemMiddleware = require("../middlewares/editItemMiddleware");
 
 const storage = multer.diskStorage({
     destination : (req, file, cb) =>{
@@ -29,7 +30,7 @@ router.get("/gamesCreation", gamesController.createGame)
 /**store method**/
 router.post("/", uploadFile.single("game_images", middlewareImages), validationsGames, gamesController.storeGame)
 /**edit method**/
-router.get("/:id/edit", gamesController.editGame)
+router.get("/:id/edit", editItemMiddleware, gamesController.editGame)
 /**update method**/
 router.put("/:id", uploadFile.single("game_images", middlewareImages), gamesController.updateGame)
 /**delete method**/

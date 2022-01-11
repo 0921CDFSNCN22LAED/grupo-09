@@ -8,6 +8,7 @@ const middlewareImages = require("../middlewares/middlewareImages.js");
 const validationsUsers = require("../validations/validationsUsers.js");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+const editUserMiddleware = require("../middlewares/editUserMiddleware");
 const targetFolder = path.resolve(
   __dirname,
   "../../public/images/users/avatar"
@@ -34,7 +35,7 @@ router.get("/login", guestMiddleware, userController.login);
 /**confirm login **/
 router.post("/login", userController.confirmUser);
 /**edit method**/
-router.get("/:id/edit", userController.editUser);
+router.get("/:id/edit", editUserMiddleware, userController.editUser);
 /**update method**/
 router.put("/:id/edit", userController.updateUser);
 /**delete method**/

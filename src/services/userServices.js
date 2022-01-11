@@ -59,8 +59,8 @@ module.exports = {
   },
 
   destroy(id) {
-    const index = games.findIndex((game) => {
-      return game.id == id;
+    const index = users.findIndex((user) => {
+      return user.id == id;
     });
 
     users.splice(index, 1);

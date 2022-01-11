@@ -51,7 +51,10 @@ const userController = {
 
   /*Delete user from DataBase*/
   destroyUser: (req, res) => {
-    userServices.destroy(req.body);
+    const idSearch = req.params.id;
+    userServices.destroy(idSearch);
+    res.clearCookie("userEmail");
+    req.session.destroy();
     res.redirect("/");
   },
 

@@ -7,6 +7,7 @@ const productsController = require("../controllers/productsController.js");
 const middlewareImages = require("../middlewares/middlewareImages.js");
 const validationsProducts = require("../validations/validationsProducts.js");
 const targetFolder = path.join(__dirname, "../../public/images/productos");
+const editItemMiddleware = require("../middlewares/editItemMiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -39,7 +40,7 @@ router.post(
   productsController.store
 );
 /**edit method**/
-router.get("/:id/edit", productsController.edit);
+router.get("/:id/edit", editItemMiddleware, productsController.edit);
 /**update method**/
 router.put(
   "/:id",
