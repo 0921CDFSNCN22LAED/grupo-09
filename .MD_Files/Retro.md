@@ -114,7 +114,7 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"El sprint lo logramos entregar con todo lo que se pedía por lo que quedamos satisfechos con la entrega. Tristemente se siguió sintiendo la ausencia de algunos compañeros. Para los próximos sprints creo que es importante estar mas organizados y reunirse un poco mas./"</p>
 
 <br>
 
