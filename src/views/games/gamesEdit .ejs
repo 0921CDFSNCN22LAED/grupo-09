@@ -12,7 +12,7 @@
             <h2 class="headlines">Editando Juego: -<%= game.name %>-
             </h2>
 
-            <form action="/games/<%= consol.id %>?_method=PUT" method="POST">
+            <form action="/games/<%= consol.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="margin-bottom-15">
                     <label for="consol-name">Nombre del Juego</label>
                     <input class="box" type="text" name="consol-name" id="nombre-producto" value="<%= game.name %>" />

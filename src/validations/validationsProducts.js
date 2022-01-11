@@ -16,7 +16,7 @@ module.exports = [
     .isLength({ min: 10 })
     .withMessage("La descripcion debe ser mas larga"),
 
-  check("image").custom((value, { req }) => {
+  check("product_image").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 

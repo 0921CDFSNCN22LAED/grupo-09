@@ -9,6 +9,11 @@
 
 .profile_photo {
   border-radius: 100%;
+  width: 100%;
+}
+.profile_photo_container {
+  margin: auto;
+  width: 80%;
 }
 
 /*MAIN LOGIN*/
@@ -58,6 +63,9 @@ label {
   .box-login {
     background-color: white;
   }
+  .profile_photo_container {
+    width: 45%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -88,4 +96,8 @@ label {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .profile_photo_container {
+    width: 35%;
+  }
+  
 }

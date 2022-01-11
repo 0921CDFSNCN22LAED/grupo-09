@@ -59,7 +59,7 @@ const gamesController = {
   /*Update Game*/
   updateGame: (req, res) => {
     const idSearch = req.params.id;
-    gamesServices.update(idSearch, req.body);
+    gamesServices.update(idSearch, req.body/*, req.file.filename*/);
     res.redirect("/games");
   },
 

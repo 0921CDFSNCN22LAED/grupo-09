@@ -15,7 +15,7 @@ const consolsController = {
     const errors = validationResult(req)
 
     if(errors.isEmpty()){
-      consolServices.create(req.body, req.file.filename)
+      consolServices.create(req.body, req.file.filename/*, req.file.filename*/)
       res.redirect("/games")
     } else {
       res.render("games/consolsCreation",{

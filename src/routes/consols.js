@@ -23,11 +23,11 @@ const uploadFile = multer({storage})
 /**request form**/
 router.get("/consolsCreation", consolsController.createConsol)
 /**store method**/
-router.post("/",  uploadFile.single("consol_image"), validationsConsol, consolsController.storeConsol)
+router.post("/",  uploadFile.single("consol_image", middlewareImages), validationsConsol, consolsController.storeConsol)
 /**edit method**/
 router.get("/:id/edit", consolsController.editConsol)
 /**update method**/
-router.put("/:id", consolsController.updateConsol)
+router.put("/:id", uploadFile.single("consol_image", middlewareImages), consolsController.updateConsol)
 /**delete method**/
 router.delete("/:id", consolsController.destroyConsol)
 

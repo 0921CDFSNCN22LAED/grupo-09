@@ -10,26 +10,27 @@
     <main>
       <section class="centrar">
         <h2 class="headlines margin-bottom-20">Agregar producto</h2>
-
-        <% if(locals.errors) { %>
-          <% errors.forEach(error=> { %>
-            <p>
-              <%= error.msg %>
-            </p>
-            <% }) %>
-              <% } %>
-
                 <form action="/products" method="POST" enctype="multipart/form-data">
                   <div class="margin-bottom-15">
                     <label for="name" class="subs">Nombre del producto</label>
-                    <input class="box" type="text" name="name" id="name" value=<%=locals.old && old.name ? old.name
-                      : " " %> >
+                    <input class="box" type="text" name="name" id="name" value="<%=locals.old && old.name ? old.name
+                      : " " %>" >
+                      <% if (locals.errors && errors.name) { %>
+                        <div class="rojopirupi">
+                          <%= errors.name.msg %>
+                        </div>
+                        <% } %>
                   </div>
 
                   <div class="margin-bottom-15">
                     <label for="description" class="subs">Descripción</label>
-                    <textarea class="box-textarea" type="text" name="description" id="description" value=<%=locals.old
-                      && old.description ? old.description : " " %> ></textarea>
+                    <textarea class="box-textarea" type="text" name="description" id="description" ><%=locals.old 
+                    && old.description ? old.description : " " %></textarea>
+                      <% if (locals.errors && errors.description) { %>
+                        <div class="rojopirupi">
+                          <%= errors.description.msg %>
+                        </div>
+                        <% } %>
                   </div>
 
                   <div class="margin-bottom-15">
@@ -37,6 +38,11 @@
                     <div>
                       <input class="margin-bottom-20" type="file" name="product_image" id="product_image"
                         accept="image/*" />
+                        <% if (locals.errors && errors.product_image) { %>
+                          <div class="rojopirupi">
+                            <%= errors.product_image.msg %>
+                          </div>
+                          <% } %>
                     </div>
                   </div>
 
@@ -65,6 +71,11 @@
                         4
                       </li>
                     </ul>
+                    <% if (locals.errors && errors.consol_color) { %>
+                      <div class="rojopirupi">
+                        <%= errors.consol_color.msg %>
+                      </div>
+                      <% } %>
                   </div>
                   <div class="margin-bottom-15 list">
                     <label for="memory" class="subs">Capacidades de memoria</label>
@@ -85,11 +96,21 @@
                         3
                       </li>
                     </ul>
+                    <% if (locals.errors && errors.memory) { %>
+                      <div class="rojopirupi">
+                        <%= errors.memory.msg %>
+                      </div>
+                      <% } %>
                   </div>
                   <div class="margin-bottom-15">
                     <label for="price" class="subs">Precio</label>
                     <input class="box" type="text" name="price" id="price" value=<%=locals.old && old.price ? old.price
                       : " " %> >
+                       <% if (locals.errors && errors.price) { %>
+                        <div class="rojopirupi">
+                          <%= errors.price.msg %>
+                        </div>
+                        <% } %>
                   </div>
 
                   <div class="buttons-send-erase">

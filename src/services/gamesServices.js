@@ -36,16 +36,20 @@ module.exports = {
         saveProducts()
     },
 
-    update(id, body){
+    update(id, body, file){
 
         const index = games.findIndex((game) => {
             return game.id == id
         })
+        
+        if (!file) {
+            file = games[index].game_images;
+          }
 
         game_to_update = {
             id: games[index].id,
-            image : games[index].image,
-            ...body
+            ...body,
+            game_images : file,
             
         }
 

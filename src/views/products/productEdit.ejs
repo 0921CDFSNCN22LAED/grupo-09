@@ -12,7 +12,7 @@
           Editar producto: <%= product.name %>
         </h2>
 
-        <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+        <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="margin-bottom-15">
             <label for="name" class="subs">Nombre del producto</label>
             <input
@@ -43,8 +43,8 @@
                 class="margin-bottom-20"
                 type="file"
                 name="product_image"
-                accept=".jpg"
-                value="<%= product.product_image %>"
+                accept="image/*"
+                value="<%= product.product_image%>"
               />
             </div>
           </div>

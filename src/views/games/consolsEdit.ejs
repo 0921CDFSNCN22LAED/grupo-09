@@ -12,7 +12,7 @@
             <h2 class="headlines">Editando consola: -<%= consol.name %>-
             </h2>
 
-            <form action="/consols/<%= consol.id %>?_method=PUT" method="POST">
+            <form action="/consols/<%= consol.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="margin-bottom-15">
                     <label for="name">Nombre de la consola</label>
                     <input class="box" type="text" name="name" id="name" value="<%= consol.name %>" />

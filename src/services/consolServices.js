@@ -40,15 +40,20 @@ module.exports = {
         
     },
 
-    update(id, body){
+    update(id, body, file){
 
         const index = consols.findIndex((consol) => {
             return consol.id == id
         })
 
+        if (!file) {
+            file = consols[index].consol_image;
+          }
+
         const product_to_update  = {
             id: consols[index].id,
-            ...body
+            ...body,
+            consol_image: file
             
         }
 

@@ -17,8 +17,10 @@
                         <section class="box-login">
                             <h2 class="headlines margin-bottom-20">Hola <%=locals.userLogged.user_name%>
                             </h2>
-                            <img src="/images/users/avatar/<%=locals.userLogged.user_image%>" class="profile_photo"
+                            <div class = profile_photo_container>
+                                <img src="/images/users/avatar/<%=locals.userLogged.user_image%>" class="profile_photo"
                                 alt="User Photo" />
+                            </div>
                             <div class="margin-vertical-20">
                                 <form action="/user/edit" method="POST">
                                     <div>

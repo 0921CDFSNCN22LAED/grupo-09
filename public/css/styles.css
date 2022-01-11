@@ -163,8 +163,6 @@ header {
 .imagen-testimonial {
   width: 150px;
   height: 150px;
-  border: black 1px solid;
-  border-radius: 100%;
   margin: auto;
 }
 .contenedor-imagen-testimonial {

@@ -30,15 +30,15 @@
     {
         "id": "5",
         "name": "FAMILY",
-        "consol_image": "Family.png",
-        "logo": "family.png",
-        "family": "nintendo"
+        "image": "",
+        "logo": "",
+        "consol_image": "Family.png"
     },
     {
         "id": "6",
         "name": "SuperNintendo",
-        "consol_image": "SuperNintendo.png",
-        "logo": "supernintendo.png",
-        "family": "nintendo"
+        "image": "",
+        "logo": "",
+        "consol_image": "SuperNintendo.png"
     }
 ]

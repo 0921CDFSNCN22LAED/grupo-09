@@ -31,7 +31,7 @@ router.post("/", uploadFile.single("game_images", middlewareImages), validations
 /**edit method**/
 router.get("/:id/edit", gamesController.editGame)
 /**update method**/
-router.put("/:id", gamesController.updateGame)
+router.put("/:id", uploadFile.single("game_images", middlewareImages), gamesController.updateGame)
 /**delete method**/
 router.delete("/:id", gamesController.destroyGame)
 

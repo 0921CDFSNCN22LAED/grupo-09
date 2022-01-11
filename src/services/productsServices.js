@@ -25,9 +25,8 @@ module.exports = {
   create(body, file) {
     const product_to_create = {
       id: Date.now(),
-      //product_image: body.file.filename,
       ...body,
-      product_image : file
+      product_image: file,
     };
 
     products.push(product_to_create);
@@ -39,14 +38,15 @@ module.exports = {
     const index = products.findIndex((producto) => {
       return producto.id == id;
     });
+    
+    if (!file) {
+      file = products[index].product_image;
+    }
 
     product_to_update = {
       id: products[index].id,
-      if(file){
-        image : products[index].file
-      },
-      image: file,
       ...body,
+      product_image: file,
     };
 
     products[index] = product_to_update;
