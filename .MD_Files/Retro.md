@@ -120,6 +120,6 @@
 
 <h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"Aunque he podido aportar poco de manera individual debido a que los temas se me dificultan cada vez más, si me he conectado a cada una de las reuniones y esos espacios me han permitido entender muchísimo mejor los temas y como se aplican al proyecto, sobretodo porque Milton y Nico se detienen a explicarme, es en estas reuniones donde intento dar mis aportes y espero poder contribuir más de manera individual en el siguiente sprint"</p>
 
 <br>
