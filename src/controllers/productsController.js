@@ -3,16 +3,10 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 
 /* Importando informacion de las consolas*/
-const productColorsJSON = fs.readFileSync(
-  "src/database/productosColores.json",
-  "utf-8"
-);
+const productColorsJSON = fs.readFileSync("src/database/productosColores.json", "utf-8");
 const productColors = JSON.parse(productColorsJSON);
 
-const productMemoriesJSON = fs.readFileSync(
-  "src/database/productosMemorias.json",
-  "utf-8"
-);
+const productMemoriesJSON = fs.readFileSync("src/database/productosMemorias.json", "utf-8");
 const productMemories = JSON.parse(productMemoriesJSON);
 
 /*Importando Consolas y Productos*/
@@ -56,9 +50,8 @@ const productsController = {
 
   update: (req, res) => {
     const idSearch = req.params.id;
-      productsServices.update(idSearch, req.body/*, req.file.filename*/);
-      res.redirect(`/products/details/${idSearch}`);
-
+    productsServices.update(idSearch, req.body /*, req.file.filename*/);
+    res.redirect(`/products/details/${idSearch}`);
   },
 
   destroy: (req, res) => {

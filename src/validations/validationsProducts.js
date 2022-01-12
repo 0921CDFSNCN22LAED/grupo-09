@@ -25,25 +25,16 @@ module.exports = [
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ", "
-          )}`
-        );
+        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`);
       }
     }
 
     return true;
   }),
 
-  check("consol_color")
-    .notEmpty()
-    .withMessage("Seleccionar minimo 1 color para el producto")
-    .bail(),
+  check("consol_color").notEmpty().withMessage("Seleccionar minimo 1 color para el producto").bail(),
 
-  check("memory")
-    .notEmpty()
-    .withMessage("Seleccionar una capacidad de memoria para el producto"),
+  check("memory").notEmpty().withMessage("Seleccionar una capacidad de memoria para el producto"),
 
   check("price")
     .notEmpty()

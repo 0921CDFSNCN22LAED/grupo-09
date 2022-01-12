@@ -11,26 +11,28 @@
     <%- include("../partials/header.ejs") %>
 
         <main>
-            
-                <div class="container">
-                    <h2 class="headlines">Registrate</h2>
-                    <div class="wrapper">
-                        <section class="user-reg">
-                            <form action="./" method="POST" class="registration" enctype="multipart/form-data"></form>
+
+            <div class="container">
+                <h2 class="headlines">Actualizando</h2>
+                <div class="wrapper">
+                    <section class="user-reg">
+                        <form action="./" method="POST" class="registration" enctype="multipart/form-data">
                             <div class="margin-vertical-20">
                                 <h3 class="subs">Actualizar datos:</h3>
                             </div>
-                            
+
                             <div class="margin-vertical-20">
                                 <label for="email">Correo Electrónico:</label>
-                                <p>Correo Electrónico: <%=locals.userLogged.email%> </p>
+                                <p>Correo Electrónico: <%=locals.userLogged.email%>
+                                </p>
                             </div>
                             <div class="margin-vertical-20">
                                 <label for="user_name">Nombre de Usuario</label>
-                                <p>Nombre de Usuario: <%=locals.userLogged.user_name%> </p>
+                                <p>Nombre de Usuario: <%=locals.userLogged.user_name%>
+                                </p>
                             </div>
-                        
-                            <div class="margin-vertical-20"> 
+
+                            <div class="margin-vertical-20">
                                 <label for="address">Domicilio</label>
                                 <input type="text" id="address" name="address" placeholder="Ingresa tu dirección"
                                     value="<%=locals.userLogged.address%>">
@@ -58,32 +60,32 @@
                                     placeholder="Repetí la contraseña ingresada">
 
                             </div>
-                        </section>
-                        <section class="reg-botones">
-                            <button type="submit" class="boton">Actualizar
-                                información</button>
-    
+                    </section>
+                    <section class="reg-botones">
+                        <button type="submit" class="boton">Actualizar
+                            información</button>
 
 
-                            </section>
-                        </form>
-                        <section class = "edit_botons">
-                        <div class= "margin-vertical-20 width_edit_botons">
+
+                    </section>
+                    </form>
+                    <section class="edit_botons">
+                        <div class="margin-vertical-20 width_edit_botons">
                             <form action="/user/<%=locals.userLogged.id %>?_method=DELETE" method="POST">
-                            <button class="boton boton1" type="submit">Eliminar Usuario</button>
-                        </form>
+                                <button class="boton boton1" type="submit">Eliminar Usuario</button>
+                            </form>
                         </div>
-                          
-                        <div class= "margin-vertical-20 width_edit_botons">
+
+                        <div class="margin-vertical-20 width_edit_botons">
                             <a href="/user/profile"> <button class="boton boton1 ">Cancelar</button></a>
                         </div>
                     </section>
-                        </section>
-                        
-                    </div>
+                    </section>
+
                 </div>
-            
- 
+            </div>
+
+
         </main>
 
 

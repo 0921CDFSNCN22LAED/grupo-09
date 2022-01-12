@@ -7,12 +7,14 @@ function userLoggedMiddleware(req, res, next) {
   let userFromCookie = userServices.findEmail(emailInCookie);
 
   if (userFromCookie) {
-    req.session.userLogged = userFromCookie;
+    req.session.userLoggedId = userFromCookie.id;
   }
 
-  if (req.session.userLogged) {
+  const user = userServices.findOne(req.session.userLoggedId);
+
+  if (user) {
     res.locals.isLogged = true;
-    res.locals.userLogged = req.session.userLogged;
+    res.locals.userLogged = user;
   }
 
   next();

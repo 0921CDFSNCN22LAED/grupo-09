@@ -26,15 +26,10 @@ const userController = {
       res.render("user/register", {
         errors: errors.mapped(),
         old: req.body,
-      })
-     
-    } 
-    
-    else {
-      
+      });
+    } else {
       userServices.create(req.body, req.file.filename);
       res.redirect("/user/login");
-      ;
     }
   },
 
@@ -45,8 +40,8 @@ const userController = {
 
   /*Update user information*/
   updateUser: (req, res) => {
-    userServices.update(req.body);
-    res.redirect("/");
+    userServices.update(req.body, req.file.filename);
+    res.redirect("/user/profile");
   },
 
   /*Delete user from DataBase*/
@@ -59,16 +54,17 @@ const userController = {
   },
 
   /*Confirm user Login attempt*/
-  confirmUser: async (req, res) => {
-    let loginUser = await userServices.findEmail(req.body.email);
+  confirmUser: (req, res) => {
+    let loginUser = userServices.findEmail(req.body.email);
 
     if (loginUser) {
       if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
-        delete loginUser.password; //no guarda en session la password
-        req.session.userLogged = loginUser;
+        //       req.session.userLogged = {...loginUser, password : undefined};
+
+        req.session.userLoggedId = loginUser.id;
 
         if (req.body.remember_user) {
-          await res.cookie("userEmail", req.body.email, {
+          res.cookie("userEmail", req.body.email, {
             maxAge: 1000 * 60 * 60,
           });
         }
@@ -91,9 +87,13 @@ const userController = {
       },
     });
   },
+
+  /*Get user profile*/
   profile: (req, res) => {
     res.render("user/profile");
   },
+
+  /*Logout user from service*/
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();

@@ -1,5 +1,5 @@
 const { check } = require("express-validator");
-const path = require("path")
+const path = require("path");
 
 module.exports = [
   check("name")
@@ -9,15 +9,9 @@ module.exports = [
     .isLength({ min: 3 })
     .withMessage("El nombre debe ser mas largo"),
 
-  check("gender")
-    .notEmpty()
-    .withMessage("Debes seleccionar el genero del juego, ejemplo :'RPG'")
-    .bail(),
+  check("gender").notEmpty().withMessage("Debes seleccionar el genero del juego, ejemplo :'RPG'").bail(),
 
-    check("consol")
-    .notEmpty()
-    .withMessage("Debes seleccionar una consla del juego, ejemplo :'PlayStation'")
-    .bail(),
+  check("consol").notEmpty().withMessage("Debes seleccionar una consla del juego, ejemplo :'PlayStation'").bail(),
 
   check("description")
     .notEmpty()
@@ -34,11 +28,7 @@ module.exports = [
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(
-          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
-            ", "
-          )}`
-        );
+        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`);
       }
     }
 

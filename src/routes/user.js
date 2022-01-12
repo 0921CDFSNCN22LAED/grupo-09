@@ -26,19 +26,19 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 /*-User Creation-*/
-/**register form**/
+/**register form **/
 router.get("/register", guestMiddleware, userController.register);
-/**store method**/
+/**store method **/
 router.post("/",   uploadFile.single("user_image"), validationsUsers, userController.storeUser);
 /**login form **/
 router.get("/login", guestMiddleware, userController.login);
 /**confirm login **/
 router.post("/login", userController.confirmUser);
-/**edit method**/
+/**edit form **/
 router.get("/:id/edit", editUserMiddleware, userController.editUser);
-/**update method**/
-router.put("/:id/edit", userController.updateUser);
-/**delete method**/
+/**update method **/
+router.put("/:id/edit",  uploadFile.single("user_image"), userController.updateUser);
+/**delete method **/
 router.delete("/:id", userController.destroyUser);
 /**user profile **/
 router.get("/profile", authMiddleware, userController.profile);

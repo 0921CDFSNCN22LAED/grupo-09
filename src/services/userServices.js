@@ -42,14 +42,14 @@ module.exports = {
     saveUsers();
   },
 
-  update(id, body) {
+  update(id, body, file) {
     const index = users.findIndex((user) => {
       return user.id == id;
     });
-
+    
     const user_to_update = {
       id: users[index].id,
-      image: users[index].image,
+      user_image: users[index].user_image,
       ...body,
     };
 
@@ -66,12 +66,5 @@ module.exports = {
     users.splice(index, 1);
 
     saveUsers();
-  },
-
-  login(body) {
-    const user_to_log = {
-      id: body.id,
-      password: bcryptjs.hashSync(body.password, 10),
-    };
-  },
+  }
 };
