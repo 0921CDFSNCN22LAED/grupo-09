@@ -7,7 +7,7 @@ const productsController = require("../controllers/productsController.js");
 const middlewareImages = require("../middlewares/middlewareImages.js");
 const validationsProducts = require("../validations/validationsProducts.js");
 const targetFolder = path.join(__dirname, "../../public/images/productos");
-const editItemMiddleware = require("../middlewares/editItemMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -31,22 +31,15 @@ router.get("/details/:id", productsController.details);
 
 /*-Products Creation-*/
 /**create form**/
-router.get("/productAdd", productsController.add);
+router.get("/productAdd", adminMiddleware, productsController.add);
 /**store method**/
-router.post(
-  "/",
-  uploadFile.single("product_image", middlewareImages),
-  validationsProducts,
-  productsController.store
-);
+router.post("/", uploadFile.single("product_image", middlewareImages), validationsProducts, productsController.store);
 /**edit method**/
-router.get("/:id/edit", editItemMiddleware, productsController.edit);
+router.get("/:id/edit", adminMiddleware, productsController.edit);
 /**update method**/
-router.put(
-  "/:id",
-  uploadFile.single("product_image", middlewareImages),
-  productsController.update
-);
+router.put("/:id", uploadFile.single("product_image", middlewareImages), productsController.update);
+/**delete confirmation**/
+router.get("/:id/delete", adminMiddleware, productsController.confirmDestroy);
 /**delete method**/
 router.delete("/:id", productsController.destroy);
 

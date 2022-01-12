@@ -44,6 +44,14 @@ const userController = {
     res.redirect("/user/profile");
   },
 
+  confirmDestroy: (req, res) => {
+    const idSearch = req.params.id;
+    user = userServices.findOne(idSearch);
+    res.render("user/delete", {
+      user,
+    });
+  },
+
   /*Delete user from DataBase*/
   destroyUser: (req, res) => {
     const idSearch = req.params.id;

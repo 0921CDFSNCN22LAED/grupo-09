@@ -1,9 +1,12 @@
 function editUserMiddleware(req, res, next) {
-    if (!req.session.userLogged) {
-      return res.redirect("/");
-    }
-    next();
+  if (!req.session.userLoggedId) {
+    return res.redirect("/");
   }
-  
-  module.exports = editUserMiddleware;
-  
+
+  if (req.params.id != req.session.userLoggedId) {
+    return res.redirect(`/user/${req.session.userLoggedId}/edit`);
+  }
+  next();
+}
+
+module.exports = editUserMiddleware;

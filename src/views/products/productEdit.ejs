@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('../partials/head.ejs', {title: "Editando " + product.name }) %>
+  </head>
 
-<head>
-  <%- include('../partials/head.ejs', {title: "Editando " + product.name }) %>
-</head>
-
-<body>
-  <%- include("../partials/header.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
     <main>
       <section class="centrar">
-        <h2 class="headlines margin-bottom-20">
-          Editar producto: <%= product.name %>
-        </h2>
+        <h2 class="headlines margin-bottom-20">Editar producto: <%= product.name %></h2>
 
         <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="margin-bottom-15">
@@ -21,54 +18,31 @@
 
           <div class="margin-bottom-15">
             <label for="description" class="subs">Descripción</label>
-            <textarea class="box-textarea" type="text" name="description" id="description">
-<%= product.description %></textarea>
+            <textarea class="box-textarea" type="text" name="description" id="description"><%= product.description %></textarea>
           </div>
 
           <div class="margin-bottom-15">
             <label for="product_image" class="subs">Subir imagen</label>
             <div>
-              <input class="margin-bottom-20" type="file" name="product_image" accept="image/*"
-                value="<%= product.product_image%>" />
+              <input class="margin-bottom-20" type="file" name="product_image" accept="image/*" value="<%= product.product_image%>" />
             </div>
           </div>
 
           <div class="margin-bottom-15 list">
             <label for="consol_color" class="subs">Colores disponibles </label>
             <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-1" /><label>Color
-                  1</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-2" /><label>Color
-                  2</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-3" /><label>Color
-                  3</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-4" /><label>Color
-                  4</label>
-              </li>
+              <li><input class="radio-check-space" type="checkbox" name="consol_color" value="color-1" /><label>Color 1</label></li>
+              <li><input class="radio-check-space" type="checkbox" name="consol_color" value="color-2" /><label>Color 2</label></li>
+              <li><input class="radio-check-space" type="checkbox" name="consol_color" value="color-3" /><label>Color 3</label></li>
+              <li><input class="radio-check-space" type="checkbox" name="consol_color" value="color-4" /><label>Color 4</label></li>
             </ul>
           </div>
           <div class="margin-bottom-15 list">
             <label for="memory" class="subs">Capacidades de memoria</label>
             <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" /><label>Memoria
-                  1</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" /><label>Memoria
-                  2</label>
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" /><label>Memoria
-                  3</label>
-              </li>
+              <li><input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" /><label>Memoria 1</label></li>
+              <li><input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" /><label>Memoria 2</label></li>
+              <li><input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" /><label>Memoria 3</label></li>
             </ul>
           </div>
           <div class="margin-bottom-15">
@@ -81,13 +55,12 @@
             <button class="buttons" type="reset">Resetar informacion</button>
           </div>
         </form>
-        <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-          <button class="buttons" type="submit">Eliminar</button>
-        </form>
+        <div>
+          <a href="./delete"><button class="buttons" type="submit">Eliminar</button></a>
+        </div>
       </section>
     </main>
 
     <%- include("../partials/footer.ejs") %>
-</body>
-
+  </body>
 </html>

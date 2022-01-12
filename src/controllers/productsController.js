@@ -54,6 +54,14 @@ const productsController = {
     res.redirect(`/products/details/${idSearch}`);
   },
 
+  confirmDestroy: (req, res) => {
+    const idSearch = req.params.id;
+    product = productsServices.findOne(idSearch);
+    res.render("products/productDelete", {
+      product,
+    });
+  },
+
   destroy: (req, res) => {
     const idSearch = req.params.id;
     productsServices.destroy(idSearch);

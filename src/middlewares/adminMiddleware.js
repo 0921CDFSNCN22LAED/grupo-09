@@ -1,11 +1,13 @@
 const userServices = require("../services/userServices");
 
-function editItemMiddleware(req, res, next) {
+function adminMiddleware(req, res, next) {
   const user = userServices.findOne(req.session.userLoggedId);
-  if (!user.admin) {
+  if (!user) {
+    return res.redirect("/");
+  } else if (!user.admin) {
     return res.redirect("/");
   }
   next();
 }
 
-module.exports = editItemMiddleware;
+module.exports = adminMiddleware;
