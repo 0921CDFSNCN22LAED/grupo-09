@@ -15,6 +15,7 @@ const consolsController = {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
+      console.log(req.files.consol_image[0]);
       consolServices.create(req.body, req.files.logo, req.files.consol_image);
       res.redirect("/games");
     } else {
@@ -40,6 +41,14 @@ const consolsController = {
     const idSearch = req.params.id;
     consolServices.update(idSearch, req.body, req.files);
     res.redirect("/games");
+  },
+
+  /*Destroy Consol form*/
+  destroy: (req, res) => {
+    const consol = consolServices.findOne(req.params.id);
+    res.render("games/consolDelete", {
+      consol,
+    });
   },
 
   /*Destroy Consol*/

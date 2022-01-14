@@ -40,6 +40,8 @@ router.post(
 router.get("/:id/edit", adminMiddleware, consolsController.editConsol);
 /**update method**/
 router.put("/:id", uploadFile.single("consol_image", middlewareImages), consolsController.updateConsol);
+/*Delete form*/
+router.get("/:id/delete", adminMiddleware, consolsController.destroy);
 /**delete method**/
 router.delete("/:id", consolsController.destroyConsol);
 

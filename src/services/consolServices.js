@@ -21,12 +21,12 @@ module.exports = {
     return consol;
   },
 
-  create(body, logo, consol_image) {
+  create(body, files) {
     const consol_to_create = {
       id: Date.now(),
       ...body,
-      consol_image: consol_image.filename,
-      logo: logo.filename,
+      consol_image: files.consol_image.filename,
+      logo: files.logo.filename,
     };
 
     consols.push(consol_to_create);

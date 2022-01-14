@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const postman = require("postman");
 
 /*Public*/
 const publicDomain = path.resolve(__dirname, "../public");
