@@ -14,7 +14,7 @@ module.exports = [
       let fileExtension = path.extname(file[0].originalname);
       console.log(fileExtension);
       if (!acceptedExtensions.includes(fileExtension)) {
-        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`);
+        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(",")}`);
       }
     }
 
