@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(20),
+      type: DataTypes.VARCHAR(50),
     },
 
     color_hex: {
@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const config = {
     timestamps: false,
+    tableName: "joystick_colors",
   };
 
   const Joystick_color = sequelize.define(alias, cols, config);

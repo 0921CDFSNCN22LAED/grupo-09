@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const config = {
     timestamps: false,
+    tableName: "memories",
   };
 
   const Memory = sequelize.define(alias, cols, config);

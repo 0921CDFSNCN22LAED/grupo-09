@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `addresses`
+--
+
+DROP TABLE IF EXISTS `addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `addresses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_addess` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `addresses_FK` (`user_id`),
+  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `addresses`
+--
+
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `consoles`
 --
 
@@ -66,6 +92,40 @@ CREATE TABLE `consoles_games` (
 LOCK TABLES `consoles_games` WRITE;
 /*!40000 ALTER TABLE `consoles_games` DISABLE KEYS */;
 /*!40000 ALTER TABLE `consoles_games` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `final_products`
+--
+
+DROP TABLE IF EXISTS `final_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `final_products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `memory_id` int(11) NOT NULL,
+  `joystick_color_id` int(11) NOT NULL,
+  `product_color_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `shopping_cart_FK_1` (`memory_id`),
+  KEY `shopping_cart_FK_2` (`joystick_color_id`),
+  KEY `shopping_cart_FK_3` (`product_color_id`),
+  KEY `shopping_cart_FK_4` (`product_id`),
+  CONSTRAINT `shopping_cart_FK_1` FOREIGN KEY (`memory_id`) REFERENCES `memories` (`id`),
+  CONSTRAINT `shopping_cart_FK_2` FOREIGN KEY (`joystick_color_id`) REFERENCES `joystick_colors` (`id`),
+  CONSTRAINT `shopping_cart_FK_3` FOREIGN KEY (`product_color_id`) REFERENCES `product_colors` (`id`),
+  CONSTRAINT `shopping_cart_FK_4` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `final_products`
+--
+
+LOCK TABLES `final_products` WRITE;
+/*!40000 ALTER TABLE `final_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `final_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -167,6 +227,63 @@ LOCK TABLES `memories` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `order_final_product`
+--
+
+DROP TABLE IF EXISTS `order_final_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order_final_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `final_product_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_final_product_FK` (`final_product_id`),
+  KEY `order_final_product_FK` (`order_id`),
+  CONSTRAINT `order_final_product_FK` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  CONSTRAINT `purchase_final_product_FK` FOREIGN KEY (`final_product_id`) REFERENCES `final_products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_final_product`
+--
+
+LOCK TABLES `order_final_product` WRITE;
+/*!40000 ALTER TABLE `order_final_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_final_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_id` int(11) NOT NULL,
+  `addresses_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_FK_1` (`user_id`),
+  KEY `purchase_FK` (`addresses_id`),
+  CONSTRAINT `purchase_FK` FOREIGN KEY (`addresses_id`) REFERENCES `addresses` (`id`),
+  CONSTRAINT `purchase_FK_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `product_colors`
 --
 
@@ -217,72 +334,6 @@ LOCK TABLES `products` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `purchase`
---
-
-DROP TABLE IF EXISTS `purchase`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `purchase` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `shoping_cart_id` int(11) NOT NULL,
-  `user_id_address` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `purchase_FK` (`shoping_cart_id`),
-  KEY `purchase_FK_1` (`user_id_address`),
-  CONSTRAINT `purchase_FK` FOREIGN KEY (`shoping_cart_id`) REFERENCES `shopping_cart` (`id`),
-  CONSTRAINT `purchase_FK_1` FOREIGN KEY (`user_id_address`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `purchase`
---
-
-LOCK TABLES `purchase` WRITE;
-/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
-/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `shopping_cart`
---
-
-DROP TABLE IF EXISTS `shopping_cart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `shopping_cart` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `memory_id` int(11) NOT NULL,
-  `joystick_color_id` int(11) NOT NULL,
-  `product_color_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `shopping_cart_FK` (`user_id`),
-  KEY `shopping_cart_FK_1` (`memory_id`),
-  KEY `shopping_cart_FK_2` (`joystick_color_id`),
-  KEY `shopping_cart_FK_3` (`product_color_id`),
-  KEY `shopping_cart_FK_4` (`product_id`),
-  CONSTRAINT `shopping_cart_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `shopping_cart_FK_1` FOREIGN KEY (`memory_id`) REFERENCES `memories` (`id`),
-  CONSTRAINT `shopping_cart_FK_2` FOREIGN KEY (`joystick_color_id`) REFERENCES `joystick_colors` (`id`),
-  CONSTRAINT `shopping_cart_FK_3` FOREIGN KEY (`product_color_id`) REFERENCES `product_colors` (`id`),
-  CONSTRAINT `shopping_cart_FK_4` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `shopping_cart`
---
-
-LOCK TABLES `shopping_cart` WRITE;
-/*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -293,7 +344,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
   `user_name` varchar(12) NOT NULL,
-  `address` text NOT NULL,
   `password` varchar(100) NOT NULL,
   `user_image` varchar(50) NOT NULL,
   `admin` tinyint(4) DEFAULT 0,
@@ -307,7 +357,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@gmail.com','admin','Calle Falsa 123','$2a$10$GG54JDDq2r/GWUFe.uCfpu6eKjx9grZhgkHJmlhlnKjss1VP2a14q','1641858386894_avatar.jpg',1);
+INSERT INTO `users` VALUES (1,'admin@gmail.com','admin','$2a$10$GG54JDDq2r/GWUFe.uCfpu6eKjx9grZhgkHJmlhlnKjss1VP2a14q','1641858386894_avatar.jpg',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -324,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-03 20:03:49
+-- Dump completed on 2022-02-03 20:59:38

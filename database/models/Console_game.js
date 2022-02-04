@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Products";
+  const alias = "Consoles_games";
 
   const cols = {
     id: {
@@ -10,29 +10,23 @@ module.exports = (sequelize, DataTypes) => {
       autoIncremente: true,
     },
 
-    name: {
-      type: DataTypes.VARCHAR(15),
-    },
-
-    description: {
-      type: DataTypes.TEXT,
-    },
-
-    price: {
+    console_id: {
       type: DataTypes.INTEGER,
+      foreignKey: true,
     },
 
-    product_image: {
-      type: DataTypes.VARCHAR(50),
+    genre_id: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
     },
   };
 
   const config = {
     timestamps: false,
-    tableName: "products",
+    tableName: "console_games",
   };
 
-  const Product = sequelize.define(alias, cols, config);
+  const Console_game = sequelize.define(alias, cols, config);
 
-  return Product;
+  return Console_game;
 };

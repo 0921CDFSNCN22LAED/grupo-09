@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(15),
+      type: DataTypes.VARCHAR(50),
     },
 
     description: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     game_image: {
-      type: DataTypes.VARCHAR(20),
+      type: DataTypes.VARCHAR(50),
     },
 
     genre_id: {
@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const config = {
     timestamps: false,
+    tableName: "games",
   };
 
   const Game = sequelize.define(alias, cols, config);

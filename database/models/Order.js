@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Purchases";
+  const alias = "Orders";
 
   const cols = {
     id: {
@@ -11,23 +11,26 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.TIMESTAMP,
     },
 
-    shopping_cart_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       foreignKey: true,
     },
 
-    user_id_address: {
+    address_id: {
       type: DataTypes.INTEGER,
       foreignKey: true,
     },
   };
 
-  const config = {};
+  const config = {
+    timestamps: true,
+    tableName: "orders",
+  };
 
-  const Purchase = sequelize.define(alias, cols, config);
+  const Order = sequelize.define(alias, cols, config);
 
-  return Purchase;
+  return Order;
 };

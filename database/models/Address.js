@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Consols";
+  const alias = "Addresses";
 
   const cols = {
     id: {
@@ -10,24 +10,22 @@ module.exports = (sequelize, DataTypes) => {
       autoIncremente: true,
     },
 
-    name: {
-      type: DataTypes.VARCHAR(15),
+    full_address: {
+      type: DataTypes.VARCHAR(50),
     },
 
-    consol_image: {
-      type: DataTypes.VARCHAR(20),
-    },
-
-    logo: {
-      type: DataTypes.VARCHAR(20),
+    user_id: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
     },
   };
 
   const config = {
     timestamps: false,
+    tableName: "addresses",
   };
 
-  const Consol = sequelize.define(alias, cols, config);
+  const Address = sequelize.define(alias, cols, config);
 
-  return Consol;
+  return Address;
 };

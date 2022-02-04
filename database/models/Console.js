@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Users";
+  const alias = "Consoles";
 
   const cols = {
     id: {
@@ -10,33 +10,25 @@ module.exports = (sequelize, DataTypes) => {
       autoIncremente: true,
     },
 
-    email: {
+    name: {
       type: DataTypes.VARCHAR(50),
     },
 
-    user_name: {
+    console_image: {
       type: DataTypes.VARCHAR(50),
     },
 
-    password: {
-      type: DataTypes.VARCHAR(100),
-    },
-
-    user_image: {
+    logo: {
       type: DataTypes.VARCHAR(50),
-    },
-
-    admin: {
-      type: DataTypes.INTEGER,
     },
   };
 
   const config = {
     timestamps: false,
-    tableName: "users",
+    tableName: "consoles",
   };
 
-  const User = sequelize.define(alias, cols, config);
+  const Console = sequelize.define(alias, cols, config);
 
-  return User;
+  return Console;
 };

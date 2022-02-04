@@ -11,12 +11,13 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(15),
+      type: DataTypes.VARCHAR(50),
     },
   };
 
   const config = {
     timestamps: false,
+    tableName: "genres",
   };
 
   const Genre = sequelize.define(alias, cols, config);

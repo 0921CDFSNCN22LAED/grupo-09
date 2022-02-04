@@ -1,18 +1,13 @@
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Shopping_carts";
+  const alias = "Final_products";
 
   const cols = {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncremente: true,
-    },
-
-    user_id: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
     },
 
     product_id: {
@@ -38,9 +33,10 @@ module.exports = (sequelize, DataTypes) => {
 
   const config = {
     timestamps: false,
+    tableName: "final_products",
   };
 
-  const Shoping_cart = sequelize.define(alias, cols, config);
+  const Final_product = sequelize.define(alias, cols, config);
 
-  return Shoping_cart;
+  return Final_product;
 };
