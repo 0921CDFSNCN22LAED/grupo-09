@@ -22,5 +22,12 @@ module.exports = (sequelize, DataTypes) => {
 
   const Memory = sequelize.define(alias, cols, config);
 
+  Memory.associate = (db) => {
+    Memory.belongsTo(db.Final_product, {
+      as: "final_products",
+      foreignKey: "memory_id",
+    });
+  };
+
   return Memory;
 };

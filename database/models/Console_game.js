@@ -28,5 +28,17 @@ module.exports = (sequelize, DataTypes) => {
 
   const Console_game = sequelize.define(alias, cols, config);
 
+  Console_game.associate = (db) => {
+    Console_game.hasMany(db.Games, {
+      as: "games",
+      foreignKey: "games_id",
+    });
+
+    Console_game.hasMany(db.Console, {
+      as: "consoles",
+      foreignKey: "console_id",
+    });
+  };
+
   return Console_game;
 };

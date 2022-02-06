@@ -26,5 +26,12 @@ module.exports = (sequelize, DataTypes) => {
 
   const Joystick_color = sequelize.define(alias, cols, config);
 
+  Joystick_color.associate = (db) => {
+    Joystick_color.belongsTo(db.Final_product, {
+      as: "final_products",
+      foreignKey: "joystick_color_id",
+    });
+  };
+
   return Joystick_color;
 };

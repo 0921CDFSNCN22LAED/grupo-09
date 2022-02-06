@@ -22,5 +22,12 @@ module.exports = (sequelize, DataTypes) => {
 
   const Genre = sequelize.define(alias, cols, config);
 
+  Genre.associate = (db) => {
+    Genre.hasMany(db.Game, {
+      as: "games",
+      foreignKey: "genre_id",
+    });
+  };
+
   return Genre;
 };

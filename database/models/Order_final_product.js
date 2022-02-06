@@ -1,4 +1,5 @@
 const sequelize = require("sequelize");
+const Order = require("./Order");
 
 module.exports = (sequelize, DataTypes) => {
   const alias = "Orders_final_products";
@@ -27,6 +28,18 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   const Order_final_product = sequelize.define(alias, cols, config);
+
+  Order_final_product.associate = (db) => {
+    Order_final_product.belongsTo(db.Final_product, {
+      as: "final_products",
+      foreignKey: "final_product_id",
+    });
+
+    Order_final_product.belongsTo(db.Order, {
+      as: "orders",
+      foreignKey: "order_id",
+    });
+  };
 
   return Order_final_product;
 };
