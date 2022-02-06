@@ -36,12 +36,12 @@ module.exports = (sequelize, DataTypes) => {
   const Game = sequelize.define(alias, cols, config);
 
   Game.associate = (db) => {
-    Game.belongsTo(db.Genre, {
+    Game.belongsTo(db.Genres, {
       as: "genres",
       foreignKey: "genre_id",
     });
 
-    Game.belongsToMany(db.Console, {
+    Game.belongsToMany(db.Consoles, {
       as: "consoles",
       through: "console_games",
       foreignKey: "console_id",

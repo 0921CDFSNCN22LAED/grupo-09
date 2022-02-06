@@ -1,6 +1,3 @@
-const sequelize = require("sequelize");
-const db = require("");
-
 module.exports = (sequelize, DataTypes) => {
   const alias = "Users";
 
@@ -40,11 +37,6 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = (db) => {
-    User.belongsTo(db.Addresses, {
-      as: "addresses",
-      foreignKey: "user_id",
-    });
-
     User.belongsTo(db.Orders, {
       as: "orders",
       foreignKey: "user_id",

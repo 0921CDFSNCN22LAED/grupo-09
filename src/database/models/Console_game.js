@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "games_id",
     });
 
-    Console_game.hasMany(db.Console, {
+    Console_game.hasMany(db.Consoles, {
       as: "consoles",
       foreignKey: "console_id",
     });
