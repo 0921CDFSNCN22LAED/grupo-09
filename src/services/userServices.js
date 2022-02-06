@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
 const usersJSON = path.join(__dirname, "../database/usuarios.json");
 const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
@@ -34,7 +35,7 @@ module.exports = {
       id: Date.now(),
       ...body,
       password: bcryptjs.hashSync(body.password, 10),
-      user_image : file
+      user_image: file,
     };
 
     users.push(user_to_create);
@@ -46,7 +47,7 @@ module.exports = {
     const index = users.findIndex((user) => {
       return user.id == id;
     });
-    
+
     const user_to_update = {
       id: users[index].id,
       user_image: users[index].user_image,
@@ -66,5 +67,5 @@ module.exports = {
     users.splice(index, 1);
 
     saveUsers();
-  }
+  },
 };
