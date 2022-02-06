@@ -31,9 +31,11 @@ module.exports = (sequelize, DataTypes) => {
   const Console = sequelize.define(alias, cols, config);
 
   Console.associate = (db) => {
-    Console.belongsToMany(db.Console_game, {
-      as: "console",
-      foreignKey: "console_id",
+    Console.belongsToMany(db.Game, {
+      as: "games",
+      through: "console_games",
+      foreignKey: "game_id",
+      otherKey: "console_id",
     });
   };
 

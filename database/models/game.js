@@ -41,9 +41,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "genre_id",
     });
 
-    Game.belongsToMany(db.Console_game, {
-      as: "console_game",
-      foreignKey: "game_id",
+    Game.belongsToMany(db.Console, {
+      as: "consoles",
+      through: "console_games",
+      foreignKey: "console_id",
+      otherKey: "game_id",
     });
   };
 
