@@ -2,7 +2,7 @@ const req = require("express/lib/request");
 const fs = require("fs");
 const path = require("path");
 
-const productsJSON = path.join(__dirname, "../database/productos.json");
+const productsJSON = path.join(__dirname, "../../databaseJSON/productos.json");
 const products = JSON.parse(fs.readFileSync(productsJSON, "utf-8"));
 
 function saveProducts() {
@@ -38,7 +38,7 @@ module.exports = {
     const index = products.findIndex((producto) => {
       return producto.id == id;
     });
-    
+
     if (!file) {
       file = products[index].product_image;
     }

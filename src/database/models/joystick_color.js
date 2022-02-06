@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     color_hex: {
-      type: DataTypes.VARCHAR(7),
+      type: DataTypes.STRING(7),
     },
   };
 

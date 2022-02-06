@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const consolsJSON = path.join(__dirname, "../database/consolas.json");
+const consolsJSON = path.join(__dirname, "../../databaseJSON/consolas.json");
 const consols = JSON.parse(fs.readFileSync(consolsJSON, "utf-8"));
 
 function saveProducts() {

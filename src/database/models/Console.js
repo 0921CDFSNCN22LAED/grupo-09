@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     console_image: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     logo: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
   };
 

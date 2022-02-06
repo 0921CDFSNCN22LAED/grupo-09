@@ -3,69 +3,59 @@ const path = require("path");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 
-const usersJSON = path.join(__dirname, "../database/usuarios.json");
-const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
+// const usersJSON = path.join(__dirname, "../../databaseJSON/usuarios.json");
+// const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
 
-function saveUsers() {
-  const to_text = JSON.stringify(users, null, 4);
-  fs.writeFileSync(usersJSON, to_text, "utf-8");
-}
+// function saveUsers() {
+//   const to_text = JSON.stringify(users, null, 4);
+//   fs.writeFileSync(usersJSON, to_text, "utf-8");
+// }
 
 module.exports = {
-  getAll() {
-    return users;
+  async getAll() {
+    return await db.User.findAll();
   },
 
-  findOne(id) {
-    const user = users.find((usuario) => {
-      return usuario.id == id;
+  async findOne(id) {
+    return await db.User.findByPk(id);
+  },
+
+  async findEmail(email) {
+    return await db.User.findOne({
+      where: {
+        email: email,
+      },
     });
-    return user;
   },
 
-  findEmail(email) {
-    const user = users.find((user) => {
-      return user.email == email;
-    });
-    return user;
-  },
-
-  create(body, file) {
-    const user_to_create = {
-      id: Date.now(),
-      ...body,
+  async create(body, file) {
+    const user = await db.User.create({
+      email: body.email,
+      user_name: body.user_name,
       password: bcryptjs.hashSync(body.password, 10),
       user_image: file,
-    };
-
-    users.push(user_to_create);
-
-    saveUsers();
+      address: body.address,
+    });
+    return user;
   },
 
-  update(id, body, file) {
-    const index = users.findIndex((user) => {
-      return user.id == id;
+  async update(id, body, file) {
+    const user = await db.User.findByPk(id);
+    await user.update({
+      email: body.email,
+      user_name: body.user_name,
+      password: bcryptjs.hashSync(body.password, 10),
+      user_image: file,
+      address: body.address,
     });
-
-    const user_to_update = {
-      id: users[index].id,
-      user_image: users[index].user_image,
-      ...body,
-    };
-
-    users[index] = user_to_update;
-
-    saveUsers();
+    return user;
   },
 
-  destroy(id) {
-    const index = users.findIndex((user) => {
-      return user.id == id;
+  async destroy(id) {
+    return await db.User.destroy({
+      where: {
+        id: id,
+      },
     });
-
-    users.splice(index, 1);
-
-    saveUsers();
   },
 };

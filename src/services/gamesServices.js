@@ -1,72 +1,65 @@
-const fs = require("fs")
-const path = require("path")
+const fs = require("fs");
+const path = require("path");
 
-const gamesJSON = path.join(__dirname, "../database/juegos.json")
-const games = JSON.parse(fs.readFileSync(gamesJSON, "utf-8"))
+const gamesJSON = path.join(__dirname, "../../databaseJSON/juegos.json");
+const games = JSON.parse(fs.readFileSync(gamesJSON, "utf-8"));
 
-function saveProducts(){
-    const to_text = JSON.stringify(games, null, 4)
-    fs.writeFileSync(gamesJSON, to_text, "utf-8")
+function saveProducts() {
+  const to_text = JSON.stringify(games, null, 4);
+  fs.writeFileSync(gamesJSON, to_text, "utf-8");
 }
-
 
 module.exports = {
-    getAll(){
-        return games
-    },
+  getAll() {
+    return games;
+  },
 
-    findOne(id){
-        const game = games.find((game) => {
-            return game.id == id
-        })
-        return game
-    },
+  findOne(id) {
+    const game = games.find((game) => {
+      return game.id == id;
+    });
+    return game;
+  },
 
-    create(body, file){
+  create(body, file) {
+    const game_to_create = {
+      id: Date.now(),
+      ...body,
+      game_images: file,
+    };
 
-        const game_to_create = {
-            id: Date.now(),
-            ...body,
-            game_images : file
-        }
+    games.push(game_to_create);
 
-        games.push(game_to_create)
+    saveProducts();
+  },
 
+  update(id, body, file) {
+    const index = games.findIndex((game) => {
+      return game.id == id;
+    });
 
-        saveProducts()
-    },
+    if (!file) {
+      file = games[index].game_images;
+    }
 
-    update(id, body, file){
+    game_to_update = {
+      id: games[index].id,
+      ...body,
+      game_images: file,
+    };
 
-        const index = games.findIndex((game) => {
-            return game.id == id
-        })
-        
-        if (!file) {
-            file = games[index].game_images;
-          }
+    games[index] = game_to_update;
 
-        game_to_update = {
-            id: games[index].id,
-            ...body,
-            game_images : file,
-            
-        }
+    saveProducts();
+  },
 
-        games[index] = game_to_update
+  destroy(id) {
+    const index = games.findIndex((game) => {
+      return game.id == id;
+    });
 
-        saveProducts()
+    games.splice(index, 1);
 
-    },
-
-    destroy(id){
-        const index = games.findIndex((game) => {
-            return game.id == id
-        })
-
-        games.splice(index,1)
-
-        saveProducts()
-    },
-
-}
+    saveProducts();
+  },
+};

@@ -12,19 +12,19 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     email: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     user_name: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     password: {
-      type: DataTypes.VARCHAR(100),
+      type: DataTypes.STRING(100),
     },
 
     user_image: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
 
     admin: {

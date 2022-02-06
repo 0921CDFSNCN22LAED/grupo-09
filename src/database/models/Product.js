@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(15),
+      type: DataTypes.STRING(15),
     },
 
     description: {
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     product_image: {
-      type: DataTypes.VARCHAR(50),
+      type: DataTypes.STRING(50),
     },
   };
 
