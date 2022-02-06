@@ -1,5 +1,3 @@
-const sequelize = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
   const alias = "Addresses";
 
@@ -11,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     full_address: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     user_id: {
@@ -27,17 +25,15 @@ module.exports = (sequelize, DataTypes) => {
 
   const Address = sequelize.define(alias, cols, config);
 
-  Address.associate = (db) => {
-    Address.belongsTo(db.User, {
-      as: "users",
-      foreignKey: "user_id",
-    });
+  Address.belongsTo(User, {
+    as: "users",
+    foreignKey: "user_id",
+  });
 
-    Address.belongsTo(db.Order, {
-      as: "orders",
-      foreignKey: "order_id",
-    });
-  };
+  Address.belongsTo(Order, {
+    as: "orders",
+    foreignKey: "order_id",
+  });
 
   return Address;
 };

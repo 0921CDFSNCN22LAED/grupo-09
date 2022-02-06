@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     date: {
-      type: DataTypes.TIMESTAMP,
+      type: "TIMESTAMP",
     },
 
     user_id: {

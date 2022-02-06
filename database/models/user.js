@@ -1,6 +1,3 @@
-const sequelize = require("sequelize");
-const db = require("");
-
 module.exports = (sequelize, DataTypes) => {
   const alias = "Users";
 
@@ -12,19 +9,19 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     email: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     user_name: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     password: {
-      type: DataTypes.VARCHAR(100),
+      type: "varchar(100)",
     },
 
     user_image: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     admin: {

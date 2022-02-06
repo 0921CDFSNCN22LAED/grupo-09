@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     description: {
@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     game_image: {
-      type: DataTypes.VARCHAR(50),
+      type: "varchar(50)",
     },
 
     genre_id: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       foreignKey: true,
     },
   };
