@@ -13,7 +13,7 @@ const db = require("../database/models");
 
 module.exports = {
   async getAll() {
-    return await db.User.findAll();
+    return await db.Users.findAll();
   },
 
   async findOne(id) {

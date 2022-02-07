@@ -1,7 +1,7 @@
-const req = require("express/lib/request");
-const fs = require("fs");
-const path = require("path");
+const db = require("../database/models");
 
+//Guardando datos en la DB con JSON
+/*
 const productsJSON = path.join(__dirname, "../../databaseJSON/productos.json");
 const products = JSON.parse(fs.readFileSync(productsJSON, "utf-8"));
 
@@ -9,58 +9,48 @@ function saveProducts() {
   const to_text = JSON.stringify(products, null, 4);
   fs.writeFileSync(productsJSON, to_text, "utf-8");
 }
+*/
 
 module.exports = {
-  getAll() {
-    return products;
+  async getAll() {
+    return await db.Products.findAll();
   },
 
-  findOne(id) {
-    const product = products.find((producto) => {
-      return producto.id == id;
+  async findOne(id) {
+    const product = await db.Products.findByPk(id);
+    return product;
+  },
+
+  async create(body, file) {
+    const product = await db.Products.create({
+      id: Date.now(),
+      ...body,
+      product_image: file,
     });
     return product;
   },
 
-  create(body, file) {
-    const product_to_create = {
-      id: Date.now(),
-      ...body,
-      product_image: file,
-    };
-
-    products.push(product_to_create);
-
-    saveProducts();
-  },
-
-  update(id, body, file) {
-    const index = products.findIndex((producto) => {
-      return producto.id == id;
-    });
+  async update(id, body, file) {
+    const product = await db.Products.findByPk(id);
 
     if (!file) {
       file = products[index].product_image;
     }
 
-    product_to_update = {
+    await product.update({
       id: products[index].id,
       ...body,
       product_image: file,
-    };
-
-    products[index] = product_to_update;
-
-    saveProducts();
-  },
-
-  destroy(id) {
-    const index = products.findIndex((product) => {
-      return product.id == id;
     });
 
-    products.splice(index, 1);
+    return product;
+  },
 
-    saveProducts();
+  async destroy(id) {
+    await db.Products.destroy({
+      where: {
+        id: id,
+      },
+    });
   },
 };
