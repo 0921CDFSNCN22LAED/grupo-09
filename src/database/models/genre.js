@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
   };
 
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   const Genre = sequelize.define(alias, cols, config);
 
   Genre.associate = (db) => {
-    Genre.hasMany(db.Game, {
+    Genre.hasMany(db.Games, {
       as: "games",
       foreignKey: "genre_id",
     });

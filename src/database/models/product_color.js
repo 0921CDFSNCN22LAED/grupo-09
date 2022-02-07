@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     color_hex: {
-      type: "varchar(7)",
+      type: DataTypes.STRING(7),
     },
   };
 
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   const Product_color = sequelize.define(alias, cols, config);
 
   Product_color.associate = (db) => {
-    Product_color.belongsTo(db.Final_product, {
+    Product_color.belongsTo(db.Final_products, {
       as: "final_products",
       foreignKey: "product_color_id",
     });

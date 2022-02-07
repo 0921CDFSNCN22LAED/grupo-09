@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     name: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     console_image: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     logo: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
   };
 
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
   const Console = sequelize.define(alias, cols, config);
 
   Console.associate = (db) => {
-    Console.belongsToMany(db.Game, {
+    Console.belongsToMany(db.Games, {
       as: "games",
       through: "console_games",
       foreignKey: "game_id",

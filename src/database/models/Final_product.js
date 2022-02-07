@@ -39,27 +39,27 @@ module.exports = (sequelize, DataTypes) => {
   const Final_product = sequelize.define(alias, cols, config);
 
   Final_product.associate = (db) => {
-    Final_product.belongsTo(db.Product, {
+    Final_product.belongsTo(db.Products, {
       as: "products",
       foreignKey: "product_id",
     });
 
-    Final_product.belongsTo(db.Memory, {
+    Final_product.belongsTo(db.Memories, {
       as: "memories",
       foreignKey: "memory_id",
     });
 
-    Final_product.belongsTo(db.Joystick_color, {
+    Final_product.belongsTo(db.Joystick_colors, {
       as: "joystick_colors",
       foreignKey: "joystick_color_id",
     });
 
-    Final_product.belongsTo(db.Product_color, {
+    Final_product.belongsTo(db.Product_colors, {
       as: "product_colors",
       foreignKey: "product_color_id",
     });
 
-    Final_product.belongsTo(db.Order_final_product, {
+    Final_product.belongsTo(db.Orders_final_products, {
       as: "order_final_products",
       foreignKey: "final_product_id",
     });

@@ -3,9 +3,10 @@ const fs = require("fs");
 const { validationResult } = require("express-validator");
 const userServices = require("../services/userServices");
 const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
-const usersJSON = path.join(__dirname, "../database/usuarios.json");
-const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
+// const usersJSON = path.join(__dirname, "../../databaseJSON/usuarios.json");
+// const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
 
 const userController = {
   /*Register Method*/
@@ -19,7 +20,7 @@ const userController = {
   },
 
   /*Store user in DataBase*/
-  storeUser: (req, res) => {
+  storeUser: async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -28,7 +29,7 @@ const userController = {
         old: req.body,
       });
     } else {
-      userServices.create(req.body, req.file.filename);
+      await userServices.create(req.body, req.file.filename);
       res.redirect("/user/login");
     }
   },
@@ -39,31 +40,31 @@ const userController = {
   },
 
   /*Update user information*/
-  updateUser: (req, res) => {
-    userServices.update(req.body, req.file.filename);
+  updateUser: async (req, res) => {
+    await userServices.update(req.body, req.file.filename);
     res.redirect("/user/profile");
   },
 
-  confirmDestroy: (req, res) => {
+  confirmDestroy: async (req, res) => {
     const idSearch = req.params.id;
-    user = userServices.findOne(idSearch);
+    user = await userServices.findOne(idSearch);
     res.render("user/delete", {
       user,
     });
   },
 
   /*Delete user from DataBase*/
-  destroyUser: (req, res) => {
+  destroyUser: async (req, res) => {
     const idSearch = req.params.id;
-    userServices.destroy(idSearch);
+    await userServices.destroy(idSearch);
     res.clearCookie("userEmail");
     req.session.destroy();
     res.redirect("/");
   },
 
   /*Confirm user Login attempt*/
-  confirmUser: (req, res) => {
-    let loginUser = userServices.findEmail(req.body.email);
+  confirmUser: async (req, res) => {
+    let loginUser = await userServices.findEmail(req.body.email);
 
     if (loginUser) {
       if (bcryptjs.compareSync(req.body.password, loginUser.password)) {

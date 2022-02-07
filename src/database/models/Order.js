@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     date: {
-      type: "TIMESTAMP",
+      type: DataTypes.DATE,
     },
 
     user_id: {
@@ -33,17 +33,12 @@ module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define(alias, cols, config);
 
   Order.associate = (db) => {
-    Order.belongsTo(db.User, {
+    Order.belongsTo(db.Users, {
       as: "users",
       foreignKey: "user_id",
     });
 
-    Order.belongsTo(db.Address, {
-      as: "addresses",
-      foreignKey: "address_id",
-    });
-
-    Order.belongsTo(db.Order_final_product, {
+    Order.belongsTo(db.Orders_final_products, {
       as: "order_final_products",
       foreignKey: "order_final_product_id",
     });

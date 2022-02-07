@@ -9,19 +9,19 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     email: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     user_name: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     password: {
-      type: "varchar(100)",
+      type: DataTypes.STRING(100),
     },
 
     user_image: {
-      type: "varchar(50)",
+      type: DataTypes.STRING(50),
     },
 
     admin: {
@@ -37,11 +37,6 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = (db) => {
-    User.belongsTo(db.Addresses, {
-      as: "addresses",
-      foreignKey: "user_id",
-    });
-
     User.belongsTo(db.Orders, {
       as: "orders",
       foreignKey: "user_id",
