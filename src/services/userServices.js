@@ -42,20 +42,20 @@ module.exports = {
 
   async update(id, body, file) {
     const user = await db.Users.findByPk(id);
-    // if (!file) {
-    //   file = user.user_image;
-    //   console.log(file);
-    // }
-    // if (body.password == "") {
-    //   body.password = user.password;
-    //   console.log(body.password);
-    // }
-    // if (body.address == "") {
-    //   body.address = user.address;
-    //   console.log(body.address);
-    // }
+    if (!file) {
+      file = user.user_image;
+      console.log(file);
+    }
+    if (body.password == "") {
+      body.password = user.password;
+      console.log(body.password);
+    }
+    if (body.address == "") {
+      body.address = user.address;
+      console.log(body.address);
+    }
     await user.update({
-      //password: bcryptjs.hashSync(body.password, 10),
+      password: bcryptjs.hashSync(body.password, 10),
       user_image: file,
       address: body.address,
     });
