@@ -1,13 +1,20 @@
 const fs = require("fs");
 const path = require("path");
+const db = require("../../database/models");
 
+<<<<<<< HEAD
+const Console = db.Console;
+//Guardando datos en la BD con JSON
+/*const consolsJSON = path.join(__dirname, "../database/consolas.json");
+=======
 const consolsJSON = path.join(__dirname, "../../databaseJSON/consolas.json");
+>>>>>>> 6eed903c6dcbac4134c38f99adb3630067efafc4
 const consols = JSON.parse(fs.readFileSync(consolsJSON, "utf-8"));
 
 function saveProducts() {
   const to_text = JSON.stringify(consols, null, 4);
   fs.writeFileSync(consolsJSON, to_text, "utf-8");
-}
+}*/
 
 module.exports = {
   getAll() {

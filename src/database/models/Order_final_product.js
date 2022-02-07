@@ -1,5 +1,4 @@
 const sequelize = require("sequelize");
-const Order = require("./Order");
 
 module.exports = (sequelize, DataTypes) => {
   const alias = "Orders_final_products";
