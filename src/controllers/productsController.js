@@ -1,13 +1,14 @@
-const fs = require("fs");
-const path = require("path");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 /* Importando informacion de las consolas*/
+/*
 const productColorsJSON = fs.readFileSync("databaseJSON/productosColores.json", "utf-8");
 const productColors = JSON.parse(productColorsJSON);
 
 const productMemoriesJSON = fs.readFileSync("databaseJSON/productosMemorias.json", "utf-8");
 const productMemories = JSON.parse(productMemoriesJSON);
+*/
 
 /*Importando Consolas y Productos*/
 

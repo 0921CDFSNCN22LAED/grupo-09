@@ -11,12 +11,12 @@ const consolsController = {
   },
 
   /*Save Consol*/
-  storeConsol: (req, res) => {
+  storeConsol: async (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
       console.log(req.files.consol_image[0]);
-      consolServices.create(req.body, req.files.logo, req.files.consol_image);
+      await consolServices.create(req.body, req.files.logo, req.files.consol_image);
       res.redirect("/games");
     } else {
       res.render("games/consolsCreation", {
@@ -27,9 +27,9 @@ const consolsController = {
   },
 
   /*Edit Consol*/
-  editConsol: (req, res) => {
+  editConsol: async (req, res) => {
     const idSearch = req.params.id;
-    consol = consolServices.findOne(idSearch);
+    consol = await consolServices.findOne(idSearch);
 
     res.render("games/consolsEdit", {
       consol,
@@ -37,9 +37,9 @@ const consolsController = {
   },
 
   /*Update Consol*/
-  updateConsol: (req, res) => {
+  updateConsol: async (req, res) => {
     const idSearch = req.params.id;
-    consolServices.update(idSearch, req.body, req.files);
+    await consolServices.update(idSearch, req.body, req.files);
     res.redirect("/games");
   },
 
@@ -52,9 +52,9 @@ const consolsController = {
   },
 
   /*Destroy Consol*/
-  destroyConsol: (req, res) => {
+  destroyConsol: async (req, res) => {
     const idSearch = req.params.id;
-    consolServices.destroy(idSearch);
+    await consolServices.destroy(idSearch);
     res.redirect("/games");
   },
 };
