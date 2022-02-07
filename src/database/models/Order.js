@@ -19,9 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: true,
     },
 
-    address_id: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
+    user_address: {
+      type: DataTypes.STRING(100),
     },
   };
 

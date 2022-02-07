@@ -12,24 +12,25 @@ const db = require("../database/models");
 // }
 
 module.exports = {
-  async getAll() {
-    return await db.User.findAll();
+  getAll() {
+    return db.Users.findAll();
   },
 
-  async findOne(id) {
-    return await db.User.findByPk(id);
+  findOne(id) {
+    return db.Users.findByPk(id);
   },
 
-  async findEmail(email) {
-    return await db.User.findOne({
+  findEmail(email_ingresado) {
+    const user = db.Users.findOne({
       where: {
-        email: email,
+        email: email_ingresado,
       },
     });
+    return user;
   },
 
   async create(body, file) {
-    const user = await db.User.create({
+    const user = await db.Users.create({
       email: body.email,
       user_name: body.user_name,
       password: bcryptjs.hashSync(body.password, 10),
@@ -40,11 +41,21 @@ module.exports = {
   },
 
   async update(id, body, file) {
-    const user = await db.User.findByPk(id);
+    const user = await db.Users.findByPk(id);
+    // if (!file) {
+    //   file = user.user_image;
+    //   console.log(file);
+    // }
+    // if (body.password == "") {
+    //   body.password = user.password;
+    //   console.log(body.password);
+    // }
+    // if (body.address == "") {
+    //   body.address = user.address;
+    //   console.log(body.address);
+    // }
     await user.update({
-      email: body.email,
-      user_name: body.user_name,
-      password: bcryptjs.hashSync(body.password, 10),
+      //password: bcryptjs.hashSync(body.password, 10),
       user_image: file,
       address: body.address,
     });
@@ -52,7 +63,7 @@ module.exports = {
   },
 
   async destroy(id) {
-    return await db.User.destroy({
+    return await db.Users.destroy({
       where: {
         id: id,
       },
