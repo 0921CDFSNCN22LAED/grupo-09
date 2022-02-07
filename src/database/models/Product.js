@@ -23,11 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     product_image: {
-<<<<<<< HEAD:database/models/Product.js
-      type: "varchar(50)",
-=======
       type: DataTypes.STRING(50),
->>>>>>> 6eed903c6dcbac4134c38f99adb3630067efafc4:src/database/models/Product.js
     },
   };
 
