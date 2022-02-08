@@ -1,7 +1,7 @@
 const userServices = require("../services/userServices");
 
-function adminMiddleware(req, res, next) {
-  const user = userServices.findOne(req.session.userLoggedId);
+async function adminMiddleware(req, res, next) {
+  const user = await userServices.findOne(req.session.userLoggedId);
   if (!user) {
     return res.redirect("/");
   } else if (!user.admin) {

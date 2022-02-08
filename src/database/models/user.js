@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(50),
     },
 
+    address: {
+      type: DataTypes.STRING(100),
+    },
+
     admin: {
       type: DataTypes.INTEGER,
     },
@@ -37,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = (db) => {
-    User.belongsTo(db.Orders, {
+    User.hasMany(db.Orders, {
       as: "orders",
       foreignKey: "user_id",
     });

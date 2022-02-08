@@ -9,8 +9,8 @@ module.exports = [
     .bail()
     .isEmail()
     .withMessage("Debes ingresar un email valido: nombre@servicio.com")
-    .custom((value, { req }) => {
-      if (userServices.findEmail(req.body.email)) {
+    .custom(async (value, { req }) => {
+      if (await userServices.findEmail(req.body.email)) {
         throw new Error("Este email ya se encuentra registrado");
       }
       return true;

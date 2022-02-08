@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pirupi_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `pirupi_db`;
 -- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for osx10.10 (x86_64)
 --
 -- Host: localhost    Database: pirupi_db
@@ -18,34 +16,12 @@ USE `pirupi_db`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `addresses`
---
-
-DROP TABLE IF EXISTS `addresses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `addresses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_address` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `addresses_FK` (`user_id`),
-  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `addresses`
---
-
-LOCK TABLES `addresses` WRITE;
-/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `consoles`
 --
+
+DROP DATABASE IF EXISTS pirupi_db;
+CREATE DATABASE pirupi_db;
+USE pirupi_db;
 
 DROP TABLE IF EXISTS `consoles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -271,12 +247,11 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `user_id` int(11) NOT NULL,
-  `addresses_id` int(11) NOT NULL,
+  `user_address` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `purchase_FK_1` (`user_id`),
-  KEY `purchase_FK` (`addresses_id`),
-  CONSTRAINT `purchase_FK` FOREIGN KEY (`addresses_id`) REFERENCES `addresses` (`id`),
-  CONSTRAINT `purchase_FK_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  KEY `purchase_FK` (`user_address`),
+  CONSTRAINT `orders_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -355,6 +330,7 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `user_image` varchar(50) NOT NULL,
   `admin` tinyint(4) DEFAULT 0,
+  `address` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -365,7 +341,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@gmail.com','admin','$2a$10$GG54JDDq2r/GWUFe.uCfpu6eKjx9grZhgkHJmlhlnKjss1VP2a14q','1641858386894_avatar.jpg',1);
+INSERT INTO `users` VALUES (1,'admin@gmail.com','admin','$2a$10$GG54JDDq2r/GWUFe.uCfpu6eKjx9grZhgkHJmlhlnKjss1VP2a14q','1641858386894_avatar.jpg',1,'Direccion 123');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
