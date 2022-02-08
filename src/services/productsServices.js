@@ -13,7 +13,11 @@ function saveProducts() {
 
 module.exports = {
   async getAll() {
-    return await db.Products.findAll();
+    try {
+      return await db.Products.findAll();
+    } catch (e) {
+      return e;
+    }
   },
 
   async findOne(id) {

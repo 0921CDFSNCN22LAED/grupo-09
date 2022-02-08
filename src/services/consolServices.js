@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const db = require("../database/models/");
 
 //Guardando datos en la BD con JSON
@@ -13,7 +11,11 @@ function saveProducts() {
 
 module.exports = {
   async getAll() {
-    return await db.Consoles.findAll();
+    try {
+      return await db.Consoles.findAll();
+    } catch (e) {
+      return e;
+    }
   },
 
   async findOne(id) {
