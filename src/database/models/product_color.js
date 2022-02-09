@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Product_color = sequelize.define(alias, cols, config);
 
-  Product_color.associate = (db) => {
-    Product_color.belongsTo(db.Final_products, {
+  Product_color.associate = (models) => {
+    Product_color.belongsTo(models.Final_products, {
       as: "final_products",
       foreignKey: "product_color_id",
     });

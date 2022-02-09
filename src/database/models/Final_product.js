@@ -38,28 +38,28 @@ module.exports = (sequelize, DataTypes) => {
 
   const Final_product = sequelize.define(alias, cols, config);
 
-  Final_product.associate = (db) => {
-    Final_product.belongsTo(db.Products, {
+  Final_product.associate = (models) => {
+    Final_product.belongsTo(models.Products, {
       as: "products",
       foreignKey: "product_id",
     });
 
-    Final_product.belongsTo(db.Memories, {
+    Final_product.belongsTo(models.Memories, {
       as: "memories",
       foreignKey: "memory_id",
     });
 
-    Final_product.belongsTo(db.Joystick_colors, {
+    Final_product.belongsTo(models.Joystick_colors, {
       as: "joystick_colors",
       foreignKey: "joystick_color_id",
     });
 
-    Final_product.belongsTo(db.Product_colors, {
+    Final_product.belongsTo(models.Product_colors, {
       as: "product_colors",
       foreignKey: "product_color_id",
     });
 
-    Final_product.belongsTo(db.Orders_final_products, {
+    Final_product.belongsTo(models.Orders_final_products, {
       as: "order_final_products",
       foreignKey: "final_product_id",
     });

@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Console = sequelize.define(alias, cols, config);
 
-  Console.associate = (db) => {
-    Console.belongsToMany(db.Games, {
+  Console.associate = (models) => {
+    Console.belongsToMany(models.Games, {
       as: "games",
       through: "console_games",
       foreignKey: "game_id",

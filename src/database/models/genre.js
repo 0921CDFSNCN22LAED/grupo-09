@@ -1,3 +1,4 @@
+"use strict";
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
@@ -22,8 +23,8 @@ module.exports = (sequelize, DataTypes) => {
 
   const Genre = sequelize.define(alias, cols, config);
 
-  Genre.associate = (db) => {
-    Genre.hasMany(db.Games, {
+  Genre.associate = (models) => {
+    Genre.hasMany(models.Games, {
       as: "games",
       foreignKey: "genre_id",
     });

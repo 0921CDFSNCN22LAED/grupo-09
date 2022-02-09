@@ -35,13 +35,13 @@ module.exports = (sequelize, DataTypes) => {
 
   const Game = sequelize.define(alias, cols, config);
 
-  Game.associate = (db) => {
-    Game.belongsTo(db.Genres, {
+  Game.associate = (models) => {
+    Game.belongsTo(models.Genres, {
       as: "genres",
       foreignKey: "genre_id",
     });
 
-    Game.belongsToMany(db.Consoles, {
+    Game.belongsToMany(models.Consoles, {
       as: "consoles",
       through: "console_games",
       foreignKey: "console_id",

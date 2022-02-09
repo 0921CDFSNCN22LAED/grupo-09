@@ -28,13 +28,13 @@ module.exports = (sequelize, DataTypes) => {
 
   const Console_game = sequelize.define(alias, cols, config);
 
-  Console_game.associate = (db) => {
-    Console_game.hasMany(db.Games, {
+  Console_game.associate = (models) => {
+    Console_game.hasMany(models.Games, {
       as: "games",
       foreignKey: "games_id",
     });
 
-    Console_game.hasMany(db.Consoles, {
+    Console_game.hasMany(models.Consoles, {
       as: "consoles",
       foreignKey: "console_id",
     });
