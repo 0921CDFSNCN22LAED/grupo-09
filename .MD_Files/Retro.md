@@ -123,3 +123,35 @@
 #### <p align="center">"Aunque he podido aportar poco de manera individual debido a que los temas se me dificultan cada vez más, si me he conectado a cada una de las reuniones y esos espacios me han permitido entender muchísimo mejor los temas y como se aplican al proyecto, sobretodo porque Milton y Nico se detienen a explicarme, es en estas reuniones donde intento dar mis aportes y espero poder contribuir más de manera individual en el siguiente sprint"</p>
 
 <br>
+
+## <h2 align="center"> **Sprint 5º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Karen Hernandez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Pablo Calvo</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Nicolas Zapata Cruz</h3>
+
+#### <p align="center">"Fue muy interesante todo el tema de implementar session y cookies en el register y login. Paulina, Milton y yo logramos hacer que funcionara muy bien y el resultado fue mejor de lo que esperábamos. Ademas la implementación de los middlewares de guest y de auth nos hizo aprender muchas cosas que se pueden implementar en cualquier pagina."</p>
+
+<br>
+
+<h3 align="center">Paulina Gomez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
