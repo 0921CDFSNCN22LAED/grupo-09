@@ -14,14 +14,14 @@ const consols = JSON.parse(consolsJSON);
 const mainController = {
   index: async (req, res) => {
     try {
-      const consols = await consolServices.findAll();
-      const products = await productServices.findAll();
+      const consols = await consolServices.getAll();
+      const products = await productServices.getAll();
       res.render("main/index", {
         consols: consols,
         products: products,
       });
     } catch (e) {
-      return e;
+      console.log(e);
     }
   },
 };
