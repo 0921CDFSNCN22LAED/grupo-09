@@ -152,6 +152,6 @@
 
 <h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"Personalmente me costaron un poco los temas de este sprint, sin embargo pude participar de las reuniones grupales donde Nico y Milton me explicaron y eso me ayudó a entender muchísimo mejor; soy consciente de que podría generar mayor aporte individual pero esto me cuesta cuando el tema me da dificultad"</p>
 
 <br>
