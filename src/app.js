@@ -48,15 +48,19 @@ app.use(cookieParser());
 app.use(userLoggedMiddleware);
 
 /**boot**/
-app.listen(4000, () => {
+app.listen(3000, () => {
   console.log("Servidor corriendo en el puerto: 4000");
 });
 
 /**static_files**/
 app.use(express.static(publicDomain));
 
-app.locals.consols = consolServices.getAll();
-app.locals.products = productsServices.getAll();
+consolServices.getAll().then((consols) => {
+  app.locals.consols = consols;
+});
+productsServices.getAll().then((products) => {
+  app.locals.products = products;
+});
 
 /**views**/
 app.use("/", mainPage);
