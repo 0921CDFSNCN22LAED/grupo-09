@@ -128,7 +128,7 @@
 
 <h3 align="center">Milton De Marte</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"El 5ºto Sprint estuvo interesante en sus "desafíos" ya que la implementación de session, cookies y login de usuario se volvieron un tanto confusas al tratar de seguir lo explicado en las clases. Gracias al trabajo en equipo, y en especial a la perseverancia por querer que funcione y seguir, el equipo logro que se cumpla esta meta. Con Nico y Pauli logramos concretar mas reuniones y trabajar mas en conjunto para sortear este obstáculo que resulto un tanto desafiante pero como todo, una vez que paso entendimos su simpleza y comprendemos mejor su implementación. Logramos un resultado mas que optimo en el cual pudimos aportar nuestro pequeño granito de arena para seguir con el desafió de llevar a cabo este proyecto. De los sprints, por el momento, mas desafiantes pero al mismo tiempo mas "entretenidos"."</p>
 
 <br>
 
