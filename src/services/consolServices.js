@@ -11,11 +11,7 @@ function saveProducts() {
 
 module.exports = {
   async getAll() {
-    try {
-      return await db.Consoles.findAll();
-    } catch (e) {
-      return e;
-    }
+    return await db.Consoles.findAll();
   },
 
   async findOne(id) {
