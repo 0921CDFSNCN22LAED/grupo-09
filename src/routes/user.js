@@ -25,7 +25,7 @@ const uploadFile = multer({ storage });
 /**register form **/
 router.get("/register", guestMiddleware, userController.register);
 /**store method **/
-router.post("/", uploadFile.single("user_image"), validationsUsers, userController.storeUser);
+router.post("/register", uploadFile.single("user_image"), validationsUsers, userController.storeUser);
 /**login form **/
 router.get("/login", guestMiddleware, userController.login);
 /**confirm login **/

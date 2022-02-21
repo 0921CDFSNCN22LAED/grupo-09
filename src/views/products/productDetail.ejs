@@ -53,8 +53,8 @@
                 <label for="colores" class="subs">Color</label>
                 <select name="productoColor" class="box">
                   <% for(let color of productColors) { %>
-                    <option value="<%=color.colorHex%>">
-                      <%=color.nombre%>
+                    <option value="<%=color.color_hex%>">
+                      <%=color.name%>
                     </option>
                     <% } %>
                 </select>
@@ -63,8 +63,8 @@
                 <label for="memoria" class="subs">Memoria</label>
                 <select name="productoMemoria" class="box">
                   <% for(let memory of productMemories) { %>
-                    <option value="<%=memory.memoria%>">
-                      <%=memory.memoria%> GB
+                    <option value="<%=memory.memory%>">
+                      <%=memory.memory%> GB
                     </option>
                     <% } %>
                 </select>

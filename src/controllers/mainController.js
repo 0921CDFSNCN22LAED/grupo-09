@@ -1,6 +1,5 @@
-const db = require("../database/models");
 const consolServices = require("../services/consolServices");
-const productServices = require("../services/productsServices");
+const productsServices = require("../services/productsServices");
 
 //Obteniendo informacion de la DB con JSON
 /*
@@ -13,16 +12,12 @@ const consols = JSON.parse(consolsJSON);
 
 const mainController = {
   index: async (req, res) => {
-    try {
-      const consols = await consolServices.getAll();
-      const products = await productServices.getAll();
-      res.render("main/index", {
-        consols: consols,
-        products: products,
-      });
-    } catch (e) {
-      console.log(e);
-    }
+    const consols = await consolServices.getAll();
+    const products = await productsServices.getAll();
+    res.render("main/index", {
+      consols: consols,
+      products: products,
+    });
   },
 };
 

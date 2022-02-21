@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   Product_color.associate = (models) => {
     Product_color.belongsTo(models.Final_products, {
       as: "final_products",
-      foreignKey: "product_color_id",
+      foreignKey: "id",
     });
   };
 

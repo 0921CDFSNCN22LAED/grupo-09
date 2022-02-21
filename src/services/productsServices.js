@@ -15,46 +15,81 @@ module.exports = {
   async getAll() {
     try {
       return await db.Products.findAll();
-    } catch (e) {
-      return e;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  async getAllColors() {
+    try {
+      return await db.Product_colors.findAll();
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  async getAllMemories() {
+    try {
+      return await db.Memories.findAll();
+    } catch (error) {
+      console.log(error);
     }
   },
 
   async findOne(id) {
-    const product = await db.Products.findByPk(id);
-    return product;
+    try {
+      const product = await db.Products.findByPk(id);
+      return product;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async create(body, file) {
-    const product = await db.Products.create({
-      id: Date.now(),
-      ...body,
-      product_image: file,
-    });
-    return product;
+    try {
+      const product = await db.Products.create({
+        id: Date.now(),
+        name: body.name,
+        description: body.description,
+        price: body.price,
+
+        product_image: file,
+      });
+      return product;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async update(id, body, file) {
-    const product = await db.Products.findByPk(id);
+    try {
+      const product = await db.Products.findByPk(id);
 
-    if (!file) {
-      file = products[index].product_image;
+      if (!file) {
+        file = product.product_image;
+      }
+
+      await product.update({
+        id: products.id,
+        ...body,
+        product_image: file,
+      });
+
+      return product;
+    } catch (error) {
+      console.log(error);
     }
-
-    await product.update({
-      id: products[index].id,
-      ...body,
-      product_image: file,
-    });
-
-    return product;
   },
 
   async destroy(id) {
-    await db.Products.destroy({
-      where: {
-        id: id,
-      },
-    });
+    try {
+      await db.Products.destroy({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

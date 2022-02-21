@@ -33,7 +33,7 @@ router.get("/details/:id", productsController.details);
 /**create form**/
 router.get("/productAdd", adminMiddleware, productsController.add);
 /**store method**/
-router.post("/", uploadFile.single("product_image", middlewareImages), validationsProducts, productsController.store);
+router.post("/productAdd", uploadFile.single("product_image", middlewareImages), validationsProducts, productsController.store);
 /**edit method**/
 router.get("/:id/edit", adminMiddleware, productsController.edit);
 /**update method**/

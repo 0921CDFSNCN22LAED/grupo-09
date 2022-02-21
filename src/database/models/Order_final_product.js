@@ -29,14 +29,14 @@ module.exports = (sequelize, DataTypes) => {
   const Order_final_product = sequelize.define(alias, cols, config);
 
   Order_final_product.associate = (models) => {
-    Order_final_product.belongsTo(models.Final_products, {
+    Order_final_product.hasMany(models.Final_products, {
       as: "final_products",
-      foreignKey: "final_product_id",
+      foreignKey: "id",
     });
 
-    Order_final_product.belongsTo(models.Orders, {
+    Order_final_product.hasOne(models.Orders, {
       as: "orders",
-      foreignKey: "order_id",
+      foreignKey: "id",
     });
   };
 

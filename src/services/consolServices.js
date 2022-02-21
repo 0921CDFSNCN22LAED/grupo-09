@@ -11,47 +11,66 @@ function saveProducts() {
 
 module.exports = {
   async getAll() {
-    return await db.Consoles.findAll();
+    try {
+      return await db.Consoles.findAll();
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async findOne(id) {
-    return await db.Consoles.findByPk(id);
+    try {
+      return await db.Consoles.findByPk(id);
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async create(body, files) {
-    const consol_to_create = await db.Consoles.create({
-      id: Date.now(),
-      ...body,
-      consol_image: files.consol_image.filename,
-      logo: files.logo.filename,
-    });
-
-    return consol_to_create;
+    try {
+      const consol_to_create = await db.Consoles.create({
+        id: Date.now(),
+        ...body,
+        consol_image: files.consol_image.filename,
+        logo: files.logo.filename,
+      });
+      return consol_to_create;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async update(id, body, files) {
-    const consol = await db.Consoles.findByPk(id);
+    try {
+      const consol = await db.Consoles.findByPk(id);
 
-    const logo_filename = files == true && files.logo == true ? files.logo.filename : consols[index].logo;
+      const logo_filename = files == true && files.logo == true ? files.logo.filename : consol.logo;
 
-    const consol_image_filename = files == true && files.consol_image == true ? files.consol_image.filename : consols[index].consol_image;
+      const consol_image_filename = files == true && files.consol_image == true ? files.consol_image.filename : consol.consol_image;
 
-    await consol.update({
-      id: consol.id,
-      ...body,
-      consol_image: consol_image_filename,
-      logo: logo_filename,
-      family: consol.family,
-    });
+      await consol.update({
+        id: consol.id,
+        ...body,
+        consol_image: consol_image_filename,
+        logo: logo_filename,
+        family: consol.family,
+      });
 
-    return consol;
+      return consol;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   async destroy(id) {
-    return await db.Consoles.destroy({
-      where: {
-        id: id,
-      },
-    });
+    try {
+      return await db.Consoles.destroy({
+        where: {
+          id: id,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

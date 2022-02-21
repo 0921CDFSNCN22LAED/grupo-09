@@ -16,10 +16,10 @@ const consolServices = require("../services/consolServices");
 const productsServices = require("../services/productsServices");
 
 const productsController = {
-  products: (req, res) => {
+  products: async (req, res) => {
     res.render("products/products", {
-      products: productsServices.getAll(),
-      consols: consolServices.getAll(),
+      products: await productsServices.getAll(),
+      consols: await consolServices.getAll(),
     });
   },
 
@@ -27,45 +27,45 @@ const productsController = {
     res.render("products/productCart");
   },
 
-  details: (req, res) => {
+  details: async (req, res) => {
     const id = req.params.id;
-    const product = productsServices.findOne(id);
+    const product = await productsServices.findOne(id);
 
     res.render("products/productDetail", {
       product,
-      productColors,
-      productMemories,
-      consols: consolServices.getAll(),
-      products: productsServices.getAll(),
+      productColors: await productsServices.getAllColors(),
+      productMemories: await productsServices.getAllMemories(),
+      consols: await consolServices.getAll(),
+      products: await productsServices.getAll(),
     });
   },
 
-  edit: (req, res) => {
+  edit: async (req, res) => {
     const idSearch = req.params.id;
-    product = productsServices.findOne(idSearch);
+    product = await productsServices.findOne(idSearch);
 
     res.render("products/productEdit", {
       product,
     });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const idSearch = req.params.id;
-    productsServices.update(idSearch, req.body /*, req.file.filename*/);
+    await productsServices.update(idSearch, req.body /*, req.file.filename*/);
     res.redirect(`/products/details/${idSearch}`);
   },
 
-  confirmDestroy: (req, res) => {
+  confirmDestroy: async (req, res) => {
     const idSearch = req.params.id;
-    product = productsServices.findOne(idSearch);
+    product = await productsServices.findOne(idSearch);
     res.render("products/productDelete", {
       product,
     });
   },
 
-  destroy: (req, res) => {
+  destroy: async (req, res) => {
     const idSearch = req.params.id;
-    productsServices.destroy(idSearch);
+    await productsServices.destroy(idSearch);
     res.redirect("/products");
   },
 
@@ -75,12 +75,16 @@ const productsController = {
     });
   },
 
-  store: (req, res) => {
+  store: async (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      productsServices.create(req.body, req.file.filename);
-      res.redirect("/products");
+      try {
+        await productsServices.create(req.body, req.file.filename);
+        res.redirect("/products");
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       res.render("products/productAdd", {
         errors: errors.mapped(),

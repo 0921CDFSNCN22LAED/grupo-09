@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   Memory.associate = (models) => {
     Memory.belongsTo(models.Final_products, {
       as: "final_products",
-      foreignKey: "memory_id",
+      foreignKey: "id",
     });
   };
 

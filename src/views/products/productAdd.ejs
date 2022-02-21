@@ -10,7 +10,7 @@
     <main>
       <section class="centrar">
         <h2 class="headlines margin-bottom-20">Agregar producto</h2>
-        <form action="/products" method="POST" enctype="multipart/form-data">
+        <form action="./productAdd" method="POST" enctype="multipart/form-data">
           <div class="margin-bottom-15">
             <label for="name" class="subs">Nombre del producto</label>
             <input class="box" type="text" name="name" id="name" value="<%=locals.old && old.name ? old.name
@@ -46,61 +46,7 @@
           </div>
 
 
-          <div class="margin-bottom-15 list">
-            <label for="consol_color" class="subs">Colores disponibles </label>
-            <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-1" <%=locals.old &&
-                  old.consol_color==="color-1" ? "selected" : " " %> />Color
-                1
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-2" <%=locals.old &&
-                  old.consol_color==="color-2" ? "selected" : " " %> />Color
-                2
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-3" <%=locals.old &&
-                  old.consol_color==="color-3" ? "selected" : " " %>/>Color
-                3
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="consol_color" value="color-4" <%=locals.old &&
-                  old.consol_color==="color-4" ? "selected" : " " %>/>Color
-                4
-              </li>
-            </ul>
-            <% if (locals.errors && errors.consol_color) { %>
-              <div class="rojopirupi">
-                <%= errors.consol_color.msg %>
-              </div>
-              <% } %>
-          </div>
-          <div class="margin-bottom-15 list">
-            <label for="memory" class="subs">Capacidades de memoria</label>
-            <ul class="margin-bottom-20">
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-1" <%=locals.old &&
-                  old.memory==="memoria-1" ? "selected" : " " %>/>Memoria
-                1
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-2" <%=locals.old &&
-                  old.memory==="memoria-2" ? "selected" : " " %>/>Memoria
-                2
-              </li>
-              <li>
-                <input class="radio-check-space" type="checkbox" name="memory" value="memoria-3" <%=locals.old &&
-                  old.memory==="memoria-3" ? "selected" : " " %>/>Memoria
-                3
-              </li>
-            </ul>
-            <% if (locals.errors && errors.memory) { %>
-              <div class="rojopirupi">
-                <%= errors.memory.msg %>
-              </div>
-              <% } %>
-          </div>
+
           <div class="margin-bottom-15">
             <label for="price" class="subs">Precio</label>
             <input class="box" type="text" name="price" id="price" value=<%=locals.old && old.price ? old.price : " " %>

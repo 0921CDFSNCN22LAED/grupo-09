@@ -64,7 +64,7 @@ const userController = {
     let loginUser = await userServices.findEmail(req.body.email);
 
     if (loginUser) {
-      if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
+      if (await bcryptjs.compareSync(req.body.password, loginUser.password)) {
         //       req.session.userLogged = {...loginUser, password : undefined};
 
         req.session.userLoggedId = loginUser.id;

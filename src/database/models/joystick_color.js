@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
   Joystick_color.associate = (models) => {
     Joystick_color.belongsTo(models.Final_products, {
       as: "final_products",
-      foreignKey: "joystick_color_id",
+      foreignKey: "id",
     });
   };
 
