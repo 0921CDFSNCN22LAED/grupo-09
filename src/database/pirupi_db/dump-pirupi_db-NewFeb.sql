@@ -1,13 +1,13 @@
--- MariaDB dump 10.19  Distrib 10.4.21-MariaDB, for osx10.10 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pirupi_db
 -- ------------------------------------------------------
--- Server version	10.4.21-MariaDB
+-- Server version	5.5.5-10.4.22-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -16,23 +16,45 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `addresses`
+--
+
+DROP TABLE IF EXISTS `addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `addresses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_addess` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `addresses_FK` (`user_id`),
+  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `addresses`
+--
+
+LOCK TABLES `addresses` WRITE;
+/*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
+/*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `consoles`
 --
 
-DROP DATABASE IF EXISTS pirupi_db;
-CREATE DATABASE pirupi_db;
-USE pirupi_db;
-
 DROP TABLE IF EXISTS `consoles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consoles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `console_image` varchar(50) NOT NULL,
   `logo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +63,7 @@ CREATE TABLE `consoles` (
 
 LOCK TABLES `consoles` WRITE;
 /*!40000 ALTER TABLE `consoles` DISABLE KEYS */;
-INSERT INTO `consoles` VALUES (1,'PS1','ps1.png','play_station.png'),(2,'N64','N64.png','nintendo_64.png'),(3,'SEGA','sega.png','sega.png'),(4,'ATARI','Atari.png','atari.png'),(5,'FAMILY','Family.png','family.png'),(6,'SuperNintendo','SuperNintendo.png','supernintendo.png');
+INSERT INTO `consoles` VALUES (1,'PS1','ps1.png','play_station.png');
 /*!40000 ALTER TABLE `consoles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +73,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `consoles_games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consoles_games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `console_id` int(11) NOT NULL,
@@ -79,14 +101,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `final_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `final_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `memory_id` int(11) NOT NULL,
   `joystick_color_id` int(11) NOT NULL,
   `product_color_id` int(11) NOT NULL,
-  `product_price` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `shopping_cart_FK_1` (`memory_id`),
   KEY `shopping_cart_FK_2` (`joystick_color_id`),
@@ -114,7 +135,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -142,7 +163,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `genres`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `genres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -165,13 +186,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `joystick_colors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `joystick_colors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `color_hex` varchar(7) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,7 +201,6 @@ CREATE TABLE `joystick_colors` (
 
 LOCK TABLES `joystick_colors` WRITE;
 /*!40000 ALTER TABLE `joystick_colors` DISABLE KEYS */;
-INSERT INTO `joystick_colors` VALUES (1,'Rojo','#a31915'),(2,'Arena','#cdb48c'),(3,'Gris','#706f6f'),(4,'Negro','#000000');
 /*!40000 ALTER TABLE `joystick_colors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +210,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `memories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `memories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `memory` int(11) NOT NULL,
@@ -209,13 +229,13 @@ INSERT INTO `memories` VALUES (1,256),(2,512),(3,1024);
 UNLOCK TABLES;
 
 --
--- Table structure for table `order_final_product`
+-- Table structure for table `order_final_products`
 --
 
-DROP TABLE IF EXISTS `order_final_product`;
+DROP TABLE IF EXISTS `order_final_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `order_final_product` (
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order_final_products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `final_product_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -223,17 +243,17 @@ CREATE TABLE `order_final_product` (
   KEY `purchase_final_product_FK` (`final_product_id`),
   KEY `order_final_product_FK` (`order_id`),
   CONSTRAINT `order_final_product_FK` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  CONSTRAINT `order_final_product_FK_1` FOREIGN KEY (`final_product_id`) REFERENCES `final_products` (`id`)
+  CONSTRAINT `purchase_final_product_FK` FOREIGN KEY (`final_product_id`) REFERENCES `final_products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `order_final_product`
+-- Dumping data for table `order_final_products`
 --
 
-LOCK TABLES `order_final_product` WRITE;
-/*!40000 ALTER TABLE `order_final_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_final_product` ENABLE KEYS */;
+LOCK TABLES `order_final_products` WRITE;
+/*!40000 ALTER TABLE `order_final_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_final_products` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -242,16 +262,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `user_id` int(11) NOT NULL,
-  `user_address` varchar(100) NOT NULL,
+  `addresses_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `purchase_FK_1` (`user_id`),
-  KEY `purchase_FK` (`user_address`),
-  CONSTRAINT `orders_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  KEY `purchase_FK` (`addresses_id`),
+  CONSTRAINT `purchase_FK` FOREIGN KEY (`addresses_id`) REFERENCES `addresses` (`id`),
+  CONSTRAINT `purchase_FK_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -270,7 +291,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_colors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_colors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -285,7 +306,7 @@ CREATE TABLE `product_colors` (
 
 LOCK TABLES `product_colors` WRITE;
 /*!40000 ALTER TABLE `product_colors` DISABLE KEYS */;
-INSERT INTO `product_colors` VALUES (1,'Rojo','#a31915'),(2,'Arena','#cdb48c'),(3,'Gris','#706f6f'),(4,'Negro','#000000');
+INSERT INTO `product_colors` VALUES (1,'Rojo','#A31915'),(2,'Arena','#CDB48C'),(3,'Gris','#706F6F'),(4,'Negro','#000000');
 /*!40000 ALTER TABLE `product_colors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,7 +316,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -303,7 +324,7 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `product_image` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2147483648 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,7 +333,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Two Players','Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.',1000,'consola_1.JPG'),(2,'Dual Stick Arcade','Consola 1 player con sistema integrado + joystick 1 player.',2000,'consola_2.jpeg'),(3,'Joystick Pro','Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.',3000,'consola_3.jpeg');
+INSERT INTO `products` VALUES (1,'Two Players','Consola árcade con sistema integrado, lista para enchufar y poder disfrutar con amigos.',1000,'consola_1.JPG'),(2,'Dual Stick Arcade','Consola 1 player con sistema integrado + joystick 1 player.',2000,'consola_2.jpeg'),(2147483647,' Joystick Pro',' Stick arcade viene lista para conectar tanto como otro pirupí, PC o PSX mediante el port USB.',1231231231,'1645402653994_product.jpeg');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,7 +343,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
@@ -332,7 +353,7 @@ CREATE TABLE `users` (
   `admin` tinyint(4) DEFAULT 0,
   `address` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -341,10 +362,21 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@gmail.com','admin','$2a$10$GG54JDDq2r/GWUFe.uCfpu6eKjx9grZhgkHJmlhlnKjss1VP2a14q','1641858386894_avatar.jpg',1,'Direccion 123');
+INSERT INTO `users` VALUES (2,'miltondemarte@gmail.com','AtomicalHaze','$2a$10$jjbEg7IDLmvNdTXK1eENy.myF0AK3.1Jyg3dyexJ8d9pGM.6Ce5cy','1645400514117_avatar.jpeg',1,'Roma 956');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'pirupi_db'
 --
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-02-20 21:56:23
