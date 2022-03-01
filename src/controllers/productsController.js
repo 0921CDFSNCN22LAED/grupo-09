@@ -1,5 +1,4 @@
 const { validationResult } = require("express-validator");
-const db = require("../database/models");
 
 /* Importando informacion de las consolas*/
 /*
@@ -21,6 +20,30 @@ const productsController = {
       products: await productsServices.getAll(),
       consols: await consolServices.getAll(),
     });
+  },
+
+  add: (req, res) => {
+    res.render("products/productAdd", {
+      old: req.body,
+    });
+  },
+
+  store: async (req, res) => {
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      try {
+        await productsServices.create(req.body, req.file.filename);
+        res.redirect("/products");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      res.render("products/productAdd", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    }
   },
 
   cart: (req, res) => {
@@ -67,30 +90,6 @@ const productsController = {
     const idSearch = req.params.id;
     await productsServices.destroy(idSearch);
     res.redirect("/products");
-  },
-
-  add: (req, res) => {
-    res.render("products/productAdd", {
-      old: req.body,
-    });
-  },
-
-  store: async (req, res) => {
-    const errors = validationResult(req);
-
-    if (errors.isEmpty()) {
-      try {
-        await productsServices.create(req.body, req.file.filename);
-        res.redirect("/products");
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      res.render("products/productAdd", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }
   },
 };
 

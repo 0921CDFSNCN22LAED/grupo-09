@@ -15,7 +15,7 @@ const consolsController = {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      console.log(req.files.consol_image[0]);
+      console.log(req.files);
       await consolServices.create(req.body, req.files.logo, req.files.consol_image);
       res.redirect("/games");
     } else {
