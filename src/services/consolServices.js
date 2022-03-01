@@ -29,8 +29,7 @@ module.exports = {
   async create(body, files) {
     try {
       const consol_to_create = await db.Consoles.create({
-        id: Date.now(),
-        ...body,
+        name: body.name,
         consol_image: files.consol_image.filename,
         logo: files.logo.filename,
       });

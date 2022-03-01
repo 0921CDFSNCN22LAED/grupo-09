@@ -1,4 +1,6 @@
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 
 //Guardando datos en la DB con JSON
 /*
@@ -46,19 +48,14 @@ module.exports = {
   },
 
   async create(body, file) {
-    try {
-      const product = await db.Products.create({
-        id: Date.now(),
-        name: body.name,
-        description: body.description,
-        price: body.price,
+    const product = await db.Products.create({
+      name: body.name,
+      description: body.description,
+      price: body.price,
+      product_image: file,
+    });
 
-        product_image: file,
-      });
-      return product;
-    } catch (error) {
-      console.log(error);
-    }
+    return product;
   },
 
   async update(id, body, file) {
@@ -70,8 +67,10 @@ module.exports = {
       }
 
       await product.update({
-        id: products.id,
-        ...body,
+        id: product.id,
+        name: body.name,
+        description: body.description,
+        price: body.price,
         product_image: file,
       });
 
@@ -83,11 +82,14 @@ module.exports = {
 
   async destroy(id) {
     try {
+      product = await db.Products.findByPk(id);
+      file = path.join(__dirname, `../../public/images/productos/${product.product_image}`);
       await db.Products.destroy({
         where: {
           id: id,
         },
       });
+      fs.unlinkSync(file);
     } catch (error) {
       console.log(error);
     }
