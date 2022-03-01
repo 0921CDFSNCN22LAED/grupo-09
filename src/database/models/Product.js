@@ -1,3 +1,5 @@
+"use strict";
+
 const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
@@ -5,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     name: {
