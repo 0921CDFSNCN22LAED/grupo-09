@@ -15,8 +15,7 @@ const consolsController = {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      console.log(req.files);
-      await consolServices.create(req.body, req.files.logo, req.files.consol_image);
+      await consolServices.create(req.body, req.file.filename);
       res.redirect("/games");
     } else {
       res.render("games/consolsCreation", {
@@ -39,13 +38,13 @@ const consolsController = {
   /*Update Consol*/
   updateConsol: async (req, res) => {
     const idSearch = req.params.id;
-    await consolServices.update(idSearch, req.body, req.files);
+    await consolServices.update(idSearch, req.body, req.file);
     res.redirect("/games");
   },
 
   /*Destroy Consol form*/
-  destroy: (req, res) => {
-    const consol = consolServices.findOne(req.params.id);
+  destroy: async (req, res) => {
+    const consol = await consolServices.findOne(req.params.id);
     res.render("games/consolDelete", {
       consol,
     });

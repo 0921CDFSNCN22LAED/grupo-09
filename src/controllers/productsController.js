@@ -74,7 +74,7 @@ const productsController = {
 
   update: async (req, res) => {
     const idSearch = req.params.id;
-    await productsServices.update(idSearch, req.body /*, req.file.filename*/);
+    await productsServices.update(idSearch, req.body, req.file);
     res.redirect(`/products/details/${idSearch}`);
   },
 

@@ -26,7 +26,7 @@ const userController = {
         old: req.body,
       });
     } else {
-      await userServices.create(req.body, req.file.filename);
+      await userServices.create(req.body, req.file);
       res.redirect("/user/login");
     }
   },
@@ -38,7 +38,8 @@ const userController = {
 
   /*Update user information*/
   updateUser: async (req, res) => {
-    await userServices.update(req.body, req.file.filename);
+    const idSearch = req.params.id;
+    await userServices.update(idSearch, req.body, req.file);
     res.redirect("/user/profile");
   },
 
@@ -62,11 +63,8 @@ const userController = {
   /*Confirm user Login attempt*/
   confirmUser: async (req, res) => {
     let loginUser = await userServices.findEmail(req.body.email);
-
     if (loginUser) {
-      if (await bcryptjs.compareSync(req.body.password, loginUser.password)) {
-        //       req.session.userLogged = {...loginUser, password : undefined};
-
+      if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
         req.session.userLoggedId = loginUser.id;
 
         if (req.body.remember_user) {
@@ -88,7 +86,7 @@ const userController = {
     return res.render("user/login", {
       errors: {
         email: {
-          msg: "Email o contraseña invalido adasdasd",
+          msg: "Email invalido / Usuario inexistente / Contraseña invalida",
         },
       },
     });
