@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     console_image: {
       type: DataTypes.STRING(50),
     },
-
-    logo: {
-      type: DataTypes.STRING(50),
-    },
   };
 
   const config = {
