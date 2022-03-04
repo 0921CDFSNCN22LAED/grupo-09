@@ -1,4 +1,6 @@
 const db = require("../database/models/");
+const path = require("path");
+const fs = require("fs");
 
 //Guardando datos en la BD con JSON
 /*const consolsJSON = path.join(__dirname, "../database/consolas.json");
@@ -8,6 +10,11 @@ function saveProducts() {
   const to_text = JSON.stringify(consols, null, 4);
   fs.writeFileSync(consolsJSON, to_text, "utf-8");
 }*/
+
+const unlinkFile = (consol) => {
+  const file = path.join(__dirname, `../../public/images/consolas/${consol.console_image}`);
+  fs.unlinkSync(file);
+};
 
 module.exports = {
   async getAll() {
@@ -20,39 +27,41 @@ module.exports = {
 
   async findOne(id) {
     try {
-      return await db.Consoles.findByPk(id);
+      const consol = await db.Consoles.findByPk(id);
+      return consol;
     } catch (error) {
       console.log(error);
     }
   },
 
-  async create(body, files) {
+  async create(body, file) {
     try {
       const consol_to_create = await db.Consoles.create({
         name: body.name,
-        consol_image: files.consol_image.filename,
-        logo: files.logo.filename,
+        console_image: file,
       });
+
       return consol_to_create;
     } catch (error) {
       console.log(error);
     }
   },
 
-  async update(id, body, files) {
+  async update(id, body, file) {
     try {
       const consol = await db.Consoles.findByPk(id);
 
-      const logo_filename = files == true && files.logo == true ? files.logo.filename : consol.logo;
-
-      const consol_image_filename = files == true && files.consol_image == true ? files.consol_image.filename : consol.consol_image;
+      if (!file) {
+        file = consol.console_image;
+      } else {
+        file = file.filename;
+        unlinkFile(consol);
+      }
 
       await consol.update({
         id: consol.id,
-        ...body,
-        consol_image: consol_image_filename,
-        logo: logo_filename,
-        family: consol.family,
+        name: body.name,
+        console_image: file,
       });
 
       return consol;
@@ -63,11 +72,13 @@ module.exports = {
 
   async destroy(id) {
     try {
-      return await db.Consoles.destroy({
+      const consol = await db.Consoles.findByPk(id);
+      await db.Consoles.destroy({
         where: {
           id: id,
         },
       });
+      unlinkFile(consol);
     } catch (error) {
       console.log(error);
     }

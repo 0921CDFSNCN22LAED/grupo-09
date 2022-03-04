@@ -13,6 +13,11 @@ function saveProducts() {
 }
 */
 
+const unlinkFile = (product) => {
+  const filePath = path.join(__dirname, `../../public/images/productos/${product.product_image}`);
+  fs.unlinkSync(filePath);
+};
+
 module.exports = {
   async getAll() {
     try {
@@ -64,6 +69,9 @@ module.exports = {
 
       if (!file) {
         file = product.product_image;
+      } else {
+        file = file.filename;
+        unlinkFile(product);
       }
 
       await product.update({
@@ -83,13 +91,13 @@ module.exports = {
   async destroy(id) {
     try {
       product = await db.Products.findByPk(id);
-      file = path.join(__dirname, `../../public/images/productos/${product.product_image}`);
+
       await db.Products.destroy({
         where: {
           id: id,
         },
       });
-      fs.unlinkSync(file);
+      unlinkFile(product);
     } catch (error) {
       console.log(error);
     }

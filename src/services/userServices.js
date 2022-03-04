@@ -1,5 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
+const path = require("path");
+const fs = require("fs");
 
 // const usersJSON = path.join(__dirname, "../../databaseJSON/usuarios.json");
 // const users = JSON.parse(fs.readFileSync(usersJSON, "utf-8"));
@@ -8,6 +10,11 @@ const db = require("../database/models");
 //   const to_text = JSON.stringify(users, null, 4);
 //   fs.writeFileSync(usersJSON, to_text, "utf-8");
 // }
+
+const unlinkFile = (user) => {
+  const filePath = path.join(__dirname, `../../public/images/users/avatar/${user.user_image}`);
+  fs.unlinkSync(filePath);
+};
 
 module.exports = {
   async getAll() {
@@ -20,7 +27,8 @@ module.exports = {
 
   async findOne(id) {
     try {
-      return await db.Users.findByPk(id);
+      const user = await db.Users.findByPk(id);
+      return user;
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +53,7 @@ module.exports = {
         email: body.email,
         user_name: body.user_name,
         password: bcryptjs.hashSync(body.password, 10),
-        user_image: file,
+        user_image: file.filename,
         address: body.address,
       });
       return user;
@@ -57,15 +65,21 @@ module.exports = {
   async update(id, body, file) {
     try {
       const user = await db.Users.findByPk(id);
+
       if (!file) {
         file = user.user_image;
+      } else {
+        file = file.filename;
+        unlinkFile(user);
       }
-      if (body.password == "") {
-        body.password = user.password;
+
+      if (body.password == " ") {
+        password = user.password;
       }
-      if (body.address == "") {
-        body.address = user.address;
+      if (body.address == " ") {
+        address = user.address;
       }
+
       await user.update({
         password: bcryptjs.hashSync(body.password, 10),
         user_image: file,
@@ -79,11 +93,13 @@ module.exports = {
 
   async destroy(id) {
     try {
-      return await db.Users.destroy({
+      const user = await db.Users.findByPk(id);
+      await db.Users.destroy({
         where: {
           id: id,
         },
       });
+      unlinkFile(user);
     } catch (error) {
       console.log(error);
     }
