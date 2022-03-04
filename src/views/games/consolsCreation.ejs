@@ -41,18 +41,6 @@
           </div>
         </div>
 
-        <div class="margin-bottom-15">
-          <label for="logo">Cargar logo</label>
-          <div>
-            <input class="margin-bottom-20" type="file" name="logo" accept="image/*" />
-            <% if (locals.errors && errors.logo) { %>
-              <div class="rojopirupi">
-                <%= errors.logo.msg %>
-              </div>
-              <% } %>
-          </div>
-        </div>
-
         <div class="buttons-send-erase">
           <button class="buttons" type="submit">Confirmar</button>
           <button class="buttons" type="reset">Borrar informacion</button>

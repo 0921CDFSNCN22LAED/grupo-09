@@ -15,16 +15,16 @@
                     <section class="blanc-space"></section>
                     <section class="user-delete">
                         <section class="box-delete">
-                            <h2 class="headlines margin-bottom-20">Estas seguro que quieres eliminar el usuario <%=
+                            <h2 class="headlines margin-bottom-20">Estas seguro que quieres eliminar la consola <%=
                                     consol.name %>?????</h2>
                             <div class="deleted_photo_container">
-                                <img class="img-consol" src="/images/users/avatar/<%=consol.consol_image%>"
+                                <img class="img-consol" src="/images/consolas/<%=consol.console_image%>"
                                     style="width:100%" height="100%" />
                             </div>
                             <div class="margin-vertical-40-20">
                                 <div>
-                                    <form action="/consols/<%= consol.id %>?_method=DELETE" method="POST">
-                                        <button class="boton" type="submit">Eliminar Usuario</button>
+                                    <form action="./?_method=DELETE" method="POST">
+                                        <button class="boton" type="submit">Eliminar consola</button>
                                     </form>
                                 </div>
                             </div>
