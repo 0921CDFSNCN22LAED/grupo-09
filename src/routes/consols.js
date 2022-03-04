@@ -24,18 +24,7 @@ const uploadFile = multer({ storage });
 /**request form**/
 router.get("/consolsCreation", adminMiddleware, consolsController.createConsol);
 /**store method**/
-router.post(
-  "/",
-  uploadFile.fields(
-    [
-      { name: "consol_image", maxCount: 1 },
-      { name: "logo", maxCount: 1 },
-    ],
-    middlewareImages
-  ),
-  validationsConsol,
-  consolsController.storeConsol
-);
+router.post("/", uploadFile.single("consol_image", middlewareImages), validationsConsol, consolsController.storeConsol);
 /**edit method**/
 router.get("/:id/edit", adminMiddleware, consolsController.editConsol);
 /**update method**/

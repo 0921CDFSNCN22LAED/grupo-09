@@ -19,6 +19,7 @@ const storage = multer.diskStorage({
     cb(null, `${Date.now()}_avatar${path.extname(file.originalname)}`);
   },
 });
+
 const uploadFile = multer({ storage });
 
 /*-User Creation-*/
@@ -41,6 +42,6 @@ router.delete("/:id", userController.destroyUser);
 /**user profile **/
 router.get("/profile", authMiddleware, userController.profile);
 //**user logout **/
-router.get("/logout/", userController.logout);
+router.get("/logout", userController.logout);
 
 module.exports = router;
