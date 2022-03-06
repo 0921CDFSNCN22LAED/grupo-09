@@ -3,6 +3,8 @@
 
 <head>
     <%- include('../partials/head.ejs', {title: "Editando " + consol.name }) %>
+
+        <script src="/js/validations/validationsFrontConsolEdit.js"></script>
 </head>
 
 <body>
@@ -13,6 +15,7 @@
             </h2>
 
             <form action="/consols/<%= consol.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div id="errorsFront"></div>
                 <div class="margin-bottom-15">
                     <label for="name">Nombre de la consola</label>
                     <input class="box" type="text" name="name" id="name" value="<%= consol.name %>" />

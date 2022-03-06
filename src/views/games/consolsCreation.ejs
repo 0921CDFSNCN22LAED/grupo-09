@@ -4,6 +4,7 @@
 
 <head>
   <%- include('../partials/head.ejs', {title: "Creando consola" }) %>
+    <script src="/js/validations/validationsFrontConsolCreate.js"></script>
 </head>
 
 <body>
@@ -16,6 +17,7 @@
 
       </div>
       <form action="/consols" method="POST" enctype="multipart/form-data">
+        <div id="errorsFront"></div>
 
         <div class="margin-bottom-15">
           <label for="name">Nombre de la consola</label>
