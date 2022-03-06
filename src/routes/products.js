@@ -37,7 +37,7 @@ router.post("/productAdd", uploadFile.single("product_image", middlewareImages),
 /**edit method**/
 router.get("/:id/edit", adminMiddleware, productsController.edit);
 /**update method**/
-router.put("/:id", uploadFile.single("product_image", middlewareImages), productsController.update);
+router.put("/:id", uploadFile.single("product_image", middlewareImages), validationsProducts, productsController.update);
 /**delete confirmation**/
 router.get("/:id/delete", adminMiddleware, productsController.confirmDestroy);
 /**delete method**/
