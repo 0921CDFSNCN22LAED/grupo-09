@@ -5,6 +5,7 @@
 
     <%- include("../partials/head.ejs") %>
         <link href="/css/styles_login.css" rel="stylesheet" />
+        <script src="/js/jsFrontUserLogin.js"> </script>
 
 <body>
     <%- include("../partials/header.ejs") %>
@@ -17,7 +18,8 @@
                         <section class="box-login">
                             <h2 class="headlines">Inicia Sesión</h2>
                             <form action="/user/login" method="POST">
-
+                                 <div id="errorsFront">
+                                </div>
                                 <%if(locals.errors && errors.email){ %>
                                     <div>
                                         <p class="rojopirupi">
