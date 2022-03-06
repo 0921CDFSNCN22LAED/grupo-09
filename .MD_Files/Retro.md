@@ -164,15 +164,23 @@
 
 <br>
 
-<h3 align="center">Karen Hernandez</h3>
+<h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"A pesar de que nos dieron mas tiempo para terminar este sprint, nos retrasamos un mas de lo esperado por temas personales de los integrantes. Al final, después de mucho trabajo con sequelize, ya que cuando hay algún error no es que brinde mucha información, logramos sacar todo adelante y dejarlo funcionando como esperábamos"</p>
 
 <br>
 
-<h3 align="center">Pablo Calvo</h3>
+<h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">"completar aqui"</p>
+#### <p align="center">"En este sprint pude participar más y hacer mas commits ya que entendía el tema mejor, sin embargo hubo algunas partes que presentaban mayor dificultad y por eso decidimos tener más reuniones para trabajar en conjunto. Finalizamos el sprint más tarde de lo indicado, sin embargo logramos resolverlo y disfrutamos bastante este tema, personalmente de mis favoritos "</p>
+
+<br>
+
+## <h2 align="center"> **Sprint 7º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">" "</p>
 
 <br>
 
@@ -184,6 +192,6 @@
 
 <h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">"En este sprint pude participar más y hacer mas commits ya que entendía el tema mejor, sin embargo hubo algunas partes que presentaban mayor dificultad y por eso decidimos tener más reuniones para trabajar en conjunto. Finalizamos el sprint más tarde de lo indicado, sin embargo logramos resolverlo y disfrutamos bastante este tema, personalmente de mis favoritos "</p>
+#### <p align="center">" "</p>
 
 <br>
