@@ -155,3 +155,35 @@
 #### <p align="center">"Personalmente me costaron un poco los temas de este sprint, sin embargo pude participar de las reuniones grupales donde Nico y Milton me explicaron y eso me ayudó a entender muchísimo mejor; soy consciente de que podría generar mayor aporte individual pero esto me cuesta cuando el tema me da dificultad"</p>
 
 <br>
+
+## <h2 align="center"> **Sprint 6º** -_retrospectiva_-</h2>
+
+<h3 align="center">Milton De Marte</h3>
+
+#### <p align="center">"La entrega del sprint 6 se vio demorada por cuestiones personales, ya que en el medio nos encontramos con vacaciones y desencuentros a nivel personal.Ciertos aspectos a cumplir al principio parecieron dificiles de completar pero luego de poder coodrinar momentos para reunirnos y llevar a cabo la realizacion nos dimos cuenta que fue mucho mas simple de lo que creiamos. Pasar el modelo creado con Express a Sequelize resulto divertido, interesante y desafiante. El equipo logro concretar reuniones mas pautadas y de esta manera completar todas los objetivos propuestos para esta entrega."</p>
+
+<br>
+
+<h3 align="center">Karen Hernandez</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Pablo Calvo</h3>
+
+#### <p align="center">"completar aqui"</p>
+
+<br>
+
+<h3 align="center">Nicolas Zapata Cruz</h3>
+
+#### <p align="center">" "</p>
+
+<br>
+
+<h3 align="center">Paulina Gomez</h3>
+
+#### <p align="center">" "</p>
+
+<br>

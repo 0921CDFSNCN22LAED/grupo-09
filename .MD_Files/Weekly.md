@@ -101,3 +101,35 @@
 ### <li align="center">**¿Que se hara hoy**</li>
 
 <p align="center">Ya habiendonos reunido y acordado como realizaremos este proyecto podemos comenzar con la implementacion de los middlewares y authentication.</p>
+
+## <h3 align="center" style="text-decoration: underline">Viernes 18 de Febrero\_</h3>
+
+<br>
+
+### <li align="center">**¿Que se hizo ayer?**</li>
+
+<p align="center">Logramos coordinar un dia en la semana para que el equipo se reuna y de la manera mas rapida y eficaz acordemos cual seria el m.o para esta nueva entrega</p>
+
+### <li align="center">**Impedimentos**</li>
+
+<p align="center">La comunicacion se volvio un poco distante en el equipo. Sin embargo, luego de las vacaciones que cada uno tuvo logramos mantenernos en contacto y comentar sobre los distintos progresos que cada quien fue realizando sobre el proyecto para no perder la practica y el avance logrado.</p>
+
+### <li align="center">**¿Que se hara hoy**</li>
+
+<p align="center">Logramos coordinar la reunion y acordar la mejor manera de llevar a cabo los objetivos para completar el Sprint 6. Optamos por trabajar de manera asincronica con la posibilidad de realizar reuniones, en la medida que se pueda, para comentar las distintas acciones tomadas y el avance realizado.</p>
+
+## <h3 align="center" style="text-decoration: underline">Martes 1 de Marzo\_</h3>
+
+<br>
+
+### <li align="center">**¿Que se hizo ayer?**</li>
+
+<p align="center">Logramos coordinar un dia en la semana para que el equipo se reuna y de la manera mas rapida y eficaz acordemos cual seria el m.o para esta nueva entrega</p>
+
+### <li align="center">**Impedimentos**</li>
+
+<p align="center">Nos econtramos con algunos problemas al momento de realizar la implementacion de Sequelize en el proyecto pero logramos resolverlos para poder continuar con la entrega.</p>
+
+### <li align="center">**¿Que se hara hoy**</li>
+
+<p align="center">Ya habiendo realizado los puntos para la entrega del Sprint nº6 resta ponernos de acuerdo para coordinar otra reunion y de esta forma terminar de cerrar los puntos a cumplir para la entrega del Sprint nº7.</p>
