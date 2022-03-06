@@ -11,6 +11,7 @@
       <section class="centrar">
         <h2 class="headlines margin-bottom-20">Agregar producto</h2>
         <form action="./productAdd" method="POST" enctype="multipart/form-data">
+          <div id="errorsFront"></div>
           <div class="margin-bottom-15">
             <label for="name" class="subs">Nombre del producto</label>
             <input class="box" type="text" name="name" id="name" value="<%=locals.old && old.name ? old.name : "" %>"> <% if (locals.errors && errors.name) { %>
