@@ -160,7 +160,7 @@
 
 <h3 align="center">Milton De Marte</h3>
 
-#### <p align="center">"La entrega del sprint 6 se vio demorada por cuestiones personales, ya que en el medio nos encontramos con vacaciones y desencuentros a nivel personal.Ciertos aspectos a cumplir al principio parecieron dificiles de completar pero luego de poder coodrinar momentos para reunirnos y llevar a cabo la realizacion nos dimos cuenta que fue mucho mas simple de lo que creiamos. Pasar el modelo creado con Express a Sequelize resulto divertido, interesante y desafiante. El equipo logro concretar reuniones mas pautadas y de esta manera completar todas los objetivos propuestos para esta entrega."</p>
+#### <p align="center">"La entrega del sprint 6 se vio demorada por cuestiones personales, ya que en el medio nos encontramos con vacaciones y desencuentros a nivel personal.Ciertos aspectos a cumplir al principio parecieron dificiles de completar pero luego de poder coordinar momentos para reunirnos y llevar a cabo la realizacion nos dimos cuenta que fue mucho mas simple de lo que creiamos. Pasar el modelo creado con Express a Sequelize resulto divertido, interesante y desafiante. El equipo logro concretar reuniones mas pautadas y de esta manera completar todas los objetivos propuestos para esta entrega. De las entregas realizadas esta nos concentro mas como grupo y nos llevo a interactuar mucho mas y forzar mas vinculos."</p>
 
 <br>
 
@@ -180,7 +180,7 @@
 
 <h3 align="center">Milton De Marte</h3>
 
-#### <p align="center">" "</p>
+#### <p align="center">"Realizar este sprint fue sencillo y divertido. La mayoria del trabajo estaba echo en una entrega anterior, las validaciones del back, por lo que validar por el front fue rapido de implementar. Logramos cumplirlo en un lapso de tiempo super rapido por lo que podemos adelantar las entregas atrasadas que teniamos pendientes. "</p>
 
 <br>
 
