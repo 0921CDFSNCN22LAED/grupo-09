@@ -184,6 +184,6 @@
 
 <h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">" "</p>
+#### <p align="center">"En este sprint pude participar más y hacer mas commits ya que entendía el tema mejor, sin embargo hubo algunas partes que presentaban mayor dificultad y por eso decidimos tener más reuniones para trabajar en conjunto. Finalizamos el sprint más tarde de lo indicado, sin embargo logramos resolverlo y disfrutamos bastante este tema, personalmente de mis favoritos "</p>
 
 <br>
