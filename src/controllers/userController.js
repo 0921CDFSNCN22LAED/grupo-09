@@ -62,34 +62,43 @@ const userController = {
 
   /*Confirm user Login attempt*/
   confirmUser: async (req, res) => {
+    const errors = validationResult(req);
     let loginUser = await userServices.findEmail(req.body.email);
-    if (loginUser) {
-      if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
-        req.session.userLoggedId = loginUser.id;
 
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, {
-            maxAge: 1000 * 60 * 60,
-          });
+    if (!errors.isEmpty()) {
+      res.render("user/login", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
+    } else {
+      if (loginUser) {
+        if (bcryptjs.compareSync(req.body.password, loginUser.password)) {
+          req.session.userLoggedId = loginUser.id;
+
+          if (req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, {
+              maxAge: 1000 * 60 * 60,
+            });
+          }
+          return res.redirect("/");
         }
-        return res.redirect("/");
+        return res.render("user/login", {
+          errors: {
+            email: {
+              msg: "Email o contraseña invalido",
+            },
+          },
+        });
       }
+
       return res.render("user/login", {
         errors: {
           email: {
-            msg: "Email o contraseña invalido",
+            msg: "Email o contraseña invalida",
           },
         },
       });
     }
-
-    return res.render("user/login", {
-      errors: {
-        email: {
-          msg: "Email invalido / Usuario inexistente / Contraseña invalida",
-        },
-      },
-    });
   },
 
   /*Get user profile*/

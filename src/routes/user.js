@@ -5,6 +5,7 @@ const router = express.Router();
 
 const userController = require("../controllers/userController.js");
 const validationsUsers = require("../validations/validationsUsers.js");
+const validationsUsersLogin = require("../validations/validationsUsersLogin");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const editUserMiddleware = require("../middlewares/editUserMiddleware");
@@ -30,7 +31,7 @@ router.post("/register", uploadFile.single("user_image"), validationsUsers, user
 /**login form **/
 router.get("/login", guestMiddleware, userController.login);
 /**confirm login **/
-router.post("/login", userController.confirmUser);
+router.post("/login", validationsUsersLogin, userController.confirmUser);
 /**edit form **/
 router.get("/:id/edit", editUserMiddleware, userController.editUser);
 /**update method **/
