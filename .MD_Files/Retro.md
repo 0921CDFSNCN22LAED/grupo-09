@@ -186,7 +186,7 @@
 
 <h3 align="center">Nicolas Zapata Cruz</h3>
 
-#### <p align="center">" "</p>
+#### <p align="center">"Este sprint fue un poco mas sencillo de los que veníamos haciendo antes por lo que lo logramos hacer de muy buena manera y el resultado fue muy satisfactorio. Las validaciones del back ya estaban casi listas de otros sprints y el del front fue muy sencillo"</p>
 
 <br>
 
