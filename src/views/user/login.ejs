@@ -24,13 +24,22 @@
                                             <%= errors.email.msg%>
                                         </p>
                                     </div>
+                
+                                    <% } else if (locals.errors && errors.password) { %>                      
+                                        <div>
+                                            <p class="rojopirupi">
+                                                <%= errors.password.msg%>
+                                            </p>
+                                        </div>
+                
                                     <% } %>
 
                                         <div class="login margin-vertical-20">
+
                                             <div>
                                                 <label for="email">Ingresa tu email</label>
                                                 <input type="text" id="email" name="email"
-                                                    placeholder="Ingresa tu correo">
+                                                    placeholder="Ingresa tu correo" value="<%= locals.old && old.email ? old.email : "" %>">
 
                                             </div>
 
