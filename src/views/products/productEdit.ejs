@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('../partials/head.ejs', {title: "Editando " + product.name }) %>
+    <script src="/js/validations/validationsFrontProduct.js"></script>
+  </head>
 
-<head>
-  <%- include('../partials/head.ejs', {title: "Editando " + product.name }) %>
-</head>
-
-<body>
-  <%- include("../partials/header.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
     <main>
       <section class="centrar">
-        <h2 class="headlines margin-bottom-20">Editar producto: <%= product.name %>
-        </h2>
+        <h2 class="headlines margin-bottom-20">Editar producto: <%= product.name %></h2>
 
         <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div id="errorsFront"></div>
           <div class="margin-bottom-15">
             <label for="name" class="subs">Nombre del producto</label>
             <input class="box" type="text" name="name" id="name" value="<%= product.name %>" />
@@ -20,18 +20,15 @@
 
           <div class="margin-bottom-15">
             <label for="description" class="subs">Descripción</label>
-            <textarea class="box-textarea" type="text" name="description"
-              id="description"><%= product.description %></textarea>
+            <textarea class="box-textarea" type="text" name="description" id="description"><%= product.description %></textarea>
           </div>
 
           <div class="margin-bottom-15">
             <label for="product_image" class="subs">Subir imagen</label>
             <div>
-              <input class="margin-bottom-20" type="file" name="product_image" accept="image/*"
-                value="<%= product.product_image%>" />
+              <input class="margin-bottom-20" type="file" name="product_image" accept="image/*" value="<%= product.product_image%>" />
             </div>
           </div>
-
 
           <div class="margin-bottom-15">
             <label for="price" class="subs">Precio</label>
@@ -50,6 +47,5 @@
     </main>
 
     <%- include("../partials/footer.ejs") %>
-</body>
-
+  </body>
 </html>
