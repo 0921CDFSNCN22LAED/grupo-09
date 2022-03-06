@@ -133,3 +133,19 @@
 ### <li align="center">**¿Que se hara hoy**</li>
 
 <p align="center">Ya habiendo realizado los puntos para la entrega del Sprint nº6 resta ponernos de acuerdo para coordinar otra reunion y de esta forma terminar de cerrar los puntos a cumplir para la entrega del Sprint nº7.</p>
+
+## <h3 align="center" style="text-decoration: underline">Domingo 6 de Marzo\_</h3>
+
+<br>
+
+### <li align="center">**¿Que se hizo ayer?**</li>
+
+<p align="center">Logramos coordinar un dia en la semana para que el equipo se reuna y de la manera mas rapida y eficaz acordemos cual seria el m.o para esta nueva entrega</p>
+
+### <li align="center">**Impedimentos**</li>
+
+<p align="center">Por el momento no nos encontramos con impedimentos al momento de realizar las validaciones para el front-end. Resulto practico y simple de implementar.</p>
+
+### <li align="center">**¿Que se hara hoy**</li>
+
+<p align="center">Logramos cumplir con exito todos los objetivos para la entrega del sprint. De todos los realizados, concordamos que este fue el mas simple y rapido de implementar. Nos encontramos en la recta final para mañana reunirnos otra vez y realizar la implementacion de la API y el dashboard en React.js .</p>
