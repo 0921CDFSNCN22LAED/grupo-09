@@ -192,6 +192,6 @@
 
 <h3 align="center">Paulina Gomez</h3>
 
-#### <p align="center">" "</p>
+#### <p align="center">"En este sprint pude participar muchísimo más porque entendí muy bien el tema y lo disfruté muchísimo, logramos completarlo en poco tiempo y no presentamos complicaciones, todos estábamos alineados con los objetivos y teníamos el conocimiento por lo que bastó con pocas reuniones para terminarlo "</p>
 
 <br>
