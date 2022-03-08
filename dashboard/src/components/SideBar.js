@@ -1,22 +1,16 @@
 import React from "react";
-import image from "../assets/images/logo-DH.png";
+import image from "../assets/images/Logo_solo_pirupi.jpg";
 import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
     <React.Fragment>
       {/*<!-- Sidebar -->*/}
-      <ul
-        className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
-        id="accordionSidebar"
-      >
+      <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
         {/*<!-- Sidebar - Brand -->*/}
-        <a
-          className="sidebar-brand d-flex align-items-center justify-content-center"
-          href="/"
-        >
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
           <div className="sidebar-brand-icon">
-            <img className="w-100" src={image} alt="Digital House" />
+            <img className="w-100" style={{ marginTop: "100px" }} src={image} alt="Pirupi" />
           </div>
         </a>
 
@@ -27,7 +21,7 @@ function SideBar() {
         <li className="nav-item active">
           <Link className="nav-link" to="/ContentWrapper">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard - DH movies</span>
+            <span>Dashboard - Pirupi Games</span>
           </Link>
         </li>
 
@@ -37,51 +31,27 @@ function SideBar() {
         {/*<!-- Heading -->*/}
         <div className="sidebar-heading">Actions</div>
 
-        {/*<!-- Nav Item - Pages -->*/}
+        {/*<!-- ProductsInDb -->*/}
         <li className="nav-item">
-          <a className="nav-link collapsed" href="/">
-            <i className="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-          </a>
-        </li>
-
-        {/*<!-- Nav Item - Charts -->*/}
-        <li className="nav-item">
-          <a className="nav-link" href="/">
-            <i className="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
-          </a>
-        </li>
-
-        {/*<!-- Nav Item - Tables -->*/}
-        <li className="nav-item">
-          <a className="nav-link" href="/">
+          <Link className="nav-link" to="/ProductsInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            <span>Tables</span>
-          </a>
-        </li>
-
-        {/*<!-- GenresInDb -->*/}
-        <li className="nav-item">
-          <Link className="nav-link" to="/GenresInDb" exact="true">
-            <i className="fas fa-fw fa-table"></i>
-            GenresInDb
+            ProductsInDb
           </Link>
         </li>
 
-        {/*<!-- LastMovieInDb -->*/}
+        {/*<!-- ConsolesInDb -->*/}
         <li className="nav-item">
-          <Link className="nav-link" to="/LastMovieInDb" exact="true">
+          <Link className="nav-link" to="/ConsolesInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            LastMovieInDb
+            ConsolesInDb
           </Link>
         </li>
 
-        {/*<!-- ContentRowMovies -->*/}
+        {/*<!-- UsersInDb -->*/}
         <li className="nav-item">
-          <Link className="nav-link" to="/ContentRowMovies" exact="true">
+          <Link className="nav-link" to="/UsersInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            ContentRowMovies
+            UsersInDb
           </Link>
         </li>
 

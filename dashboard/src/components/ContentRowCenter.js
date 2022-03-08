@@ -1,26 +1,17 @@
 import React from "react";
-import LastMovieInDb from "./LastMovieInDb";
-import GenresInDb from "./GenresInDb";
+import ConsolesInDb from "./ConsolesInDb";
+import ProductsInDb from "./ProductsInDb";
 import { Route } from "react-router-dom";
 
 function ContentRowCenter() {
   return (
     <div className="row">
       {/*<!-- Last Movie in DB -->*/}
-      <Route
-        path={["/LastMovieInDb", "/", "/ContentWrapper"]}
-        exact={true}
-        component={LastMovieInDb}
-      />
+      <Route path={["/ProductsInDb", "/", "/ContentWrapper"]} exact={true} component={ProductsInDb} />
       {/*<!-- End content row last movie in Data Base -->*/}
 
       {/*<!-- Genres in DB -->*/}
-
-      <Route
-        path={["/GenresInDb", "/", "/ContentWrapper"]}
-        exact={true}
-        component={GenresInDb}
-      />
+      <Route path={["/ConsolesInDb", "/", "/ContentWrapper"]} exact={true} component={ConsolesInDb} />
     </div>
   );
 }

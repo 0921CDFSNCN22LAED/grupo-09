@@ -11,6 +11,8 @@ const userController = {
         id: users[i].id,
         user_name: users[i].user_name,
         email: users[i].email,
+        address: users[i].address,
+        user_image: `${API_HOST}/api/users/${users[i].id}/${users[i].user_image}`,
         detail: `${API_HOST}/api/users/${users[i].id}`,
       });
     }

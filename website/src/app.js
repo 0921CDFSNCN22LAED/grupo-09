@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const postman = require("postman");
+const cors = require("cors");
 
 /*Public*/
 const publicDomain = path.resolve(__dirname, "../public");
@@ -31,6 +32,12 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 /**ejs**/
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+/**cors**/
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 /**urlencoded**/
 app.use(express.urlencoded({ extended: false }));
 /**JSON**/
