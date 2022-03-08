@@ -25,9 +25,9 @@ function Chart() {
             <thead>
               <tr>
                 <th>Email</th>
-                <th>Username</th>
-                <th>Address</th>
-                <th>Image</th>
+                <th>Nombre de usuario</th>
+                <th>Dirección</th>
+                <th>Imagen</th>
               </tr>
             </thead>
             <tbody>

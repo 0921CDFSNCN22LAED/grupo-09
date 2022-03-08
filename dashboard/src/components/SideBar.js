@@ -35,7 +35,7 @@ function SideBar() {
         <li className="nav-item">
           <Link className="nav-link" to="/LastProductInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            LastProductInDb
+            Último producto en BD
           </Link>
         </li>
 
@@ -43,15 +43,23 @@ function SideBar() {
         <li className="nav-item">
           <Link className="nav-link" to="/ConsolesInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            ConsolesInDb
+            Consolas en BD
           </Link>
         </li>
 
-        {/*<!-- DataInDb -->*/}
+        {/*<!-- UsersInDb -->*/}
         <li className="nav-item">
           <Link className="nav-link" to="/DataInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            DataInDb
+            Usuarios en BD
+          </Link>
+        </li>
+
+        {/*<!-- ProductsInDb -->*/}
+        <li className="nav-item">
+          <Link className="nav-link" to="/ProductsInDb" exact="true">
+            <i className="fas fa-fw fa-table"></i>
+            Productos en BD
           </Link>
         </li>
 

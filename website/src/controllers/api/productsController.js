@@ -10,6 +10,7 @@ const productsController = {
       newProducts.push({
         id: products[i].id,
         name: products[i].name,
+        price: products[i].price,
         description: products[i].description,
         detail: `${API_HOST}/api/products/${products[i].id}`,
       });
