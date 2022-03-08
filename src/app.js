@@ -17,6 +17,7 @@ const mainUser = require("./routes/user.js");
 const mainGames = require("./routes/games.js");
 const mainConsols = require("./routes/consols.js");
 const apiUsers = require("./routes/api/users.js");
+const apiProducts = require("./routes/api/products.js");
 
 /*Services*/
 const productsServices = require("./services/productsServices");
@@ -75,6 +76,8 @@ app.use("/games", mainGames);
 app.use("/consols", mainConsols);
 
 app.use("/api", apiUsers);
+
+app.use("/api", apiProducts);
 
 /**error-404**/
 app.use((req, res, next) => {
