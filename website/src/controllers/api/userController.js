@@ -28,6 +28,16 @@ const userController = {
   /*Detail Method*/
   detail: async (req, res) => {
     const user = await userServices.findOne(req.params.id);
+    if (!user) {
+      const respuesta = {
+        meta: {
+          status: 404,
+          url: `api/users/${req.params.id}`,
+          message: "User not found",
+        },
+      };
+      return res.json(respuesta);
+    }
     const newUser = {
       id: user.id,
       user_name: user.user_name,

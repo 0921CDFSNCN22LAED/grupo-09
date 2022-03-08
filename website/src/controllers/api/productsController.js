@@ -28,6 +28,16 @@ const productsController = {
   /*Detail Method*/
   detail: async (req, res) => {
     const product = await productsServices.findOne(req.params.id);
+    if (!product) {
+      const respuesta = {
+        meta: {
+          status: 404,
+          url: `api/products/${req.params.id}`,
+          message: "Product not found",
+        },
+      };
+      return res.json(respuesta);
+    }
     const newProduct = {
       id: product.id,
       name: product.name,
