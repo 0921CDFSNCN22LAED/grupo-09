@@ -47,11 +47,11 @@ function SideBar() {
           </Link>
         </li>
 
-        {/*<!-- UsersInDb -->*/}
+        {/*<!-- DataInDb -->*/}
         <li className="nav-item">
-          <Link className="nav-link" to="/UsersInDb" exact="true">
+          <Link className="nav-link" to="/DataInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            UsersInDb
+            DataInDb
           </Link>
         </li>
 

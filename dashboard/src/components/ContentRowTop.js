@@ -1,6 +1,6 @@
 import React from "react";
 import ContentRowCenter from "./ContentRowCenter";
-import UsersInDb from "./UsersInDb";
+import DataInDb from "./DataInDb";
 import Chart from "./Chart";
 import { Route } from "react-router-dom";
 
@@ -14,9 +14,9 @@ function ContentRowTop() {
         </div>
 
         {/*<!-- Content Row Movies-->*/}
-        <UsersInDb />
+        <DataInDb />
         <ContentRowCenter />
-        <Route path={["/UsersInDb", "/", "/ContentWrapper"]} exact={true} component={Chart} />
+        <Route path={["/DataInDb", "/", "/ContentWrapper"]} exact={true} component={Chart} />
       </div>
       {/*<!--End Content Row Top-->*/}
     </React.Fragment>
