@@ -8,7 +8,7 @@ function App() {
     <React.Fragment>
       <div id="wrapper">
         <Switch>
-          <Route path={["/", "/ContentWrapper", "/ProductsInDb", "/ConsolesInDb", "/DataInDb"]} exact={true} component={Document} />
+          <Route path={["/", "/ContentWrapper", "/LastProductInDb", "/ConsolesInDb", "/DataInDb"]} exact={true} component={Document} />
           <Route component={Error404} />
         </Switch>
       </div>

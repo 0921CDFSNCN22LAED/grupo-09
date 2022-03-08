@@ -31,11 +31,11 @@ function SideBar() {
         {/*<!-- Heading -->*/}
         <div className="sidebar-heading">Actions</div>
 
-        {/*<!-- ProductsInDb -->*/}
+        {/*<!-- LastProductInDb -->*/}
         <li className="nav-item">
-          <Link className="nav-link" to="/ProductsInDb" exact="true">
+          <Link className="nav-link" to="/LastProductInDb" exact="true">
             <i className="fas fa-fw fa-table"></i>
-            ProductsInDb
+            LastProductInDb
           </Link>
         </li>
 
