@@ -5592,6 +5592,9 @@ button.bg-primary:hover {
 .bg-secondary {
   background-color: #858796 !important;
 }
+.margin-pirupi {
+  margin-top: 100px;
+}
 a.bg-secondary:focus,
 a.bg-secondary:hover,
 button.bg-secondary:focus,
