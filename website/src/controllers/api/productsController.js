@@ -13,6 +13,7 @@ const productsController = {
         price: products[i].price,
         description: products[i].description,
         detail: `${API_HOST}/api/products/${products[i].id}`,
+        product_image: products[i].product_image,
       });
     }
     const respuesta = {
@@ -44,7 +45,7 @@ const productsController = {
       name: product.name,
       description: product.description,
       price: product.price,
-      product_image: `${API_HOST}/api/products/${product.id}/${product.product_image}`,
+      product_image: `${API_HOST}/images/productos/${product.product_image}`,
     };
     const respuesta = {
       meta: {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { API_HOST } from "../constants";
-import imagenFondo from "../assets/images/1646103572318_product.JPG";
 
 function LastProductInDb() {
+  //Fetch del producto
   const [productList, setProductList] = useState([]);
   useEffect(() => {
     fetch(`${API_HOST}/api/products`).then((response) =>
@@ -17,13 +17,27 @@ function LastProductInDb() {
         })
     );
   }, []);
+
+  //Fetch de la imagen
   const index = productList.length - 1;
-  let id = 0;
+  let image = "";
   if (productList.length > 0) {
-    id = productList[index].id;
-    console.log(id);
-    return id;
+    image = productList[index].product_image;
+    console.log(image);
   }
+  const imageUrl = `${API_HOST}/images/productos/${image}`;
+  console.log(imageUrl);
+  const [img, setImg] = useState();
+  const fetchImage = async () => {
+    const res = await fetch(imageUrl);
+    const imageBlob = await res.blob();
+    const imageObjectURL = URL.createObjectURL(imageBlob);
+    setImg(imageObjectURL);
+  };
+  useEffect(() => {
+    fetchImage();
+  }, []);
+
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
@@ -32,12 +46,13 @@ function LastProductInDb() {
         </div>
         <div className="card-body">
           <div className="text-center">
-            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={`${API_HOST}/images/productos/1646103730386_product.jpeg`} alt="Imagen producto" />
+            {productList.length > 0 && <p>{productList[index].name}</p>}
+            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={img} alt="Imagen producto" />
+            {productList.length > 0 && <p>{productList[index].description}</p>}
+            <Link to="/LastProductInDb" exact="true" className="btn btn-danger" rel="nofollow">
+              Ver detalle del producto
+            </Link>
           </div>
-          <p>{productList.length > 0 ? productList[id].description : "Cargando..."}</p>
-          <Link to="/LastProductInDb" exact="true" className="btn btn-danger" rel="nofollow">
-            Ver detalle del producto
-          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { API_HOST } from "../constants";
 import imagenFondo from "../assets/images/1646103572318_product.JPG";
 
