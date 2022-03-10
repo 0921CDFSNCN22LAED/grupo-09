@@ -36,7 +36,7 @@ function LastProductInDb() {
   };
   useEffect(() => {
     fetchImage();
-  }, []);
+  }, [imageUrl]);
 
   return (
     <div className="col-lg-6 mb-4">
