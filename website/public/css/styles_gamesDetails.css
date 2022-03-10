@@ -5,6 +5,16 @@
 }
 
 /*MAIN GAMES DETAILS*/
+.margin-top {
+  margin: auto;
+  justify-content: center;
+  margin-top: 30px;
+}
+.container-games {
+  margin: auto;
+  justify-content: center;
+  margin-top: 35px;
+}
 
 .container {
   width: 90%;
