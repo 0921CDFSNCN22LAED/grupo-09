@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
 
   form.addEventListener("submit", function (e) {
     function checkImage(productImage) {
-      if (/.jpe?g$/i.test(productImage.value)) {
+      if (/.*$/i.test(productImage.value)) {
         return true;
       }
       return false;
@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
     if (description.value == "") {
       errores.push("El campo de descripción tiene que estar completo");
     } else if (description.value.length < 20) {
-      errores.push("El nombre debe tener al menos 20 caracteres");
+      errores.push("La descripción debe tener al menos 20 caracteres");
     }
 
     if (productImage.value == "") {

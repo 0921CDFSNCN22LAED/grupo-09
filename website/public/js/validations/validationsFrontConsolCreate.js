@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
 
   form.addEventListener("submit", function (e) {
     function checkImage(productImage) {
-      if (/.jpe?g$/i.test(productImage.value)) {
+      if (/.*$/i.test(productImage.value)) {
         return true;
       }
       return false;

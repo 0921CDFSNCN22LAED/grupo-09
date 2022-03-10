@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
     }
 
     function checkImage(userImage) {
-      if (/.jpe?g$/i.test(userImage.value)) {
+      if (/.*$/i.test(userImage.value)) {
         return true;
       }
       return false;
