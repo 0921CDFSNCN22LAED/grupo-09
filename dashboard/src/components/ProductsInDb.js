@@ -19,24 +19,25 @@ function ProductsInDb() {
   }, []);
   console.log(productList);
   return (
-    <div className="col-lg-6 mb-4">
-      <div className="card shadow mb-4">
-        <div className="card-header py-3">
-          <h5 className="m-0 font-weight-bold text-gray-800">Productos en la base de datos</h5>
-        </div>
-        {productList.map((product, i) => {
-          return (
-            <div key={i} className="card-body">
-              <p>{product.name}</p>
-              <div className="text-center">
-                <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={imagenFondo} alt="imagen producto" />
+    <div className="row">
+      {productList.map((product, i) => {
+        return (
+          <div className="col-lg-6 mb-4">
+            <div className="card shadow mb-4">
+              <div className="card-header py-3">
+                <h5 className="m-0 font-weight-bold text-gray-800">{product.name}</h5>
               </div>
-              <p>{product.price}</p>
-              <p>{product.description}</p>
+              <div key={i} className="card-body">
+                <div className="text-center">
+                  <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={imagenFondo} alt="imagen producto" />
+                  <p>{product.price}</p>
+                  <p>{product.description}</p>
+                </div>
+              </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

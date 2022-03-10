@@ -1,8 +1,6 @@
 import React from "react";
 import ConsolesInDb from "./ConsolesInDb";
 import LastProductInDb from "./LastProductInDb";
-import ProductsInDb from "./ProductsInDb";
-
 import { Route } from "react-router-dom";
 
 function ContentRowCenter() {
@@ -14,9 +12,6 @@ function ContentRowCenter() {
 
       {/*<!-- Console in DB -->*/}
       <Route path={["/ConsolesInDb", "/", "/ContentWrapper"]} exact={true} component={ConsolesInDb} />
-
-      {/*<!-- Products in DB -->*/}
-      <Route path={["/ProductsInDb", "/ContentWrapper"]} exact={true} component={ProductsInDb} />
     </div>
   );
 }

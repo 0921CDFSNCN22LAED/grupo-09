@@ -25,7 +25,7 @@ function LastProductInDb() {
     image = productList[index].product_image;
     console.log(image);
   }
-  const imageUrl = `${API_HOST}/images/productos/${image}`;
+  const imageUrl = image == "" ? `${API_HOST}/images/productos/1646103730386_product.jpeg` : `${API_HOST}/images/productos/${image}`;
   console.log(imageUrl);
   const [img, setImg] = useState();
   const fetchImage = async () => {
@@ -49,7 +49,7 @@ function LastProductInDb() {
             {productList.length > 0 && <p>{productList[index].name}</p>}
             <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={img} alt="Imagen producto" />
             {productList.length > 0 && <p>{productList[index].description}</p>}
-            <Link to="/LastProductInDb" exact="true" className="btn btn-danger" rel="nofollow">
+            <Link to="/ProductsInDb" exact="true" className="btn btn-danger" rel="nofollow">
               Ver detalle del producto
             </Link>
           </div>
