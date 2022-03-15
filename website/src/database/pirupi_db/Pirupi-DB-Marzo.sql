@@ -15,9 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP DATABASE IF EXISTS movies_db;
-CREATE DATABASE movies_db;
-USE movies_db;
+DROP DATABASE IF EXISTS pirupi_db;
+CREATE DATABASE pirupi_db;
+USE pirupi_db;
 
 --
 -- Table structure for table `consoles`
