@@ -14,6 +14,7 @@ const publicDomain = path.resolve(__dirname, "../public");
 /*Routes*/
 const mainPage = require("./routes/main.js");
 const mainProducts = require("./routes/products.js");
+const mainFinalProducts = require("./routes/finalProducts.js");
 const mainUser = require("./routes/user.js");
 const mainGames = require("./routes/games.js");
 const mainConsols = require("./routes/consols.js");
@@ -76,6 +77,8 @@ productsServices.getAll().then((products) => {
 app.use("/", mainPage);
 
 app.use("/products", mainProducts);
+
+app.use("/products", mainFinalProducts);
 
 app.use("/user", mainUser);
 
