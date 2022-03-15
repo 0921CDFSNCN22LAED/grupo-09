@@ -50,7 +50,7 @@ function LastProductInDb() {
             <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 40 + "rem" }} src={img} alt="Imagen producto" />
             {productList.length > 0 && <p>{productList[index].description}</p>}
             <Link to="/ProductsInDb" exact="true" className="btn btn-danger" rel="nofollow">
-              Ver detalle del producto
+              Ver todos los productos
             </Link>
           </div>
         </div>
