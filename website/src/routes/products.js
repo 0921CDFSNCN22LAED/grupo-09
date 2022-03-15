@@ -23,9 +23,6 @@ const uploadFile = multer({ storage });
 /*-Index Products-*/
 router.get("/", productsController.products);
 
-/*-Cart-*/
-router.get("/cart", productsController.cart);
-
 /*-Product Details-*/
 router.get("/details/:id", productsController.details);
 
