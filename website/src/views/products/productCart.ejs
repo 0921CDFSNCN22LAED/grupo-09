@@ -20,17 +20,19 @@
           <section class="margin-sections section-productos-cart">
             <section class="section-productos">
               <% let finalPrice = 0 %> <% for(let finalProduct of finalProducts) { %>
-              <div class="contenedor-producto-cart">
-                <div>
-                  <a href="./products/details/<%= finalProduct.products.id %>"><img src="/images/productos/<%= finalProduct.products.product_image %>" class="w-100" alt="Trailers" /></a>
-                </div>
-                <div>
-                  <h2 class="subs centrado margin-10"><%= finalProduct.products.name %></h2>
-                  <p class="centrado"><%= finalProduct.products.price %></p>
-                  <p class="centrado"><%= finalProduct.product_colors.name %></p>
-                  <p class="centrado"><%= finalProduct.memories.memory %></p>
-                </div>
-                 <a href="/user/login"><i class="fas fa-trash-alt trash-cart"></i></a>
+                <div class="contenedor-producto-cart">
+                  <div>
+                    <a href="./products/details/<%= finalProduct.products.id %>"><img src="/images/productos/<%= finalProduct.products.product_image %>" class="w-100" alt="Trailers" /></a>
+                  </div>
+                  <div>
+                    <h2 class="subs centrado margin-10"><%= finalProduct.products.name %></h2>
+                    <p class="centrado"><%= finalProduct.products.price %></p>
+                    <p class="centrado"><%= finalProduct.product_colors.name %></p>
+                    <p class="centrado"><%= finalProduct.memories.memory %></p>
+                  </div>
+                  <form action="./finalProducts/<%= finalProduct.id %>?_method=DELETE" method="POST">
+                 <button type="submit"><i class="fas fa-trash-alt trash-cart"></i></button>
+                 </form>
               </div>
               <%finalPrice = finalPrice + finalProduct.products.price }%>
             </section>
@@ -48,7 +50,7 @@
               </div>
               <h3 class="margin-vertical-20">Precio Final: $<%=finalPrice%></h2>
             </div>
-            <button class="boton boton-cart">Finalizar Compra</button>
+              <button class="boton boton-cart">Finalizar Compra</button>
           </section>
         </section>
       </section>

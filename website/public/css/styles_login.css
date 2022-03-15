@@ -90,7 +90,7 @@ label {
     margin: 0;
   }
   .bg-image {
-    background-image: url("https://raw.githubusercontent.com/0921CDFSNCN22LAED/grupo-09/main/public/images/trailers/mission-start.jpg");
+    background-image: url("https://raw.githubusercontent.com/0921CDFSNCN22LAED/grupo-09/81b2f1cac2f4fda249f1eda374aec7d9989eaf2e/website/public/images/trailers/mission-start.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,5 +99,4 @@ label {
   .profile_photo_container {
     width: 35%;
   }
-  
 }
