@@ -43,6 +43,10 @@
 .trash-cart:hover {
   color: red;
 }
+.empty-cart {
+  width: 30%;
+  margin: auto;
+}
 @media (min-width: 480px) {
   .boton-cart {
     width: 80%;

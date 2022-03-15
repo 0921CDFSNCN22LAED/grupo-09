@@ -8,6 +8,12 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
+      <% if(finalProducts.length == 0){%> 
+        <section class = "empty-cart">
+        <h1 class="headlines centrado margin-10">Tu carrito esta vacio</h1>
+        <img class="d-block w-100" src="/images/404/Empty-Red-Shopping-Cart.jpg" alt="Empty Cart">
+      </section>
+        <% } else { %> 
       <section class="cart-section">
         <h3 class="headlines">Tu carrito</h3>
         <section class="cart-wrapper">
@@ -46,7 +52,9 @@
           </section>
         </section>
       </section>
+      <% }%> 
     </main>
+
 
     <%- include("../partials/footer.ejs") %>
   </body>
