@@ -180,9 +180,23 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .contenedor-producto {
   width: 80%;
   margin: 20px;
+}
+.contenedor-producto-cart {
+  width: 80%;
+  margin: 20px;
+  border: solid 2px gray;
+}
+.cart-section {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.product-cart-list {
+  margin: 10px 0;
 }
 .contenedor-testimonial-section {
   margin: auto;
@@ -335,6 +349,9 @@ footer {
   /*HEADER*/
 
   /*BODY*/
+  .section-productos-cart {
+    width: 70%;
+  }
 
   .trailers {
     width: 60%;
@@ -359,6 +376,28 @@ footer {
   .contenedor-producto {
     width: 30%;
     margin: 0;
+  }
+  .cart-wrapper {
+    display: flex;
+  }
+  .contenedor-producto-cart {
+    width: 45%;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .cart-resume {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-right: 3%;
+    width: 30%;
+  }
+  .cart-resume-card {
+    background-color: #e6e3e3;
+    padding: 20px;
+    border-radius: 20px;
   }
   .contenedor-testimonial-section {
     width: 100%;
@@ -446,6 +485,10 @@ footer {
 
   .burger-menu-container {
     display: none;
+  }
+  .contenedor-producto-cart {
+    width: 40%;
+    padding: 40px;
   }
 
   /*FOOTER*/

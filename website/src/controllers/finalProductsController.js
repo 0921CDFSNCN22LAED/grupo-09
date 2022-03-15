@@ -16,7 +16,7 @@ const finalProductsServices = require("../services/finalProductsServices");
 const finalProductsController = {
   cart: async (req, res) => {
     const finalProducts = await finalProductsServices.getAll();
-    console.log(finalProducts);
+    //console.log(finalProducts);
     res.render("products/productCart", {
       finalProducts: finalProducts,
     });

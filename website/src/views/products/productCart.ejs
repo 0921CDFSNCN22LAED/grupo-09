@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include("../partials/head.ejs") %>
+    <link href="/css/styles_productCart.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <%- include("../partials/head.ejs") %>
-    <link href="/css/styles_productCart.css" rel="stylesheet">
-</head>
-
-<body>
-  <%- include("../partials/header.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
     <main>
-      <h3 class="headlines">Tu carrito</h3>
-      <section class="margin-sections">
-        <section class="section-productos">
-          <% for(let finalProduct of finalProducts) { %>
-            <div class="contenedor-producto">
-              <div>
-                <a href="./products/details/<%= finalProduct.products.id %>"><img
-                    src="/images/productos/<%= finalProduct.products.product_image %>" class="w-100"
-                    alt="Trailers" /></a>
+      <section class="cart-section">
+        <h3 class="headlines">Tu carrito</h3>
+        <section class="cart-wrapper">
+          <section class="margin-sections section-productos-cart">
+            <section class="section-productos">
+              <% let finalPrice = 0 %> <% for(let finalProduct of finalProducts) { %>
+              <div class="contenedor-producto-cart">
+                <div>
+                  <a href="./products/details/<%= finalProduct.products.id %>"><img src="/images/productos/<%= finalProduct.products.product_image %>" class="w-100" alt="Trailers" /></a>
+                </div>
+                <div>
+                  <h2 class="subs centrado margin-10"><%= finalProduct.products.name %></h2>
+                  <p class="centrado"><%= finalProduct.products.price %></p>
+                  <p class="centrado"><%= finalProduct.product_colors.name %></p>
+                  <p class="centrado"><%= finalProduct.memories.memory %></p>
+                </div>
+                 <a href="/user/login"><i class="fas fa-trash-alt trash-cart"></i></a>
               </div>
-              <div>
-                <h2 class="subs centrado margin-10">
-                  <%= finalProduct.products.name %>
-                </h2>
-                <p class="centrado">
-                  <%= finalProduct.products.price %>
-                </p>
-                <p class="centrado">
-                  <%= finalProduct.product_colors.name %>
-                </p>
-                <p class="centrado">
-                  <%= finalProduct.memories.memory %>
-                </p>
+              <%finalPrice = finalPrice + finalProduct.products.price }%>
+            </section>
+          </section>
+          <section class="cart-resume">
+            <div class="cart-resume-card" >
+              <h2>Resumen</h2>
+              <div class="product-cart-list">
+                <p>Productos en el carrito:</p>
+                <div>
+                  <% for(let finalProduct of finalProducts) { %>
+                  <p><%= finalProduct.products.name %></p>
+                  <%}%>
+                </div>
               </div>
+              <h3 class="margin-vertical-20">Precio Final: $<%=finalPrice%></h2>
             </div>
-            <% } %>
+            <button class="boton boton-cart">Finalizar Compra</button>
+          </section>
         </section>
       </section>
     </main>
 
     <%- include("../partials/footer.ejs") %>
-
-</body>
-
+  </body>
 </html>
