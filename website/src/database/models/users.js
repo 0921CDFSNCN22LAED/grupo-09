@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = (models) => {
     User.hasMany(models.Orders, {
       as: "orders",
-      foreignKey: "id",
+      foreignKey: "order_id",
     });
   };
 

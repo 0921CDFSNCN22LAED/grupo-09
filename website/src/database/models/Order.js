@@ -5,9 +5,9 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     date: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
 
@@ -32,14 +32,14 @@ module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define(alias, cols, config);
 
   Order.associate = (models) => {
-    Order.hasOne(models.Users, {
+    Order.belongsTo(models.Users, {
       as: "users",
-      foreignKey: "id",
+      foreignKey: "user_id",
     });
 
-    Order.belongsTo(models.Orders_final_products, {
+    Order.hasMany(models.Orders_final_products, {
       as: "order_final_products",
-      foreignKey: "id",
+      foreignKey: "order_id",
     });
   };
 

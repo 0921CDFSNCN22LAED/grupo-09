@@ -5,18 +5,18 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     final_product_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
 
     order_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
   };
@@ -29,14 +29,14 @@ module.exports = (sequelize, DataTypes) => {
   const Order_final_product = sequelize.define(alias, cols, config);
 
   Order_final_product.associate = (models) => {
-    Order_final_product.hasMany(models.Final_products, {
+    Order_final_product.belongsTo(models.Final_products, {
       as: "final_products",
-      foreignKey: "id",
+      foreignKey: "final_product_id",
     });
 
-    Order_final_product.hasOne(models.Orders, {
+    Order_final_product.belongsTo(models.Orders, {
       as: "orders",
-      foreignKey: "id",
+      foreignKey: "orders_id",
     });
   };
 

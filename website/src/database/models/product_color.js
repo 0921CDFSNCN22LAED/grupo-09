@@ -5,9 +5,9 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     name: {
@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
   const Product_color = sequelize.define(alias, cols, config);
 
   Product_color.associate = (models) => {
-    Product_color.belongsTo(models.Final_products, {
+    Product_color.hasMany(models.Final_products, {
       as: "final_products",
-      foreignKey: "id",
+      foreignKey: "product_color_id",
     });
   };
 

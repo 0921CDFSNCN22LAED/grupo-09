@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     memory: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
     },
   };
 
@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
   const Memory = sequelize.define(alias, cols, config);
 
   Memory.associate = (models) => {
-    Memory.belongsTo(models.Final_products, {
+    Memory.hasMany(models.Final_products, {
       as: "final_products",
-      foreignKey: "id",
+      foreignKey: "memory_id",
     });
   };
 

@@ -5,28 +5,23 @@ module.exports = (sequelize, DataTypes) => {
 
   const cols = {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncremente: true,
+      autoIncrement: true,
     },
 
     product_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
 
     memory_id: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
-    },
-
-    joystick_color_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
 
     product_color_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       foreignKey: true,
     },
   };
@@ -39,29 +34,24 @@ module.exports = (sequelize, DataTypes) => {
   const Final_product = sequelize.define(alias, cols, config);
 
   Final_product.associate = (models) => {
-    Final_product.hasOne(models.Products, {
+    Final_product.belongsTo(models.Products, {
       as: "products",
-      foreignKey: "id",
+      foreignKey: "product_id",
     });
 
-    Final_product.hasOne(models.Memories, {
+    Final_product.belongsTo(models.Memories, {
       as: "memories",
-      foreignKey: "id",
+      foreignKey: "memory_id",
     });
 
-    Final_product.hasOne(models.Joystick_colors, {
-      as: "joystick_colors",
-      foreignKey: "id",
-    });
-
-    Final_product.hasOne(models.Product_colors, {
+    Final_product.belongsTo(models.Product_colors, {
       as: "product_colors",
-      foreignKey: "id",
+      foreignKey: "product_color_id",
     });
 
-    Final_product.belongsTo(models.Orders_final_products, {
+    Final_product.hasMany(models.Orders_final_products, {
       as: "order_final_products",
-      foreignKey: "id",
+      foreignKey: "final_product_id",
     });
   };
 
