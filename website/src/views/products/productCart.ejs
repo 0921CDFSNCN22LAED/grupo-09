@@ -11,40 +11,31 @@
     <main>
       <h3 class="headlines">Tu carrito</h3>
       <section class="margin-sections">
-        <div class="carrito">
-          <div>
-            <label>Consola <small>(Descripcion)</small></label>
-            <input type="number" size="3" placeholder="$1000">
-          </div>
-          <div>
-            <label for="etiquetas">Adiocional <small>(Descripcion)</small></label>
-            <input type="number" size="3" placeholder="$1000">
-          </div>
-          <div>
-            <label>Seleccione el color</label> <br>
-            <select>
-              <option value="">- Selecione el color --</option>
-              <option value="2">Color1</option>
-              <option value="1">Color2</option>
-              <option value="3">Color3</option>
-          </div>
-          <input type="button" id="calcular" class="button" value="Calcular">
-        </div>
-        <div class="total">
-          <p>Resumen:</p>
-          <div id="lista-productos">
-
-          </div>
-          <p class=>Total:</p>
-          <div id="suma-total">
-
-          </div>
-          <input type="hidden" name="total_pedido" id="total_pedido">
-          <input type="hidden" name="total_descuento" id="total_descuento" value="total_descuento">
-          <input class="boton" type="submit" name="submit" class="button" value="Pagar">
-        </div>
-        </select>
-
+        <section class="section-productos">
+          <% for(let finalProduct of finalProducts) { %>
+            <div class="contenedor-producto">
+              <div>
+                <a href="./products/details/<%= finalProduct.products.id %>"><img
+                    src="/images/productos/<%= finalProduct.products.product_image %>" class="w-100"
+                    alt="Trailers" /></a>
+              </div>
+              <div>
+                <h2 class="subs centrado margin-10">
+                  <%= finalProduct.products.name %>
+                </h2>
+                <p class="centrado">
+                  <%= finalProduct.products.price %>
+                </p>
+                <p class="centrado">
+                  <%= finalProduct.product_colors.name %>
+                </p>
+                <p class="centrado">
+                  <%= finalProduct.memories.memory %>
+                </p>
+              </div>
+            </div>
+            <% } %>
+        </section>
       </section>
     </main>
 

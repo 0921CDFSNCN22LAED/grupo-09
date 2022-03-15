@@ -48,22 +48,22 @@
             </div>
           </section>
           <section>
-            <form action="/">
+            <form action="../finalProducts/<%= product.id %>" method="POST">
               <div class="margin-bottom-15 list">
-                <label for="colores" class="subs">Color</label>
-                <select name="productoColor" class="box">
+                <label for="color" class="subs">Color</label>
+                <select name="color" class="box">
                   <% for(let color of productColors) { %>
-                    <option value="<%=color.color_hex%>">
+                    <option value="<%= color.id %>">
                       <%=color.name%>
                     </option>
                     <% } %>
                 </select>
               </div>
               <div class="margin-bottom-15 list">
-                <label for="memoria" class="subs">Memoria</label>
-                <select name="productoMemoria" class="box">
+                <label for="memory" class="subs">Memoria</label>
+                <select name="memory" class="box">
                   <% for(let memory of productMemories) { %>
-                    <option value="<%=memory.memory%>">
+                    <option value="<%=memory.id%>">
                       <%=memory.memory%> GB
                     </option>
                     <% } %>
@@ -82,16 +82,10 @@
           </section>
         </section>
       </section>
-      <section class="margin-vertical-100-20 section-logos-consolas">
-        <% for (let consol of consols) { %>
-          <div class="wrapper-logos-consolas">
-            <img src="/images/logos_consolas/<%= consol.logo %>" class="w-100" alt="Trailers" />
-          </div>
-          <% } %>
-      </section>
+      <%- include("../partials/bannerLogos.ejs") %>
 
 
-      <%- include("../partials/testimonial.ejs") %>
+        <%- include("../partials/testimonial.ejs") %>
 
     </main>
 </body>
