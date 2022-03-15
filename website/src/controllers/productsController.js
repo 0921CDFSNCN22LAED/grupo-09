@@ -46,10 +46,6 @@ const productsController = {
     }
   },
 
-  cart: (req, res) => {
-    res.render("products/productCart");
-  },
-
   details: async (req, res) => {
     const id = req.params.id;
     const product = await productsServices.findOne(id);
